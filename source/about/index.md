@@ -14,6 +14,8 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 ## Experience
 
+### Co-op / Intern
+
 - **Manulife** — Co-op (05/2026 – 08/2026)  
   - To be updated.
 
@@ -21,14 +23,6 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
   - Built a .NET MVC module to standardize job titles across ~5,000 public companies; reduced backlog **85%**.  
   - Migrated Selenium → Katalon and set up CI/CD in Azure DevOps.  
   - Refactored enterprise platform modules; improved page load time **30%**.
-
-- **UW Fintech** — Analyst (10/2025 – Present)  
-  - Wrote an industry report on AI/ML dynamics in fintech: market structure, margins, and liquidity risk.  
-  - Analyzed GenAI vs traditional ML operational/compliance needs; mapped talent and regulatory risk.
-
-- **UX Research Hub** — Director (09/2024 – Present)  
-  - Secured sponsorship + recruited a Google UX Researcher keynote; enabled events with **zero** out-of-pocket cost.  
-  - Built a Google Sheets financial tracking system; cut budget planning time **40%** for a ~30-person team.
 
 - **Lansi Institute of AI in Medicine** — Co-op (Remote) (04/2024 – 12/2024)  
   - Built scalable genomic ETL for multi-omics; reduced preprocessing time **92%** via parallelization/workflow optimization.  
@@ -45,6 +39,16 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 - **Math Tutor, Loyalist Collegiate and Vocational Institute** (09/2022 – 06/2023)  
   - Delivered structured tutoring with progress tracking and logic-based lesson plans.
+
+### Campus Leadership
+
+- **UW Fintech** — Analyst (10/2025 – Present)  
+  - Wrote an industry report on AI/ML dynamics in fintech: market structure, margins, and liquidity risk.  
+  - Analyzed GenAI vs traditional ML operational/compliance needs; mapped talent and regulatory risk.
+
+- **UX Research Hub** — Director (09/2024 – Present)  
+  - Secured sponsorship + recruited a Google UX Researcher keynote; enabled events with **zero** out-of-pocket cost.  
+  - Built a Google Sheets financial tracking system; cut budget planning time **40%** for a ~30-person team.
 
 ## Projects
 
