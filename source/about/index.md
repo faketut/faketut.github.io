@@ -64,10 +64,10 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 ## Activities & Competitions
 
-- **SAF Investment Research Challenge** (07/2025): 3rd place.
-https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results
+- **12th SAF Investment Research Challenge** (https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results
+) (07/2025): 3rd place.
 
-- **SAF Strategy Case Competition** (05/2025): Finalist; Tesla crisis diagnosis (sentiment analysis with Python/NLTK), forecasting (ARIMA), insolvency/liquidity modeling, authored most of final deck.
+- **7th SAF Strategy Case Competition** (05/2025): Finalist; Tesla crisis diagnosis (sentiment analysis with Python/NLTK), forecasting (ARIMA), insolvency/liquidity modeling, authored most of final deck.
 - **SDG Impact Alliance Sustainability Hackathon** (03/2025): 8th place; audited sustainability metrics vs disclosures; proposed ESG audit framework + carbon credit simulation.
 - **Alpha FMC x CODE Case Competition** (01/2025): Finalist; operational risk/control gap analysis; audit-style dashboard and savings recommendations.
 
@@ -75,89 +75,120 @@ https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competit
 
 ### Coursera (selected)
 
-- **Parallel, Concurrent, and Distributed Programming** — Rice University  
-  [![Rice University](https://media.licdn.com/dms/image/v2/C4E0BAQGBW9UluY3-Vg/company-logo_100_100/company-logo_100_100/0/1630602229448/riceuniversity_logo?e=1778716800&v=beta&t=FxpW_ruOGsbQdrJpOmVVoUbSd51ap56cmTUd1_ExK8U)](https://www.coursera.org/account/accomplishments/specialization/certificate/2BGHCLUXS149)
-
-- **Reinforcement Learning** — University of Alberta  
-  [![University of Alberta](https://media.licdn.com/dms/image/v2/D560BAQGIXcY0sg1nVQ/company-logo_100_100/company-logo_100_100/0/1725657074608/university_of_alberta_logo?e=1778716800&v=beta&t=9if5CYyri8CuUKVOUdG20fdmUYB2F5Am0s-RYdT2BwU)](https://www.coursera.org/account/accomplishments/specialization/certificate/PU86XV9ER8PI)
-
-- **Bayesian Statistics**  
-  [![Bayesian Statistics](https://media.licdn.com/dms/image/v2/C4E0BAQEEdPQHFbiGrg/company-logo_100_100/company-logo_100_100/0/1656436364797?e=1778716800&v=beta&t=tQLcD-QDkvLtXyWqQFu7vXJeR1xaYyN5cPVEqHCHZEE)](https://www.coursera.org/account/accomplishments/specialization/certificate/1VLGG1JR8PAK)
-
-- **Data Products for Predictive Analytics** — UC San Diego (Rady)  
-  [![UC San Diego](https://media.licdn.com/dms/image/v2/D560BAQGHW5PmnCgw-Q/company-logo_100_100/company-logo_100_100/0/1718746544699/ucsandiego_rady_school_of_management_logo?e=1778716800&v=beta&t=NN6yYz_u_qJYmWkl55gmipFV4EupHyOVLaMv0ujGzsA)](https://www.coursera.org/account/accomplishments/specialization/certificate/C6JF5TD65GWB)
-
-- **iOS App Development** — University of Toronto  
-  [![University of Toronto](https://media.licdn.com/dms/image/v2/C4D0BAQHX-foiyEDxpw/company-logo_100_100/company-logo_100_100/0/1639421285702/university_of_toronto_logo?e=1778716800&v=beta&t=NgsvzzBZ6X2PIvpke0qJQfOgLTEf9fEnEKNRG77NXmA)](https://www.coursera.org/account/accomplishments/specialization/certificate/AUZY08LDYTUM)
-
-- **Pricing Strategy Optimization** — BCG  
-  [![BCG](https://media.licdn.com/dms/image/v2/D4E0BAQE_RmtwzBSpAg/company-logo_100_100/company-logo_100_100/0/1702568604682/boston_consulting_group_logo?e=1778716800&v=beta&t=1ARoslJLKZ8uI9mtdVSJiiu7bp7Kexrei3-2NALokyg)](https://www.coursera.org/account/accomplishments/specialization/certificate/997XDEG7H810)
-
-- **Cost Accounting** — Technical University of Munich  
-  [![TUM](https://media.licdn.com/dms/image/v2/D4D0BAQGYm_x_LuZ84g/company-logo_100_100/B4DZhWqognGsAQ-/0/1753800673663/technische_universitat_munchen_logo?e=1778716800&v=beta&t=v3OgwIC9C9HciaB1cUixXrANIjuW0K_jWk-PIuJUHy4)](https://www.coursera.org/account/accomplishments/specialization/certificate/IA9SJ2GI6T1A)
-
-- **Valuation and Financial Analysis** — Yonsei University  
-  [![Yonsei University](https://media.licdn.com/dms/image/v2/D560BAQHtgIy07-b20A/company-logo_100_100/company-logo_100_100/0/1667779233966/yonsei_logo?e=1778716800&v=beta&t=N4u8KTra-D740gW9r6dQGLGQxrbtMFgYeu0x3f4bRmY)](https://www.coursera.org/account/accomplishments/specialization/certificate/TJDVWPYXF4UK)
-
-- **AI for Cybersecurity** — IBM  
-  [![IBM](https://media.licdn.com/dms/image/v2/D560BAQGiz5ecgpCtkA/company-logo_100_100/company-logo_100_100/0/1688684715866/ibm_logo?e=1778716800&v=beta&t=RjZjoQmBolNjU5speUZ7r4_z2ZynxZbA_Pvi6ivtBzI)](https://www.coursera.org/account/accomplishments/specialization/certificate/CYX497N7LZ3W)
-
-- **Time Series and Sequential Data** — SAS  
-  [![SAS](https://media.licdn.com/dms/image/v2/D4E0BAQFhSD86O7AkYA/company-logo_100_100/company-logo_100_100/0/1720039737493/sas_logo?e=1778716800&v=beta&t=21S-5nQMBO-sFDqPQ_QrbrWnRBEpBUp3ItX1sDM1YZc)](https://www.coursera.org/account/accomplishments/specialization/certificate/HS7GKBW6L9IO)
-
-- **Machine Learning** — Stanford Online  
-  [![Stanford Online](https://media.licdn.com/dms/image/v2/D560BAQEd670c2b8VOQ/company-logo_100_100/B56Z2S6TZbGwAY-/0/1776286250926/stanford_online_logo?e=1778716800&v=beta&t=b0cQN_MYKuDYW1BKTJ7npM4jyDSGKMOGRZikWzkT7Bs)](https://www.coursera.org/account/accomplishments/specialization/certificate/QGBYZ04AJTGI)
-
-- **SAS Programmer (Professional Certificate)** — SAS  
-  [![SAS](https://media.licdn.com/dms/image/v2/D4E0BAQFhSD86O7AkYA/company-logo_100_100/company-logo_100_100/0/1720039737493/sas_logo?e=1778716800&v=beta&t=21S-5nQMBO-sFDqPQ_QrbrWnRBEpBUp3ItX1sDM1YZc)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/AG85WMU0MMSV)
-
-- **Mathematics for Machine Learning** — Imperial College London  
-  [![Imperial College London](https://media.licdn.com/dms/image/v2/D4E0BAQGOM2ioD3Ym6w/company-logo_100_100/company-logo_100_100/0/1719955498213/imperial_college_london_logo?e=1778716800&v=beta&t=mNYN1yP1XJfkrU6cH78BGO5oOuXGD1UMhlK_pq-VEWU)](https://www.coursera.org/account/accomplishments/specialization/certificate/9BM761WGFSU7)
-
-- **Database Design & Operational BI**  
-  [![Database Design](https://media.licdn.com/dms/image/v2/C4E0BAQETEpO-5HXpZw/company-logo_100_100/company-logo_100_100/0/1630640256235?e=1778716800&v=beta&t=smtrXjgdFligmz4s6XecH2fXJIEtYv09nz8bDD6UUC8)](https://www.coursera.org/account/accomplishments/specialization/certificate/SBC571L4L7F1)
-
-- **Business Strategy**  
-  [![Business Strategy](https://media.licdn.com/dms/image/v2/D4E0BAQFPXxfaisprvA/company-logo_100_100/company-logo_100_100/0/1712014926451?e=1778716800&v=beta&t=8CxkWVWAFvFnUqOdunlVLHx1vUW-1bqZBTZuGrcLZus)](https://www.coursera.org/account/accomplishments/specialization/certificate/30EI1TJMISNB)
-
-- **Blockchain** — UC Irvine Extension  
-  [![UC Irvine Extension](https://media.licdn.com/dms/image/v2/D560BAQH7iG7YBwEsQg/company-logo_100_100/B56Zx3caG3HUAQ-/0/1771530462146/university_of_california_irvine_extension_logo?e=1778716800&v=beta&t=WFawrvGS4hCMip5uZeoD_pWWyhjVSCMZ4Fk18nFGeEc)](https://www.coursera.org/account/accomplishments/specialization/certificate/87N6K0SPEYXU)
-
-- **Vector Database** — IBM  
-  [![IBM](https://media.licdn.com/dms/image/v2/D560BAQGiz5ecgpCtkA/company-logo_100_100/company-logo_100_100/0/1688684715866/ibm_logo?e=1778716800&v=beta&t=RjZjoQmBolNjU5speUZ7r4_z2ZynxZbA_Pvi6ivtBzI)](https://www.coursera.org/account/accomplishments/specialization/certificate/P1QA0YDA1JBB)
-
-- **Finance & Quantitative Modeling** — University of Pennsylvania  
-  [![University of Pennsylvania](https://media.licdn.com/dms/image/v2/D4E0BAQFJvX-Ed9d2gA/company-logo_100_100/B4EZxITZrAGwAQ-/0/1770739574173/university_of_pennsylvania_logo?e=1778716800&v=beta&t=DMlPmbzlZdCNTW_93KpC9wlmZsiP-U4WWwIy8tpc3UY)](https://www.coursera.org/account/accomplishments/specialization/certificate/OAX4SY0DHP3R)
-
-- **Google IT Support (Professional Certificate)** — Google  
-  [![Google](https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/HZ5KBCQL1HUW)
-
-- **AWS Cloud Solutions** — AWS  
-  [![AWS](https://media.licdn.com/dms/image/v2/D4E0BAQFqdm1TZ-RZKQ/company-logo_100_100/B4EZgOay6gHEAY-/0/1752588562343/amazon_web_services_logo?e=1778716800&v=beta&t=IEBpkHjZLptWf8__iKrHAVNNcdjVR_eK1LsHUGTsQa4)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/TH9FBF9UDHUX)
-
-- **Graphic Design**  
-  [![Graphic Design](https://media.licdn.com/dms/image/v2/D560BAQHilaKdJueUVg/company-logo_100_100/B56ZodIp56HUAU-/0/1761425400481?e=1778716800&v=beta&t=CtE1pPnr7AACBVEbacwjzAny7OIXIaiiNiEw0EatqDo)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/02BAJ3NCGT9H)
-
-- **Bookkeeping** — Intuit  
-  [![Intuit](https://media.licdn.com/dms/image/v2/C560BAQFTpF8uneqScw/company-logo_100_100/company-logo_100_100/0/1661446146222/intuit_logo?e=1778716800&v=beta&t=4QXnRlFTIy7taeWD1XwCA81AdRsN_iB9aA54upqSxEU)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/U1RRYRECZB3I)
-
-- **Google UX Design (Professional Certificate)** — Google  
-  [![Google](https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/J8V5ISFUR3EG)
-
-- **Payroll**  
-  [![Payroll](https://media.licdn.com/dms/image/v2/C560BAQGUVbphN7CEig/company-logo_100_100/company-logo_100_100/0/1630570060806/asparity_decision_solutions_logo?e=1778716800&v=beta&t=U3l1GV2lE8Rwn_hcb_AXX7sMQ4rdBk8_kpZ-Fw8Ag_s)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/IWKXFETDA9OH)
-
-- **Data Engineering**  
-  [![Data Engineering](https://media.licdn.com/dms/image/v2/D560BAQGVn2MO4DWnLg/company-logo_100_100/B56ZbZv8i_H4AQ-/0/1747409948261?e=1778716800&v=beta&t=Y50n2jR-sJsbOlFM-Lw5SJuUa4fRIKzI4eWYWSkbD7g)](https://www.coursera.org/account/accomplishments/specialization/certificate/I4R071N6OK97)
-
-- **SAP Technology Consultant** — SAP  
-  [![SAP](https://media.licdn.com/dms/image/v2/D560BAQGmwwo0aq4jVA/company-logo_100_100/company-logo_100_100/0/1723034255614/sap_logo?e=1778716800&v=beta&t=9eFtecNx0IimKOR6gbQVLlbb6d8P9vhFDgX0IFPCQ8Y)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/1XDQABM2IARB)
-
-- **Digital Marketing & E-commerce** — Google  
-  [![Google](https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/VVWW1YQ7EZDF)
-
-- **Data Analytics** — Google  
-  [![Google](https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g)](https://www.coursera.org/account/accomplishments/professional-cert/certificate/P4QUH8AEBGG7)
+<div class="not-prose grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/2BGHCLUXS149" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGBW9UluY3-Vg/company-logo_100_100/company-logo_100_100/0/1630602229448/riceuniversity_logo?e=1778716800&v=beta&t=FxpW_ruOGsbQdrJpOmVVoUbSd51ap56cmTUd1_ExK8U" alt="Rice University" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Parallel, Concurrent…</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/PU86XV9ER8PI" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQGIXcY0sg1nVQ/company-logo_100_100/company-logo_100_100/0/1725657074608/university_of_alberta_logo?e=1778716800&v=beta&t=9if5CYyri8CuUKVOUdG20fdmUYB2F5Am0s-RYdT2BwU" alt="University of Alberta" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Reinforcement Learning</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/1VLGG1JR8PAK" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEEdPQHFbiGrg/company-logo_100_100/company-logo_100_100/0/1656436364797?e=1778716800&v=beta&t=tQLcD-QDkvLtXyWqQFu7vXJeR1xaYyN5cPVEqHCHZEE" alt="Bayesian Statistics" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Bayesian Statistics</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/C6JF5TD65GWB" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQGHW5PmnCgw-Q/company-logo_100_100/company-logo_100_100/0/1718746544699/ucsandiego_rady_school_of_management_logo?e=1778716800&v=beta&t=NN6yYz_u_qJYmWkl55gmipFV4EupHyOVLaMv0ujGzsA" alt="UC San Diego" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Data Products (PA)</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/AUZY08LDYTUM" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQHX-foiyEDxpw/company-logo_100_100/company-logo_100_100/0/1639421285702/university_of_toronto_logo?e=1778716800&v=beta&t=NgsvzzBZ6X2PIvpke0qJQfOgLTEf9fEnEKNRG77NXmA" alt="University of Toronto" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">iOS App Development</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/997XDEG7H810" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQE_RmtwzBSpAg/company-logo_100_100/company-logo_100_100/0/1702568604682/boston_consulting_group_logo?e=1778716800&v=beta&t=1ARoslJLKZ8uI9mtdVSJiiu7bp7Kexrei3-2NALokyg" alt="BCG" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Pricing Strategy</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/IA9SJ2GI6T1A" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4D0BAQGYm_x_LuZ84g/company-logo_100_100/B4DZhWqognGsAQ-/0/1753800673663/technische_universitat_munchen_logo?e=1778716800&v=beta&t=v3OgwIC9C9HciaB1cUixXrANIjuW0K_jWk-PIuJUHy4" alt="TUM" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Cost Accounting</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/TJDVWPYXF4UK" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQHtgIy07-b20A/company-logo_100_100/company-logo_100_100/0/1667779233966/yonsei_logo?e=1778716800&v=beta&t=N4u8KTra-D740gW9r6dQGLGQxrbtMFgYeu0x3f4bRmY" alt="Yonsei University" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Valuation & Analysis</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/CYX497N7LZ3W" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQGiz5ecgpCtkA/company-logo_100_100/company-logo_100_100/0/1688684715866/ibm_logo?e=1778716800&v=beta&t=RjZjoQmBolNjU5speUZ7r4_z2ZynxZbA_Pvi6ivtBzI" alt="IBM" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">AI for Cybersecurity</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/HS7GKBW6L9IO" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFhSD86O7AkYA/company-logo_100_100/company-logo_100_100/0/1720039737493/sas_logo?e=1778716800&v=beta&t=21S-5nQMBO-sFDqPQ_QrbrWnRBEpBUp3ItX1sDM1YZc" alt="SAS" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Time Series</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/QGBYZ04AJTGI" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQEd670c2b8VOQ/company-logo_100_100/B56Z2S6TZbGwAY-/0/1776286250926/stanford_online_logo?e=1778716800&v=beta&t=b0cQN_MYKuDYW1BKTJ7npM4jyDSGKMOGRZikWzkT7Bs" alt="Stanford Online" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Machine Learning</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/AG85WMU0MMSV" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFhSD86O7AkYA/company-logo_100_100/company-logo_100_100/0/1720039737493/sas_logo?e=1778716800&v=beta&t=21S-5nQMBO-sFDqPQ_QrbrWnRBEpBUp3ItX1sDM1YZc" alt="SAS" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">SAS Programmer</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/9BM761WGFSU7" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGOM2ioD3Ym6w/company-logo_100_100/company-logo_100_100/0/1719955498213/imperial_college_london_logo?e=1778716800&v=beta&t=mNYN1yP1XJfkrU6cH78BGO5oOuXGD1UMhlK_pq-VEWU" alt="Imperial College London" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Math for ML</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/SBC571L4L7F1" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQETEpO-5HXpZw/company-logo_100_100/company-logo_100_100/0/1630640256235?e=1778716800&v=beta&t=smtrXjgdFligmz4s6XecH2fXJIEtYv09nz8bDD6UUC8" alt="Database Design" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">DB Design & BI</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/30EI1TJMISNB" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFPXxfaisprvA/company-logo_100_100/company-logo_100_100/0/1712014926451?e=1778716800&v=beta&t=8CxkWVWAFvFnUqOdunlVLHx1vUW-1bqZBTZuGrcLZus" alt="Business Strategy" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Business Strategy</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/87N6K0SPEYXU" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQH7iG7YBwEsQg/company-logo_100_100/B56Zx3caG3HUAQ-/0/1771530462146/university_of_california_irvine_extension_logo?e=1778716800&v=beta&t=WFawrvGS4hCMip5uZeoD_pWWyhjVSCMZ4Fk18nFGeEc" alt="UC Irvine Extension" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Blockchain</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/P1QA0YDA1JBB" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQGiz5ecgpCtkA/company-logo_100_100/company-logo_100_100/0/1688684715866/ibm_logo?e=1778716800&v=beta&t=RjZjoQmBolNjU5speUZ7r4_z2ZynxZbA_Pvi6ivtBzI" alt="IBM" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Vector Database</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/OAX4SY0DHP3R" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFJvX-Ed9d2gA/company-logo_100_100/B4EZxITZrAGwAQ-/0/1770739574173/university_of_pennsylvania_logo?e=1778716800&v=beta&t=DMlPmbzlZdCNTW_93KpC9wlmZsiP-U4WWwIy8tpc3UY" alt="University of Pennsylvania" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Quant Modeling</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/HZ5KBCQL1HUW" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">IT Support</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/TH9FBF9UDHUX" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFqdm1TZ-RZKQ/company-logo_100_100/B4EZgOay6gHEAY-/0/1752588562343/amazon_web_services_logo?e=1778716800&v=beta&t=IEBpkHjZLptWf8__iKrHAVNNcdjVR_eK1LsHUGTsQa4" alt="AWS" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">AWS Cloud</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/02BAJ3NCGT9H" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQHilaKdJueUVg/company-logo_100_100/B56ZodIp56HUAU-/0/1761425400481?e=1778716800&v=beta&t=CtE1pPnr7AACBVEbacwjzAny7OIXIaiiNiEw0EatqDo" alt="Graphic Design" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Graphic Design</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/U1RRYRECZB3I" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/C560BAQFTpF8uneqScw/company-logo_100_100/company-logo_100_100/0/1661446146222/intuit_logo?e=1778716800&v=beta&t=4QXnRlFTIy7taeWD1XwCA81AdRsN_iB9aA54upqSxEU" alt="Intuit" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Bookkeeping</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/J8V5ISFUR3EG" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">UX Design</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/IWKXFETDA9OH" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/C560BAQGUVbphN7CEig/company-logo_100_100/company-logo_100_100/0/1630570060806/asparity_decision_solutions_logo?e=1778716800&v=beta&t=U3l1GV2lE8Rwn_hcb_AXX7sMQ4rdBk8_kpZ-Fw8Ag_s" alt="Payroll" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Payroll</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/I4R071N6OK97" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQGVn2MO4DWnLg/company-logo_100_100/B56ZbZv8i_H4AQ-/0/1747409948261?e=1778716800&v=beta&t=Y50n2jR-sJsbOlFM-Lw5SJuUa4fRIKzI4eWYWSkbD7g" alt="Data Engineering" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Data Engineering</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/1XDQABM2IARB" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQGmwwo0aq4jVA/company-logo_100_100/company-logo_100_100/0/1723034255614/sap_logo?e=1778716800&v=beta&t=9eFtecNx0IimKOR6gbQVLlbb6d8P9vhFDgX0IFPCQ8Y" alt="SAP" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">SAP Consultant</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/VVWW1YQ7EZDF" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Digital Marketing</span>
+  </a>
+  <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/P4QUH8AEBGG7" target="_blank" rel="noopener noreferrer">
+    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Data Analytics</span>
+  </a>
+</div>
 
 ### Skills
 
