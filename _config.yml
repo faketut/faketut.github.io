@@ -1,9 +1,9 @@
-title: jianfeng's blog
+title: Jian Feng's Hub
 subtitle:
 description:
-author: jianfeng
-language: zh-CN
-timezone: Asia/Shanghai
+author: Jian Feng
+language: en
+timezone: Asia/Hong_Kong
 
 url: https://faketut.github.io/
 root: /
@@ -50,6 +50,11 @@ tag_map:
 meta_generator: true
 
 theme: maple
+
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 20
 
 deploy:
   type: ''
