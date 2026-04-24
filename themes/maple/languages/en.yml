@@ -1,0 +1,27 @@
+categories: Categories
+search: Search
+tags: Tags
+tagcloud: Tag Cloud
+tweets: Tweets
+prev: Prev
+next: Next
+comment: Comments
+archive_a: Archives
+archive_b: "Archives: %s"
+page: Page %d
+recent_posts: Recent Posts
+newer: Newer
+older: Older
+share: Share
+share_actions: Actions
+share_copy_link: Copy link
+share_link_copied: Link copied
+share_copy_failed: Copy failed
+share_wechat: WeChat
+share_wechat_qr_tip: Scan QR code to share
+back_to_top: Back to top
+close: Close
+powered_by: Powered by
+rss_feed: RSS Feed
+category: Category
+tag: Tag

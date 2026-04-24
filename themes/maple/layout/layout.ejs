@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+<head>
+  <%- partial('_partial/head',{cache: true}) %>
+</head>
+<body class="font-sans bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-200 relative">
+  <%- partial('_partial/header', {cache: true}) %>
+  <main class="pt-14">
+    <%- body %>
+  </main>
+  <%- partial('_partial/footer', {cache: true}) %>
+  <%- partial('_partial/back-to-top', {cache: true}) %>
+  <%- partial('_partial/after-footer') %>
+  <div class="fixed top-0 bottom-0 left-0 right-0 pointer-events-none print:hidden" id="bombax-ceiba"></div>
+</body>
+
+</html>

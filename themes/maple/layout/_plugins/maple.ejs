@@ -1,0 +1,29 @@
+<% if (theme['bombax-ceiba'] && theme['bombax-ceiba'].enable) { %>
+  <script>
+    $(document).ready(function () {
+      const bombaxCeibaCount = "<%= theme['bombax-ceiba'].count %>";
+      const speed = "<%= theme['bombax-ceiba'].speed %>";
+      const bombaxCeibaEl = document.getElementById("bombax-ceiba");
+      const bombaxCeibas = Array.from({ length: bombaxCeibaCount }).map(() => {
+        const bombaxCeiba = document.createElement("div");
+        const scale = Math.random() * 0.5 + 0.5;
+        const offset = Math.random() * 2 - 1;
+        const x = Math.random() * bombaxCeibaEl.clientWidth;
+        const y = -Math.random() * bombaxCeibaEl.clientHeight;
+        const duration = 10 / speed;
+        const delay = -duration;
+        bombaxCeiba.className = "bombax-ceiba";
+        bombaxCeiba.style.width = `${24 * scale}px`;
+        bombaxCeiba.style.height = `${24 * scale}px`;
+        bombaxCeiba.style.left = `${x}px`;
+        bombaxCeiba.style.top = `${y}px`;
+        bombaxCeiba.style.setProperty("--bombax-ceiba-fall-offset", offset);
+        bombaxCeiba.style.setProperty("--bombax-ceiba-fall-height", `${Math.abs(y) + bombaxCeibaEl.clientHeight}px`);
+        bombaxCeiba.style.animation = `fall ${duration}s linear infinite`;
+        bombaxCeiba.style.animationDelay = `${delay}s`;
+        bombaxCeibaEl.appendChild(bombaxCeiba)
+        return bombaxCeiba
+      })
+    });
+  </script>
+  <% } %>

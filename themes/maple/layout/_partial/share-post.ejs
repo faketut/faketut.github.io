@@ -1,0 +1,55 @@
+<% if (theme.share_post && theme.share_post.enable) { %>
+  <section
+    class="share-post"
+    id="share-post"
+    data-platforms='<%- JSON.stringify((theme.share_post && theme.share_post.platforms) || {}) %>'
+    data-qr-api-base="<%- (theme.share_post && theme.share_post.qr_api_base) ? theme.share_post.qr_api_base : 'https://api.qrserver.com/v1/create-qr-code/' %>"
+    data-i18n-actions="<%- __('share_actions') %>"
+    data-i18n-copy-link="<%- __('share_copy_link') %>"
+    data-i18n-link-copied="<%- __('share_link_copied') %>"
+    data-i18n-copy-failed="<%- __('share_copy_failed') %>"
+    data-i18n-wechat="<%- __('share_wechat') %>"
+    data-i18n-wechat-qr-tip="<%- __('share_wechat_qr_tip') %>"
+    data-i18n-close="<%- __('close') %>"
+  >
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-sm font-medium text-gray-700 dark:text-gray-200">
+        <%= __('share') %>
+      </h3>
+      <div class="text-xs text-gray-400" aria-hidden="true">
+        <%= __('share_actions') %>
+      </div>
+    </div>
+
+    <div class="mt-3 flex flex-wrap gap-2" id="share-buttons-container"></div>
+
+    <div class="mt-2 hidden text-xs text-gray-500 dark:text-gray-400" id="share-toast" role="status" aria-live="polite"></div>
+
+    <div class="fixed inset-0 z-50 hidden" id="share-modal" aria-hidden="true">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="absolute left-1/2 top-1/2 w-[18rem] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-4 shadow-lg dark:bg-zinc-800">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <iconify-icon width="18" icon="ri:wechat-line"></iconify-icon>
+            <div class="text-sm font-medium"><%= __('share_wechat') %></div>
+          </div>
+          <button
+            type="button"
+            id="share-modal-close"
+            class="inline-flex items-center justify-center rounded-md p-1 text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-700"
+            aria-label="<%- __('close') %>"
+            title="<%- __('close') %>"
+          >
+            <iconify-icon width="18" icon="carbon:close"></iconify-icon>
+          </button>
+        </div>
+        <div class="mt-3 flex items-center justify-center">
+          <img id="share-modal-qr" class="h-[150px] w-[150px] rounded bg-white p-1" alt="<%- __('share_wechat_qr_tip') %>" />
+        </div>
+        <div class="mt-3 text-center text-xs text-gray-500 dark:text-gray-400">
+          <%= __('share_wechat_qr_tip') %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% } %>

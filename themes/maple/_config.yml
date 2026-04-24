@@ -1,0 +1,83 @@
+# Header
+nav:
+  Posts: /archives
+  # Categories: /category
+  # Tags: /tag
+
+# favicon
+favicon: /favicon.png
+
+# logo
+logo: /images/logo.svg
+
+# links
+links:
+  Github: https://github.com/xbmlz
+  # ZhiHu:
+  # Twitter:
+  # Weibo:
+
+# share post actions
+share_post:
+  enable: false
+  # QR code generator base URL for WeChat share
+  # default: https://api.qrserver.com/v1/create-qr-code/
+  qr_api_base: https://api.qrserver.com/v1/create-qr-code/
+  platforms:
+    twitter: true
+    linkedin: false
+    facebook: false
+    reddit: false
+    weibo: true
+    qq: true
+    wechat: true
+
+# ads
+ads:
+  enable: false
+  adsterra:
+    enable: false
+    # script url provided by ad network
+    js:
+    # container id provided by ad network
+    div_id:
+
+# analytics
+google_analytics:
+baidu_analytics:
+
+# mathjax
+fancybox: true
+
+# mathjax
+mathjax: true
+
+# echarts
+echarts: true
+
+# busuanzi
+busuanzi: true
+
+# mermaid
+mermaid:
+  enable: true
+  # Available themes: default | dark | forest | neutral
+  theme: default
+
+# giscus
+giscus:
+  enable:
+  repo:
+  repo_id:
+  category:
+  category_id:
+  mapping:
+
+# bombax-ceiba
+bombax-ceiba:
+  enable: true
+  # fall leaf count
+  count: 10
+  # 0-1
+  speed: 0.5
+
