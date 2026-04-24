@@ -35,13 +35,13 @@ share_post:
 
 # ads
 ads:
-  enable: false
+  enable: true
   adsterra:
-    enable: false
+    enable: true
     # script url provided by ad network
-    js:
+    js: https://pl29242202.profitablecpmratenetwork.com/5fe41348fd7f700b5708c1c2a2c623f8/invoke.js
     # container id provided by ad network
-    div_id:
+    div_id: container-5fe41348fd7f700b5708c1c2a2c623f8
 
 # analytics
 google_analytics: G-F0FD4FHZKL
@@ -73,9 +73,10 @@ giscus:
   category: General
   category_id: DIC_kwDOSKOmO84C7nVi
   mapping: pathname
+  lang: en
 
-# bombax-ceiba
-bombax-ceiba:
+# maple
+maple:
   enable: true
   # fall leaf count
   count: 10
