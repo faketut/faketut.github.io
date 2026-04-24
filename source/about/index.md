@@ -14,8 +14,6 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 ## Experience
 
-### Co-op / Intern
-
 - **Manulife** — Co-op (05/2026 – 08/2026)  
   - To be updated.
 
@@ -40,7 +38,7 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 - **Math Tutor, Loyalist Collegiate and Vocational Institute** (09/2022 – 06/2023)  
   - Delivered structured tutoring with progress tracking and logic-based lesson plans.
 
-### Campus Leadership
+### Campus
 
 - **UW Fintech** — Analyst (10/2025 – Present)  
   - Wrote an industry report on AI/ML dynamics in fintech: market structure, margins, and liquidity risk.  
@@ -73,7 +71,7 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 ## Certificates & Skills
 
-### Coursera (selected)
+### Coursera
 
 <div class="not-prose grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/2BGHCLUXS149" target="_blank" rel="noopener noreferrer">
@@ -192,31 +190,30 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 ### Skills
 
-#### Languages
-
 ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-003B57?logo=postgresql&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=000)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
 ![C%23](https://img.shields.io/badge/C%23-512BD4?logo=dotnet&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
-
-#### Backend / Data
 
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
+![ASP.NET](https://img.shields.io/badge/ASP.NET-512BD4?logo=dotnet&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white)
+![Spring](https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
-
-#### Cloud / DevOps
 
 ![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
 ![GCP](https://img.shields.io/badge/GCP-4285F4?logo=googlecloud&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
-
-#### Analytics / Product
 
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?logo=tableau&logoColor=white)
 ![PowerBI](https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=000)
