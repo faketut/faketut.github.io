@@ -75,147 +75,146 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 <div class="not-prose grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/2BGHCLUXS149" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGBW9UluY3-Vg/company-logo_100_100/company-logo_100_100/0/1630602229448/riceuniversity_logo?e=1778716800&v=beta&t=FxpW_ruOGsbQdrJpOmVVoUbSd51ap56cmTUd1_ExK8U" alt="Rice University" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Parallel, Concurrent…</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/PU86XV9ER8PI" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQGIXcY0sg1nVQ/company-logo_100_100/company-logo_100_100/0/1725657074608/university_of_alberta_logo?e=1778716800&v=beta&t=9if5CYyri8CuUKVOUdG20fdmUYB2F5Am0s-RYdT2BwU" alt="University of Alberta" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Reinforcement Learning</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/1VLGG1JR8PAK" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEEdPQHFbiGrg/company-logo_100_100/company-logo_100_100/0/1656436364797?e=1778716800&v=beta&t=tQLcD-QDkvLtXyWqQFu7vXJeR1xaYyN5cPVEqHCHZEE" alt="Bayesian Statistics" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Bayesian Statistics</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/C6JF5TD65GWB" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQGHW5PmnCgw-Q/company-logo_100_100/company-logo_100_100/0/1718746544699/ucsandiego_rady_school_of_management_logo?e=1778716800&v=beta&t=NN6yYz_u_qJYmWkl55gmipFV4EupHyOVLaMv0ujGzsA" alt="UC San Diego" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Data Products (PA)</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/AUZY08LDYTUM" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQHX-foiyEDxpw/company-logo_100_100/company-logo_100_100/0/1639421285702/university_of_toronto_logo?e=1778716800&v=beta&t=NgsvzzBZ6X2PIvpke0qJQfOgLTEf9fEnEKNRG77NXmA" alt="University of Toronto" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">iOS App Development</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/997XDEG7H810" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQE_RmtwzBSpAg/company-logo_100_100/company-logo_100_100/0/1702568604682/boston_consulting_group_logo?e=1778716800&v=beta&t=1ARoslJLKZ8uI9mtdVSJiiu7bp7Kexrei3-2NALokyg" alt="BCG" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Pricing Strategy</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/IA9SJ2GI6T1A" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4D0BAQGYm_x_LuZ84g/company-logo_100_100/B4DZhWqognGsAQ-/0/1753800673663/technische_universitat_munchen_logo?e=1778716800&v=beta&t=v3OgwIC9C9HciaB1cUixXrANIjuW0K_jWk-PIuJUHy4" alt="TUM" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Cost Accounting</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/TJDVWPYXF4UK" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQHtgIy07-b20A/company-logo_100_100/company-logo_100_100/0/1667779233966/yonsei_logo?e=1778716800&v=beta&t=N4u8KTra-D740gW9r6dQGLGQxrbtMFgYeu0x3f4bRmY" alt="Yonsei University" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Valuation & Analysis</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/CYX497N7LZ3W" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQGiz5ecgpCtkA/company-logo_100_100/company-logo_100_100/0/1688684715866/ibm_logo?e=1778716800&v=beta&t=RjZjoQmBolNjU5speUZ7r4_z2ZynxZbA_Pvi6ivtBzI" alt="IBM" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">AI for Cybersecurity</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/HS7GKBW6L9IO" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFhSD86O7AkYA/company-logo_100_100/company-logo_100_100/0/1720039737493/sas_logo?e=1778716800&v=beta&t=21S-5nQMBO-sFDqPQ_QrbrWnRBEpBUp3ItX1sDM1YZc" alt="SAS" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Time Series</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/QGBYZ04AJTGI" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQEd670c2b8VOQ/company-logo_100_100/B56Z2S6TZbGwAY-/0/1776286250926/stanford_online_logo?e=1778716800&v=beta&t=b0cQN_MYKuDYW1BKTJ7npM4jyDSGKMOGRZikWzkT7Bs" alt="Stanford Online" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Machine Learning</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/AG85WMU0MMSV" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFhSD86O7AkYA/company-logo_100_100/company-logo_100_100/0/1720039737493/sas_logo?e=1778716800&v=beta&t=21S-5nQMBO-sFDqPQ_QrbrWnRBEpBUp3ItX1sDM1YZc" alt="SAS" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">SAS Programmer</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/9BM761WGFSU7" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGOM2ioD3Ym6w/company-logo_100_100/company-logo_100_100/0/1719955498213/imperial_college_london_logo?e=1778716800&v=beta&t=mNYN1yP1XJfkrU6cH78BGO5oOuXGD1UMhlK_pq-VEWU" alt="Imperial College London" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Math for ML</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/SBC571L4L7F1" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQETEpO-5HXpZw/company-logo_100_100/company-logo_100_100/0/1630640256235?e=1778716800&v=beta&t=smtrXjgdFligmz4s6XecH2fXJIEtYv09nz8bDD6UUC8" alt="Database Design" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">DB Design & BI</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/30EI1TJMISNB" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFPXxfaisprvA/company-logo_100_100/company-logo_100_100/0/1712014926451?e=1778716800&v=beta&t=8CxkWVWAFvFnUqOdunlVLHx1vUW-1bqZBTZuGrcLZus" alt="Business Strategy" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Business Strategy</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/87N6K0SPEYXU" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQH7iG7YBwEsQg/company-logo_100_100/B56Zx3caG3HUAQ-/0/1771530462146/university_of_california_irvine_extension_logo?e=1778716800&v=beta&t=WFawrvGS4hCMip5uZeoD_pWWyhjVSCMZ4Fk18nFGeEc" alt="UC Irvine Extension" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Blockchain</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/P1QA0YDA1JBB" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQGiz5ecgpCtkA/company-logo_100_100/company-logo_100_100/0/1688684715866/ibm_logo?e=1778716800&v=beta&t=RjZjoQmBolNjU5speUZ7r4_z2ZynxZbA_Pvi6ivtBzI" alt="IBM" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Vector Database</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/OAX4SY0DHP3R" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFJvX-Ed9d2gA/company-logo_100_100/B4EZxITZrAGwAQ-/0/1770739574173/university_of_pennsylvania_logo?e=1778716800&v=beta&t=DMlPmbzlZdCNTW_93KpC9wlmZsiP-U4WWwIy8tpc3UY" alt="University of Pennsylvania" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Quant Modeling</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/HZ5KBCQL1HUW" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">IT Support</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/TH9FBF9UDHUX" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFqdm1TZ-RZKQ/company-logo_100_100/B4EZgOay6gHEAY-/0/1752588562343/amazon_web_services_logo?e=1778716800&v=beta&t=IEBpkHjZLptWf8__iKrHAVNNcdjVR_eK1LsHUGTsQa4" alt="AWS" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">AWS Cloud</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/02BAJ3NCGT9H" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQHilaKdJueUVg/company-logo_100_100/B56ZodIp56HUAU-/0/1761425400481?e=1778716800&v=beta&t=CtE1pPnr7AACBVEbacwjzAny7OIXIaiiNiEw0EatqDo" alt="Graphic Design" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Graphic Design</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/U1RRYRECZB3I" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/C560BAQFTpF8uneqScw/company-logo_100_100/company-logo_100_100/0/1661446146222/intuit_logo?e=1778716800&v=beta&t=4QXnRlFTIy7taeWD1XwCA81AdRsN_iB9aA54upqSxEU" alt="Intuit" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Bookkeeping</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/J8V5ISFUR3EG" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">UX Design</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/IWKXFETDA9OH" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/C560BAQGUVbphN7CEig/company-logo_100_100/company-logo_100_100/0/1630570060806/asparity_decision_solutions_logo?e=1778716800&v=beta&t=U3l1GV2lE8Rwn_hcb_AXX7sMQ4rdBk8_kpZ-Fw8Ag_s" alt="Payroll" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Payroll</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/I4R071N6OK97" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQGVn2MO4DWnLg/company-logo_100_100/B56ZbZv8i_H4AQ-/0/1747409948261?e=1778716800&v=beta&t=Y50n2jR-sJsbOlFM-Lw5SJuUa4fRIKzI4eWYWSkbD7g" alt="Data Engineering" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Data Engineering</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/1XDQABM2IARB" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D560BAQGmwwo0aq4jVA/company-logo_100_100/company-logo_100_100/0/1723034255614/sap_logo?e=1778716800&v=beta&t=9eFtecNx0IimKOR6gbQVLlbb6d8P9vhFDgX0IFPCQ8Y" alt="SAP" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">SAP Consultant</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/VVWW1YQ7EZDF" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Digital Marketing</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/P4QUH8AEBGG7" target="_blank" rel="noopener noreferrer">
-    <img src="https://media.licdn.com/dms/image/v2/D4E0BAQGv3cqOuUMY7g/company-logo_100_100/B4EZmhegXHGcAU-/0/1759350753990/google_logo?e=1778716800&v=beta&t=oyauLAhMKDwroENjxT3iSuFHhYNWyLar32I5PYYRS2g" alt="Google" width="28" height="28" style="border-radius:6px" />
+    <iconify-icon width="20" icon="simple-icons:coursera"></iconify-icon>
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Data Analytics</span>
   </a>
 </div>
 
 ### Skills
 
-![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-003B57?logo=postgresql&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=000)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white)
-![C%23](https://img.shields.io/badge/C%23-512BD4?logo=dotnet&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
-
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
-![ASP.NET](https://img.shields.io/badge/ASP.NET-512BD4?logo=dotnet&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white)
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?logo=googlecloud&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white)
-
-![Tableau](https://img.shields.io/badge/Tableau-E97627?logo=tableau&logoColor=white)
-![PowerBI](https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=000)
-![GoogleAnalytics](https://img.shields.io/badge/Google%20Analytics-E37400?logo=googleanalytics&logoColor=white)
+<div class="not-prose flex flex-wrap gap-2">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" />
+  <img alt="SQL" src="https://img.shields.io/badge/SQL-003B57?logo=postgresql&logoColor=white" />
+  <img alt="C" src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=000" />
+  <img alt="C++" src="https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white" />
+  <img alt="C#" src="https://img.shields.io/badge/C%23-512BD4?logo=dotnet&logoColor=white" />
+  <img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white" />
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000" />
+  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" />
+  <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white" />
+  <img alt="ASP.NET" src="https://img.shields.io/badge/ASP.NET-512BD4?logo=dotnet&logoColor=white" />
+  <img alt=".NET" src="https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white" />
+  <img alt="Spring" src="https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white" />
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" />
+  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" />
+  <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white" />
+  <img alt="Redis" src="https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white" />
+  <img alt="AWS" src="https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white" />
+  <img alt="GCP" src="https://img.shields.io/badge/GCP-4285F4?logo=googlecloud&logoColor=white" />
+  <img alt="Azure" src="https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white" />
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" />
+  <img alt="Kubernetes" src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white" />
+  <img alt="Tableau" src="https://img.shields.io/badge/Tableau-E97627?logo=tableau&logoColor=white" />
+  <img alt="Power BI" src="https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=000" />
+  <img alt="Google Analytics" src="https://img.shields.io/badge/Google%20Analytics-E37400?logo=googleanalytics&logoColor=white" />
+</div>
 
