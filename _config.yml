@@ -5,7 +5,7 @@ author: jianfeng
 language: zh-CN
 timezone: Asia/Shanghai
 
-url: https://jianfeng.github.io/
+url: https://faketut.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
