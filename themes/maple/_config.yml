@@ -1,8 +1,8 @@
 # Header
 nav:
   Posts: /archives
-  # Categories: /category
-  # Tags: /tag
+  Categories: /category
+  Tags: /tag
 
 # favicon
 favicon: /favicon.png
@@ -13,7 +13,7 @@ logo: /images/logo.svg
 # links
 links:
   Github: https://github.com/faketut
-  # ZhiHu:
+  LinkedIn: https://www.linkedin.com/in/jack-jf
   # Twitter:
   # Weibo:
 
@@ -25,9 +25,9 @@ share_post:
   qr_api_base: https://api.qrserver.com/v1/create-qr-code/
   platforms:
     twitter: true
-    linkedin: false
-    facebook: false
-    reddit: false
+    linkedin: true
+    facebook: true
+    reddit: true
     weibo: true
     qq: true
     wechat: true
@@ -43,7 +43,7 @@ ads:
     div_id:
 
 # analytics
-google_analytics:
+google_analytics: G-F0FD4FHZKL
 baidu_analytics:
 
 # mathjax
@@ -66,12 +66,12 @@ mermaid:
 
 # giscus
 giscus:
-  enable:
-  repo:
-  repo_id:
-  category:
-  category_id:
-  mapping:
+  enable: true
+  repo: faketut/faketut.github.io
+  repo_id: R_kgDOSKOmOw
+  category: General
+  category_id: DIC_kwDOSKOmO84C7nVi
+  mapping: pathname
 
 # bombax-ceiba
 bombax-ceiba:
