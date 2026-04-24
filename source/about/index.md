@@ -191,30 +191,80 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 ### Skills
 
 <div class="not-prose flex flex-wrap gap-2">
-  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white" />
-  <img alt="SQL" src="https://img.shields.io/badge/SQL-003B57?logo=postgresql&logoColor=white" />
-  <img alt="C" src="https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=000" />
-  <img alt="C++" src="https://img.shields.io/badge/C%2B%2B-00599C?logo=c%2B%2B&logoColor=white" />
-  <img alt="C#" src="https://img.shields.io/badge/C%23-512BD4?logo=dotnet&logoColor=white" />
-  <img alt="Java" src="https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white" />
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000" />
-  <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white" />
-  <img alt="Flask" src="https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white" />
-  <img alt="ASP.NET" src="https://img.shields.io/badge/ASP.NET-512BD4?logo=dotnet&logoColor=white" />
-  <img alt=".NET" src="https://img.shields.io/badge/.NET-512BD4?logo=dotnet&logoColor=white" />
-  <img alt="Spring" src="https://img.shields.io/badge/Spring-6DB33F?logo=spring&logoColor=white" />
-  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white" />
-  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white" />
-  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white" />
-  <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white" />
-  <img alt="Redis" src="https://img.shields.io/badge/Redis-DC382D?logo=redis&logoColor=white" />
-  <img alt="AWS" src="https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white" />
-  <img alt="GCP" src="https://img.shields.io/badge/GCP-4285F4?logo=googlecloud&logoColor=white" />
-  <img alt="Azure" src="https://img.shields.io/badge/Azure-0078D4?logo=microsoftazure&logoColor=white" />
-  <img alt="Docker" src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white" />
-  <img alt="Kubernetes" src="https://img.shields.io/badge/Kubernetes-326CE5?logo=kubernetes&logoColor=white" />
-  <img alt="Tableau" src="https://img.shields.io/badge/Tableau-E97627?logo=tableau&logoColor=white" />
-  <img alt="Power BI" src="https://img.shields.io/badge/Power%20BI-F2C811?logo=powerbi&logoColor=000" />
-  <img alt="Google Analytics" src="https://img.shields.io/badge/Google%20Analytics-E37400?logo=googleanalytics&logoColor=white" />
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Python">
+    <iconify-icon width="22" icon="logos:python"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="SQL">
+    <iconify-icon width="22" icon="mdi:database-search-outline"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="C">
+    <iconify-icon width="22" icon="logos:c"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="C++">
+    <iconify-icon width="22" icon="logos:c-plusplus"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="C#">
+    <iconify-icon width="22" icon="logos:c-sharp"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Java">
+    <iconify-icon width="22" icon="logos:java"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="JavaScript">
+    <iconify-icon width="22" icon="logos:javascript"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="FastAPI">
+    <iconify-icon width="22" icon="simple-icons:fastapi"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Flask">
+    <iconify-icon width="22" icon="simple-icons:flask"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="ASP.NET">
+    <iconify-icon width="22" icon="logos:dotnet"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title=".NET">
+    <iconify-icon width="22" icon="logos:dotnet"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Spring">
+    <iconify-icon width="22" icon="logos:spring-icon"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Node.js">
+    <iconify-icon width="22" icon="logos:nodejs-icon"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="PostgreSQL">
+    <iconify-icon width="22" icon="logos:postgresql"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="MySQL">
+    <iconify-icon width="22" icon="logos:mysql-icon"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="MongoDB">
+    <iconify-icon width="22" icon="logos:mongodb-icon"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Redis">
+    <iconify-icon width="22" icon="logos:redis"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="AWS">
+    <iconify-icon width="22" icon="logos:aws"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="GCP">
+    <iconify-icon width="22" icon="logos:google-cloud"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Azure">
+    <iconify-icon width="22" icon="logos:microsoft-azure"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Docker">
+    <iconify-icon width="22" icon="logos:docker-icon"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Kubernetes">
+    <iconify-icon width="22" icon="logos:kubernetes"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Tableau">
+    <iconify-icon width="22" icon="logos:tableau-icon"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Power BI">
+    <iconify-icon width="22" icon="logos:microsoft-power-bi"></iconify-icon>
+  </span>
+  <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Google Analytics">
+    <iconify-icon width="22" icon="logos:google-analytics"></iconify-icon>
+  </span>
 </div>
 
