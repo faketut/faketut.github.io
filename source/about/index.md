@@ -1,6 +1,7 @@
 ---
 title: About
 date: 2026-04-24 00:00:00
+layout: page
 ---
 
 ## Jian Feng
