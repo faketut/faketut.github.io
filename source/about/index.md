@@ -51,19 +51,18 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
 
 ## Projects
 
-- **wlp4-compiler (C++)**: End-to-end WLP4 compiler (scanner, SLR(1) parser, semantic analysis, ARM64 codegen), symbol tables/type-checking, regression validation.
-- **ArmyOfSafeguards (LLM safety)**: Layered safety system (rules + expert classifiers + meta-classifier gating); DeBERTa-v3 + LoRA low-latency inference; red-team benchmarking and thresholding.
-- **MiniKV (storage engine)**: Minimal LSM-tree KV store with WAL, SSTables/compaction, recovery guarantees, and throughput tuning.
-- **CabStream ETL (data engineering)**: Airflow → GCS → BigQuery, dbt-modeled marts/tests, Looker Studio dashboards for NYC taxi analytics.
-- **VoxFlow (voice AI agent)**: Twilio Voice real-time agent with streaming audio via WebSockets into Ultravox; n8n automation + FastAPI services.
-- **DungeonSpire (C++ roguelike)**: Terminal roguelike with RAII, interface-separated simulation/rendering, reproducible seeded procgen.
-- **FoodWeOrder (Flask + WeChat Pay)**: Payment callbacks + idempotent settlement; background workers; concurrency-safe inventory via atomic DB transactions.
-- **PlantPal (UX + AI)**: AI-assisted plant diagnosis, full UX lifecycle (research → prototypes → usability testing), care calendar + knowledge base.
-- **Smart Handoff (Co-operators Designathon)**: Omni-channel lead-gen UX flows in Figma; backend/data collaboration; marketing strategy.
+- [**wlp4-compiler (C++)**](https://www.github.com/faketut/C-class-compiler): End-to-end WLP4 compiler (scanner, SLR(1) parser, semantic analysis, ARM64 codegen), symbol tables/type-checking, regression validation.
+- [**ArmyOfSafeguards (LLM safety)**](https://www.github.com/faketut/ArmyOfSafeguards): Layered safety system (rules + expert classifiers + meta-classifier gating); DeBERTa-v3 + LoRA low-latency inference; red-team benchmarking and thresholding.
+- [**MiniKV (storage engine)**](https://www.github.com/faketut/MiniKV): Minimal LSM-tree KV store with WAL, SSTables/compaction, recovery guarantees, and throughput tuning.
+- [**CabStream ETL (data engineering)**](https://www.github.com/faketut/CabStream-ETL): Airflow → GCS → BigQuery, dbt-modeled marts/tests, Looker Studio dashboards for NYC taxi analytics.
+- [**VoxFlow (voice AI agent)**](https://www.github.com/faketut/VoxFlow): Twilio Voice real-time agent with streaming audio via WebSockets into Ultravox; n8n automation + FastAPI services.
+- [**DungeonSpire (C++ roguelike)**](https://www.github.com/faketut/DungeonSpire): Terminal roguelike with RAII, interface-separated simulation/rendering, reproducible seeded procgen.
+- [**FoodWeOrder (Flask + WeChat Pay)**](https://www.github.com/faketut/FoodWeOrder): Payment callbacks + idempotent settlement; background workers; concurrency-safe inventory via atomic DB transactions.
+- [**Smart Handoff (Co-operators Designathon)**](https://www.figma.com/design/7N032qMJLb08V7UtiYANWd/Cooperators-Designathon?node-id=1-4&t=YVoIVProv4CyeQsa-1): Omni-channel lead-gen UX flows in Figma; backend/data collaboration; marketing strategy.
 
 ## Activities & Competitions
 
-- **12th SAF Investment Research Challenge** (https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results
+- [**12th SAF Investment Research Challenge**](https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results
 ) (07/2025): 3rd place.
 
 - **7th SAF Strategy Case Competition** (05/2025): Finalist; Tesla crisis diagnosis (sentiment analysis with Python/NLTK), forecasting (ARIMA), insolvency/liquidity modeling, authored most of final deck.
