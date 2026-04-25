@@ -20,7 +20,7 @@ links:
 
 # share post actions
 share_post:
-  enable: false
+  enable: true
   # QR code generator base URL for WeChat share
   # default: https://api.qrserver.com/v1/create-qr-code/
   qr_api_base: https://api.qrserver.com/v1/create-qr-code/

@@ -49,34 +49,36 @@
     <%- page.content %>
   </article>
   <!-- tag -->
-  <div class="mt-12 pt-6 border-t border-gray-200">
-    <% if (page.tags && page.tags.length) { %>
+  <% if (page.tags && page.tags.length) { %>
+    <div class="mt-12 pt-6 border-t border-gray-200">
       <% page.tags.forEach(function (tag) { %>
-        <span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 m-1 text-sm rounded-md transition-colors hover:bg-gray-200">
-          <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
-        </span>
+          <span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 m-1 text-sm rounded-md transition-colors hover:bg-gray-200">
+            <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
+          </span>
       <% }); %>
-    <% } %>
-  </div>
+    </div>
+  <% } %>
   <!-- prev and next -->
-  <div class="flex justify-between mt-12 pt-6 border-t border-gray-200">
-    <div>
-      <% if (page.prev) { %>
-        <a href="<%- url_for(page.prev.path) %>" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
-          <iconify-icon width="20" icon="ri:arrow-left-s-line" data-inline="false"></iconify-icon>
-          <%- page.prev.title %>
-        </a>
-      <% } %>
+  <% if (page.prev || page.next) { %>
+    <div class="flex justify-between mt-12 pt-6 border-t border-gray-200">
+      <div>
+        <% if (page.prev) { %>
+          <a href="<%- url_for(page.prev.path) %>" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
+            <iconify-icon width="20" icon="ri:arrow-left-s-line" data-inline="false"></iconify-icon>
+            <%- page.prev.title %>
+          </a>
+        <% } %>
+      </div>
+      <div>
+        <% if (page.next) { %>
+          <a href="<%- url_for(page.next.path) %>" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
+            <%- page.next.title %>
+            <iconify-icon width="20" icon="ri:arrow-right-s-line" data-inline="false"></iconify-icon>
+          </a>
+        <% } %>
+      </div>
     </div>
-    <div>
-      <% if (page.next) { %>
-        <a href="<%- url_for(page.next.path) %>" class="text-sm text-gray-400 hover:text-gray-500 flex justify-center">
-          <%- page.next.title %>
-          <iconify-icon width="20" icon="ri:arrow-right-s-line" data-inline="false"></iconify-icon>
-        </a>
-      <% } %>
-    </div>
-  </div>
+  <% } %>
   <!-- share -->
   <div class="mt-12 pt-6 border-t border-gray-200">
     <%- partial('_partial/share-post') %>
