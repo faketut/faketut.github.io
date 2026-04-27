@@ -1,7 +1,12 @@
 ---
 title: 实时面试辅助系统优化工程实践：从“能跑”到“低延迟、稳、隐形”
 date: 2026-04-24 00:00:00
-tags: RAG, real-time, copilot, PyQt, ASR, optimization
+tags: 
+ - real-time
+ - copilot
+ - optimization
+categories:
+ - engineering
 ---
 
 
