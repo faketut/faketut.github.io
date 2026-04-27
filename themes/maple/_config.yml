@@ -5,8 +5,8 @@ nav:
   Tags: /tags
   About: /about
 
-# favicon
-favicon: /favicon.png
+# favicon (theme ships favicon.ico at themes/maple/source/favicon.ico)
+favicon: /favicon.ico
 
 # logo
 logo: /images/logo.svg

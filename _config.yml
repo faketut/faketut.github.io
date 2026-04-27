@@ -43,6 +43,10 @@ index_generator:
   per_page: 10
   order_by: -date
 
+# hexo-generator-tag: without this, /tags/ is not generated (404).
+tag_generator:
+  enable_index_page: true
+
 default_category: uncategorized
 category_map:
 tag_map:
