@@ -4,9 +4,6 @@ date: 2026-04-29 00:00:00
 tags:
   - web3
   - cryptography
-  - product
-  - architecture
-  - engineering
 categories:
   - product
   - architecture
