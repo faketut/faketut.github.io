@@ -35,13 +35,7 @@ share_post:
 
 # ads
 ads:
-  enable: true
-  adsterra:
-    enable: true
-    # script url provided by ad network
-    js: https://pl29242202.profitablecpmratenetwork.com/5fe41348fd7f700b5708c1c2a2c623f8/invoke.js
-    # container id provided by ad network
-    div_id: container-5fe41348fd7f700b5708c1c2a2c623f8
+  enable: false
 
 # analytics
 google_analytics: G-F0FD4FHZKL
