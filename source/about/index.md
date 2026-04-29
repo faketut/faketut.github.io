@@ -50,21 +50,21 @@ Computing & Financial Management (Honours Co-op) @ University of Waterloo.
   - Built a Google Sheets financial tracking system; cut budget planning time **40%** for a ~30-person team.
 
 ## Projects
-
-- [**wlp4-compiler (C++)**](https://www.github.com/faketut/C-class-compiler): End-to-end WLP4 compiler (scanner, SLR(1) parser, semantic analysis, ARM64 codegen), symbol tables/type-checking, regression validation.
+- [**GhostPilot (Copilot)**](https://www.github.com/faketut/GhostPilot): Desktop interview copilot for Windows: invisible overlay + ASR → text LLM + Alt+P screenshot → multimodal LLM, with a local RAG knowledge base.
+- [**WeAgree (Crypto)**](https://www.github.com/faketut/WeAgree): Secure web platform for creating, signing, and sharing legally binding agreements using SHA‑256 integrity verification, KMS‑backed RSA‑PSS signatures, AES‑256‑GCM encryption, and blockchain anchoring for tamper‑evident auditability.
+- [**wlp4-compiler**](https://www.github.com/faketut/C-class-compiler): End-to-end WLP4 compiler (scanner, SLR(1) parser, semantic analysis, ARM64 codegen), symbol tables/type-checking, regression validation.
 - [**ArmyOfSafeguards (LLM safety)**](https://www.github.com/faketut/ArmyOfSafeguards): Layered safety system (rules + expert classifiers + meta-classifier gating); DeBERTa-v3 + LoRA low-latency inference; red-team benchmarking and thresholding.
 - [**MiniKV (storage engine)**](https://www.github.com/faketut/MiniKV): Minimal LSM-tree KV store with WAL, SSTables/compaction, recovery guarantees, and throughput tuning.
 - [**CabStream ETL (data engineering)**](https://www.github.com/faketut/CabStream-ETL): Airflow → GCS → BigQuery, dbt-modeled marts/tests, Looker Studio dashboards for NYC taxi analytics.
 - [**VoxFlow (voice AI agent)**](https://www.github.com/faketut/VoxFlow): Twilio Voice real-time agent with streaming audio via WebSockets into Ultravox; n8n automation + FastAPI services.
 - [**DungeonSpire (C++ roguelike)**](https://www.github.com/faketut/DungeonSpire): Terminal roguelike with RAII, interface-separated simulation/rendering, reproducible seeded procgen.
 - [**FoodWeOrder (Flask + WeChat Pay)**](https://www.github.com/faketut/FoodWeOrder): Payment callbacks + idempotent settlement; background workers; concurrency-safe inventory via atomic DB transactions.
-- [**Smart Handoff (Co-operators Designathon)**](https://www.figma.com/design/7N032qMJLb08V7UtiYANWd/Cooperators-Designathon?node-id=1-4&t=YVoIVProv4CyeQsa-1): Omni-channel lead-gen UX flows in Figma; backend/data collaboration; marketing strategy.
+- [**Smart Handoff (UX Design)**](https://www.figma.com/design/7N032qMJLb08V7UtiYANWd/Cooperators-Designathon?node-id=1-4&t=YVoIVProv4CyeQsa-1): Omni-channel lead-gen UX flows in Figma; backend/data collaboration; marketing strategy.
 
 ## Activities & Competitions
 
 - [**12th SAF Investment Research Challenge**](https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results
 ) (07/2025): 3rd place.
-
 - **7th SAF Strategy Case Competition** (05/2025): Finalist; Tesla crisis diagnosis (sentiment analysis with Python/NLTK), forecasting (ARIMA), insolvency/liquidity modeling, authored most of final deck.
 - **SDG Impact Alliance Sustainability Hackathon** (03/2025): 8th place; audited sustainability metrics vs disclosures; proposed ESG audit framework + carbon credit simulation.
 - **Alpha FMC x CODE Case Competition** (01/2025): Finalist; operational risk/control gap analysis; audit-style dashboard and savings recommendations.
