@@ -1,8 +1,6 @@
 <section class="px-6 max-w-prose mx-auto gap-12 grid grid-cols-1">
   <div class="flex flex-col h-48 items-center justify-center">
-    <% if (page && page.pageTitle) { %>
-      <h1 class="site-title text-4xl leading-relaxed"><%= page.pageTitle %></h1>
-    <% } else if (path.indexOf("tag") === 0) { %>
+    <% if (path.indexOf("tag") === 0) { %>
       <h1 class="site-title text-4xl leading-relaxed">
         <%= __('tag') %> - <%= path.split('/')[1] %>
       </h1>
@@ -19,12 +17,8 @@
       </p>
     <% } %>
   </div>
-  <%
-    var last_year = '';
-    var postsIter = page.posts || [];
-    var forEachPost = postsIter.each ? function (fn) { return postsIter.each(fn); } : function (fn) { return postsIter.forEach(fn); };
-  %>
-  <% forEachPost(function (post, index) { %>
+  <% var last_year = ''; %>
+  <% page.posts.each(function (post, index) { %>
     <% var cur_year = post.date.year(); %>
     <% if(last_year !== cur_year){ %>
       <div class="relative pointer-events-none">

@@ -2,9 +2,7 @@ title: FengHub
 subtitle:
 description:
 author: Jian Feng
-language:
-  - en
-  - zh-CN
+language: en
 timezone: Asia/Hong_Kong
 
 url: https://faketut.github.io/
@@ -18,7 +16,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
+
 skip_render:
 
 new_post_name: :title.md
@@ -64,3 +62,4 @@ feed:
 
 deploy:
   type: ''
+

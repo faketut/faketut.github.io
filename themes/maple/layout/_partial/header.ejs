@@ -11,30 +11,16 @@
         <%- page.title %>
       </div>
       <div class="flex-1"></div>
+      <% var om = config.i18n_menu || {}; %>
       <div class="flex items-center gap-3">
         <% for (var i in theme.nav){ %>
-          <%
-            var navPath = theme.nav[i];
-            var isExternal = typeof navPath === 'string' && (navPath.indexOf('http://') === 0 || navPath.indexOf('https://') === 0);
-            var langPrefix = (currentLang === 'en' || currentLang === 'zh-CN') ? ('/' + currentLang) : '';
-            var navHref = isExternal ? navPath : url_for(langPrefix + navPath);
-          %>
-          <a class="hidden sm:flex" href="<%- navHref %>"><%= __(i) %></a>
+          <a class="hidden sm:flex" href="<%- url_for(theme.nav[i]) %>"><%= __(i) %></a>
         <% } %>
-        <%
-          var currentLang = (page && page.lang) ? page.lang : (config.language || 'en');
-          if (Array.isArray(currentLang)) currentLang = currentLang[0];
-          currentLang = (currentLang + '').split(',')[0].trim();
-          var targetLang = currentLang === 'zh-CN' ? 'en' : 'zh-CN';
-          var currentPath = page && page.path ? page.path : '';
-          var targetPath = currentPath.startsWith(currentLang + '/')
-            ? (targetLang + '/' + currentPath.slice((currentLang + '/').length))
-            : (targetLang + '/');
-          var switchHref = url_for('/' + targetPath);
-        %>
-        <a class="hidden sm:flex text-sm font-medium opacity-80 hover:opacity-100" title="Switch language" href="<%- switchHref %>">
-          <%= currentLang === 'zh-CN' ? 'EN' : '中文' %>
-        </a>
+        <% if (om.other_lang_url) { %>
+          <a class="hidden sm:flex text-sm font-medium opacity-80 hover:opacity-100" title="Switch language" href="<%- om.other_lang_url %>">
+            <%= om.other_lang_label || "English" %>
+          </a>
+        <% } %>
         <% if (theme.links !== undefined) { %>
           <% for (var key in theme.links) { %>
             <a class="w-5 h-5 hidden sm:flex" title="<%- key %>" href="<%= theme.links[key] %>">
@@ -65,20 +51,16 @@
     <ul class="nav flex flex-col sm:flex-row text-sm font-medium">
       <% for (var i in theme.nav){ %>
         <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
-          <%
-            var navPathM = theme.nav[i];
-            var isExternalM = typeof navPathM === 'string' && (navPathM.indexOf('http://') === 0 || navPathM.indexOf('https://') === 0);
-            var langPrefixM = (currentLang === 'en' || currentLang === 'zh-CN') ? ('/' + currentLang) : '';
-            var navHrefM = isExternalM ? navPathM : url_for(langPrefixM + navPathM);
-          %>
-          <a href="<%- navHrefM %>" class="flex h-12 sm:h-auto items-center"><%= __(i) %></a>
+          <a href="<%- url_for(theme.nav[i]) %>" class="flex h-12 sm:h-auto items-center"><%= __(i) %></a>
         </li>
       <% } %>
-      <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
-        <a href="<%- switchHref %>" class="flex h-12 sm:h-auto items-center">
-          <%= currentLang === 'zh-CN' ? 'EN' : '中文' %>
-        </a>
-      </li>
+      <% if (om.other_lang_url) { %>
+        <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
+          <a href="<%- om.other_lang_url %>" class="flex h-12 sm:h-auto items-center">
+            <%= om.other_lang_label || "English" %>
+          </a>
+        </li>
+      <% } %>
     </ul>
   </div>
   <div class="mask bg-black/20 absolute inset-0"></div>
