@@ -2,7 +2,9 @@ title: FengHub
 subtitle:
 description:
 author: Jian Feng
-language: en
+language:
+  - en
+  - zh-CN
 timezone: Asia/Hong_Kong
 
 url: https://faketut.github.io/

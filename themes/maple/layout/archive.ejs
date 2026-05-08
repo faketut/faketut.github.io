@@ -2,11 +2,11 @@
   <div class="flex flex-col h-48 items-center justify-center">
     <% if (path.indexOf("tag") === 0) { %>
       <h1 class="site-title text-4xl leading-relaxed">
-        Tag - <%= path.split('/')[1] %>
+        <%= __('tag') %> - <%= path.split('/')[1] %>
       </h1>
     <% } else if (path.indexOf("categories") === 0) { %>
       <h1 class="site-title text-4xl leading-relaxed">
-        Categories - <%= path.split('/')[1] %>
+        <%= __('categories') %> - <%= path.split('/')[1] %>
       </h1>
     <% } else { %>
       <h1 class="site-title text-4xl leading-relaxed">

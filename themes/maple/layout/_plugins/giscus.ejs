@@ -1,6 +1,6 @@
 <% if (theme.giscus.enable){ %>
 <%
-  var giscusLang = config.language || 'en';
+  var giscusLang = (page && page.lang) ? page.lang : (config.language || 'en');
   if (Array.isArray(giscusLang)) giscusLang = giscusLang[0];
   giscusLang = (giscusLang + '').split(',')[0].trim();
   giscusLang = giscusLang.replace('_', '-');

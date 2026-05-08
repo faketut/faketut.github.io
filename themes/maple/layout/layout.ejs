@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html lang="<%= config.language %>">
+<%
+  var pageLang = (page && page.lang) ? page.lang : config.language;
+  if (Array.isArray(pageLang)) pageLang = pageLang[0];
+  pageLang = (pageLang + '').split(',')[0].trim();
+%>
+<html lang="<%= pageLang %>">
 <head>
   <%- partial('_partial/head',{cache: true}) %>
 </head>
