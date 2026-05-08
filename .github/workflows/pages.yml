@@ -35,7 +35,7 @@ jobs:
         run: npx hexo generate
 
       - name: Ensure root index redirect (i18n)
-        run: node scripts/ensure-root-index.mjs
+        run: node tools/ensure-root-index.cjs
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

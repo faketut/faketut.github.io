@@ -1,5 +1,5 @@
 ---
-title: Optimizing a WLP4 (C-like) Compiler Backend: from “correct codegen” to smaller, faster, and more robust
+title: "Optimizing a WLP4 (C-like) Compiler Backend: from correct codegen to smaller, faster, and more robust"
 date: 2026-04-28 00:00:00
 tags:
   - compiler

@@ -1,5 +1,5 @@
 ---
-title: WeAgree decentralized engineering: from legal dual-track logic to on-chain evidence anchoring
+title: "WeAgree decentralized engineering: from legal dual-track logic to on-chain evidence anchoring"
 date: 2026-04-29 00:00:00
 tags:
   - web3

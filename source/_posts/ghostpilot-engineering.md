@@ -1,5 +1,5 @@
 ---
-title: Engineering a Real-Time Interview Copilot: from “it works” to low-latency, stable, and invisible
+title: "Engineering a Real-Time Interview Copilot: from it works to low-latency, stable, and invisible"
 date: 2026-04-24 00:00:00
 tags:
   - real-time
