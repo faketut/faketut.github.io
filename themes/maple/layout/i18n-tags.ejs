@@ -1,0 +1,12 @@
+<div class="px-6 max-w-prose mx-auto md:px-0 mt-6">
+  <h2 class="font-bold text-2xl"><%= __('tags') %></h2>
+  <ul class="mt-2">
+    <% (page.tags || []).forEach(item => { %>
+      <li class="mt-2">
+        <a href="<%- url_for('/' + page.lang + '/tags/' + encodeURIComponent(item.name) + '/') %>"><%- item.name %></a>
+        <span>(<%- item.count %>)</span>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+
