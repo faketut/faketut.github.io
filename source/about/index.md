@@ -7,32 +7,21 @@ layout: page
 ---
 
 ## Jian Feng
-Explore and solve chanllenges in fintech.
+Quality, impact, passion.
 
 ## Education
 - **University of Waterloo** (09/2023 – 04/2028): Computing and Financial Management (Honours, Co-op)  
   - **Majors**: Computer Science, Finance, Statistics (Joint Honours)
 ## Experience
-- **Manulife** — Co-op (05/2026 – 08/2026)  
-  - cloud platform, SEPE reliability 
-- **Treasury Board of Canada Secretariat** — Co-op (09/2025 – 12/2025)  
-  - Built a .NET MVC module to standardize job titles across ~5,000 public companies; reduced backlog **85%**.  
-  - Migrated Selenium → Katalon and established CI/CD in Azure DevOps; refactored modules to improve page load time **30%**.
-- **Lansi Institute of AI in Medicine** — Co-op (Remote) (04/2024 – 12/2024)  
-  - Built scalable multi-omics genomic ETL; reduced preprocessing time **92%** via parallelization/workflow optimization.  
-  - Built models linking variants to drug response; supported a meta-analysis on T2D therapeutic targets.
-- **Sanyang Technology** — Intern (07/2024 – 11/2024)  
-  - Shipped automated financial reconciliation in .NET; eliminated manual discrepancy tracking and ensured **100%** data accuracy.  
-  - Integrated REST APIs + Kafka + Redis for high-volume ingestion and real-time revenue visibility.
-- **Guangdong Tiptop Asset Management** — Intern (01/2025 – 04/2025)  
-  - Built a bottom-up fundamental research framework and a 3-statement + DCF valuation model (Audiowel, NEEQ: 832491) with sensitivity/exit scenarios.  
-  - Led feasibility study for North America expansion (TAM, unit economics, benchmarking, risk).
+- **Manulife** — Co-op (05/2026 – 08/2026): Cloud platform and SEPE reliability work.
+- **Treasury Board of Canada Secretariat** — Co-op (09/2025 – 12/2025): Built a .NET MVC module that standardized job titles across ~5,000 public companies and cut backlog **85%**, plus migrated Selenium → Katalon on Azure DevOps CI/CD for **30%** faster page loads.
+- **Guangdong Tiptop Asset Management** — Intern (01/2025 – 04/2025): Built a bottom-up research framework and 3-statement + DCF model (Audiowel, NEEQ: 832491), and led a North America expansion feasibility study.
+- **Sanyang Technology** — Intern (07/2024 – 11/2024): Shipped .NET financial reconciliation with REST + Kafka + Redis, reaching **100%** data accuracy and real-time revenue visibility.
+- **Lansi Institute of AI in Medicine** — Co-op, Remote (04/2024 – 12/2024): Built a parallelized multi-omics ETL (**92%** less preprocessing time) and variant→drug-response models supporting a T2D therapeutic-target meta-analysis.
 
 ### Campus
-- **UW Fintech** — Analyst (10/2025 – Present)  
-  - Wrote an industry report on AI/ML dynamics in fintech; analyzed GenAI vs traditional ML operational/compliance needs.
-- **UX Research Hub** — Director (09/2024 – Present)  
-  - Secured sponsorship + recruited a Google UX Researcher keynote; built financial tracking that cut budget planning time **40%**.
+- **UW Fintech** — Analyst (10/2025 – Present): Wrote an industry report on AI/ML in fintech, contrasting GenAI vs traditional ML on operations and compliance.
+- **UX Research Hub** — Director (09/2024 – Present): Secured sponsorship and a Google UX Researcher keynote, and built financial tracking that cut budget planning time **40%**.
 
 ## Projects
 
