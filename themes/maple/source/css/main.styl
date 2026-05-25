@@ -120,3 +120,23 @@ a:hover
 .dark::view-transition-new(root)
   z-index: 1
 
+
+/* Responsive, wider post column on larger viewports.
+   Default Tailwind `max-w-prose` and `.prose` both cap content at ~65ch,
+   which feels cramped on laptop / desktop. Progressively widen at lg/xl/2xl
+   while leaving room for the fixed TOC (w-48 on the right, lg+). */
+.post-content.prose
+  max-width: none
+
+@media (min-width: 1024px)
+  section.max-w-prose
+    max-width: 80ch
+
+@media (min-width: 1280px)
+  section.max-w-prose
+    max-width: 90ch
+
+@media (min-width: 1536px)
+  section.max-w-prose
+    max-width: 100ch
+
