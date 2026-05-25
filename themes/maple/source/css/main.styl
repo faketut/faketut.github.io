@@ -140,3 +140,47 @@ a:hover
   section.max-w-prose
     max-width: 100ch
 
+/* Paginator (index + archive) — Hexo's paginator() helper outputs
+   <a class="page-number">, <span class="page-number current">, etc. */
+.pagination
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 0.5rem
+  margin: 3rem 0 1rem
+  font-size: 0.95rem
+
+.pagination .page-number,
+.pagination .extend
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  min-width: 2rem
+  height: 2rem
+  padding: 0 0.6rem
+  border-radius: 0.375rem
+  color: #4b5563
+  text-decoration: none
+  transition: background-color 0.15s ease
+
+.pagination .page-number:hover,
+.pagination .extend:hover
+  background-color: rgba(0, 0, 0, 0.06)
+  color: #de7441
+
+.pagination .current
+  background-color: #de7441
+  color: #fff
+
+.pagination .space
+  color: #9ca3af
+  padding: 0 0.25rem
+
+html.dark .pagination .page-number,
+html.dark .pagination .extend
+  color: #d1d5db
+
+html.dark .pagination .page-number:hover,
+html.dark .pagination .extend:hover
+  background-color: rgba(255, 255, 255, 0.08)
+

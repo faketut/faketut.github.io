@@ -43,6 +43,12 @@ index_generator:
   per_page: 10
   order_by: -date
 
+archive_generator:
+  per_page: 10
+  yearly: true
+  monthly: false
+  daily: false
+
 # hexo-generator-tag: without this, /tags/ is not generated (404).
 tag_generator:
   enable_index_page: true
