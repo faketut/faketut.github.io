@@ -53,7 +53,7 @@ Quality, impact, passion.
 <div class="not-prose grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/2BGHCLUXS149" target="_blank" rel="noopener noreferrer">
     <img src="/images/coursera-logos/riceuniversity_logo.png" alt="Rice University" width="28" height="28" style="border-radius:6px" />
-    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Parallel, Concurrent…</span>
+    <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Parallel-Concurrent-Distributed ...</span>
   </a>
   <a class="flex items-center gap-2 rounded-lg border border-gray-200 p-2 hover:bg-gray-50 dark:border-zinc-700 dark:hover:bg-zinc-800/60" href="https://www.coursera.org/account/accomplishments/specialization/certificate/PU86XV9ER8PI" target="_blank" rel="noopener noreferrer">
     <img src="/images/coursera-logos/university_of_alberta_logo.png" alt="University of Alberta" width="28" height="28" style="border-radius:6px" />
