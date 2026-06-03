@@ -66,6 +66,11 @@ feed:
   path: rss2.xml
   limit: 20
 
+search:
+  path: search.xml
+  field: post
+  content: true
+
 deploy:
   type: ''
 

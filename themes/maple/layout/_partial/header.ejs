@@ -13,8 +13,17 @@
       <div class="flex-1"></div>
       <% var om = config.i18n_menu || {}; %>
       <div class="flex items-center gap-3">
+        <!-- Blog nav: archives, categories, tags -->
         <% for (var i in theme.nav){ %>
           <a class="hidden sm:flex" href="<%- url_for(theme.nav[i]) %>"><%= __(i) %></a>
+        <% } %>
+        <!-- Divider -->
+        <span class="hidden sm:block w-px h-4 bg-black/20 dark:bg-white/20"></span>
+        <!-- Personal nav: about, lang, social icons, rss -->
+        <% if (theme.personal_nav) { %>
+          <% for (var i in theme.personal_nav){ %>
+            <a class="hidden sm:flex" href="<%- url_for(theme.personal_nav[i]) %>"><%= __(i) %></a>
+          <% } %>
         <% } %>
         <% if (om.other_lang_url) { %>
           <a class="hidden sm:flex text-sm font-medium opacity-80 hover:opacity-100" title="Switch language" href="<%- om.other_lang_url %>">
@@ -30,6 +39,12 @@
         <% } %>
         <a class="w-5 h-5 hidden sm:flex" title="RSS" href="<%- url_for('/rss2.xml') %>" target="_blank" rel="noopener noreferrer">
           <iconify-icon width="20" icon="ri:rss-line"></iconify-icon>
+        </a>
+        <!-- Divider -->
+        <span class="hidden sm:block w-px h-4 bg-black/20 dark:bg-white/20"></span>
+        <!-- Search + dark toggle -->
+        <a class="w-5 h-5 cursor-pointer" title="Search" id="open-search">
+          <iconify-icon width="20" icon="ri:search-line"></iconify-icon>
         </a>
         <a class="w-5 h-5" title="toggle theme" id="toggle-dark">
           <iconify-icon width="20" icon="" id="theme-icon"></iconify-icon>
@@ -53,6 +68,13 @@
         <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
           <a href="<%- url_for(theme.nav[i]) %>" class="flex h-12 sm:h-auto items-center"><%= __(i) %></a>
         </li>
+      <% } %>
+      <% if (theme.personal_nav) { %>
+        <% for (var i in theme.personal_nav){ %>
+          <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
+            <a href="<%- url_for(theme.personal_nav[i]) %>" class="flex h-12 sm:h-auto items-center"><%= __(i) %></a>
+          </li>
+        <% } %>
       <% } %>
       <% if (om.other_lang_url) { %>
         <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">

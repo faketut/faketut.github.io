@@ -3,6 +3,8 @@ nav:
   archive_a: /archives
   categories: /categories
   tags: /tags
+
+personal_nav:
   about: /about
 
 # favicon (theme ships favicon.ico at themes/maple/source/favicon.ico)
