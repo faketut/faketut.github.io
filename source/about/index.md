@@ -13,32 +13,57 @@ Quality, impact, passion.
 - **University of Waterloo** (09/2023 – 04/2028): Computing and Financial Management (Honours, Co-op)  
   - **Majors**: Computer Science, Finance, Statistics (Joint Honours)
 ## Experience
-- **Manulife** — Co-op (05/2026 – 08/2026): Cloud platform and SEPE reliability work.
-- **Treasury Board of Canada Secretariat** — Co-op (09/2025 – 12/2025): Built a .NET MVC module that standardized job titles across ~5,000 public companies and cut backlog **85%**, plus migrated Selenium → Katalon on Azure DevOps CI/CD for **30%** faster page loads.
-- **Guangdong Tiptop Asset Management** — Intern (01/2025 – 04/2025): Built a bottom-up research framework and 3-statement + DCF model (Audiowel, NEEQ: 832491), and led a North America expansion feasibility study.
-- **Sanyang Technology** — Intern (07/2024 – 11/2024): Shipped .NET financial reconciliation with REST + Kafka + Redis, reaching **100%** data accuracy and real-time revenue visibility.
-- **Lansi Institute of AI in Medicine** — Co-op, Remote (04/2024 – 12/2024): Built a parallelized multi-omics ETL (**92%** less preprocessing time) and variant→drug-response models supporting a T2D therapeutic-target meta-analysis.
+- **Manulife** — Co-op (05/2026 – 08/2026):
+  - Triage ~10 weekly cloud/network infra tickets from global ETS teams via ServiceNow, owning resolution and stakeholder follow-through.
+  - Built `aks-onboarding-automation` replacing manual ServiceNow ticket exchanges; projected to cut onboarding from days to minutes.
+- **Treasury Board of Canada Secretariat** — Co-op (09/2025 – 12/2025):
+  - Shipped a .NET MVC module that auto-normalized job titles across 5K public firms via pattern matching; cut manual data cleaning **80%**.
+  - Migrated 30 test cases across 5 suites from Selenium to Katalon and stood up CI/CD on Azure DevOps, presenting demo to executives.
+  - Refactored core modules of an enterprise data platform and tuned SQL queries, cutting page load **30%** and improving maintainability.
+- **Guangdong Tiptop Asset Management** — Intern (01/2025 – 04/2025):
+  - Led bottom-up research on food-service automation and industrial sensors; built a proprietary long screen on earnings, moat, and capex.
+  - Built 3-statement + DCF model for Audiowell (BSE: 920491, ¥3.5B mcap, 27% rev CAGR '22–'24); sensitized WACC/exits for base/bear IRR.
+  - Market-entry thesis for Hunan Smartcxi (commercial-kitchen EaaS); ¥50–200B TAM; labor inflation + chain penetration drive tailwinds.
+- **Sanyang Technology** — Intern (07/2024 – 11/2024):
+  - Built Gantt visualizer of a flexible job-shop scheduling system, unblocking algorithm A/B runs on benchmark instances.
+  - Shipped Spring Boot CRUD APIs for cloud reporting/BI modules, unblocking front-end dashboards and downstream ETL consumers.
+- **Lansi Institute of AI in Medicine** — Co-op, Remote (04/2024 – 12/2024):
+  - Built genomic ETL pipelines for ~100GB multi-omics data; per-sample fan-out via Python `multiprocessing` cut runtime **89%**.
+  - Co-authored published T2D drug-target meta-analysis (68 studies); trained XGBoost, SMR, MR² to link variants to drug response.
 
 ### Campus
-- **UW Fintech** — Analyst (10/2025 – Present): Wrote an industry report on AI/ML in fintech, contrasting GenAI vs traditional ML on operations and compliance.
-- **UX Research Hub** — Director (09/2024 – Present): Secured sponsorship and a Google UX Researcher keynote, and built financial tracking that cut budget planning time **40%**.
+- **UW Fintech** — Analyst (10/2025 – Present):
+  - Authored monthly market reports for a 50-member investment club, synthesizing macro, sector, and single-name trends for trade ideas.
+- **UX Research Hub** — Director (09/2024 – Present):
+  - Secured **100%** external sponsorship and booked a Google UXR keynote speaker, delivering flagship programming at $0 cost to the club.
+  - Negotiated a cross-promotion partnership with the TikTok student chapter, expanding event reach and growing shared audience.
 
 ## Projects
 
 ### Top projects
-- [**MiniKV (storage engine)**](https://www.github.com/faketut/MiniKV): Minimal LSM-tree KV store (WAL, SSTables/compaction, recovery) with throughput tuning.
+- [**qmj-tsx (quant research)**](https://www.github.com/faketut/qmj-tsx): Reproducible AQR Quality-Minus-Junk replication on Canadian equities, plus a price-derived Quality extension for TSX small-caps — paper, code, and `make all` pipeline.
+- [**MiniKV (storage engine)**](https://www.github.com/faketut/MiniKV): Crash-safe LSM-tree KV store in Go — WAL, SSTables/compaction, recovery, and throughput tuning.
 - [**wlp4-compiler**](https://www.github.com/faketut/C-class-compiler): End-to-end WLP4 compiler (scanner, SLR(1) parser, semantic analysis, ARM64 codegen) with regression validation.
-- [**CabStream ETL (data engineering)**](https://www.github.com/faketut/CabStream-ETL): Airflow → GCS → BigQuery pipeline with dbt-modeled marts/tests and Looker Studio dashboards.
-- [**GhostPilot (Copilot)**](https://www.github.com/faketut/GhostPilot): Windows desktop interview copilot: invisible overlay + ASR → LLM; screenshots to multimodal LLM + local RAG.
-- [**ArmyOfSafeguards (LLM safety)**](https://www.github.com/faketut/ArmyOfSafeguards): Layered safety gating (rules + classifiers + meta-classifier); DeBERTa-v3 + LoRA low-latency inference.
-- [**WeAgree (Crypto)**](https://www.github.com/faketut/WeAgree): Signing/sharing agreements with SHA‑256 integrity, KMS-backed RSA‑PSS signatures, AES‑256‑GCM encryption, and audit anchoring.
+- [**CabStream ETL (data engineering)**](https://www.github.com/faketut/CabStream-ETL): Terraform + Airflow → GCS → BigQuery pipeline with dbt-modeled marts/tests and Looker Studio dashboards.
+- [**GhostPilot (interview copilot)**](https://www.github.com/faketut/GhostPilot): Windows desktop copilot — invisible overlay, multi-provider ASR + LLM, Alt+P screenshot vision, local hybrid RAG.
+- [**WeAgree (crypto)**](https://www.github.com/faketut/WeAgree): Web platform for legally binding agreements — SHA‑256 integrity, KMS-backed RSA‑PSS signatures, AES‑256‑GCM encryption, blockchain anchoring.
 
 <details>
 <summary>More projects</summary>
 
-- [**VoxFlow (voice AI agent)**](https://www.github.com/faketut/VoxFlow): Twilio Voice real-time agent with streaming audio via WebSockets into Ultravox; n8n automation + FastAPI services.
-- [**DungeonSpire (C++ roguelike)**](https://www.github.com/faketut/DungeonSpire): Terminal roguelike with RAII, interface-separated simulation/rendering, reproducible seeded procgen.
-- [**FoodWeOrder (Flask + WeChat Pay)**](https://www.github.com/faketut/FoodWeOrder): Payment callbacks + idempotent settlement; background workers; concurrency-safe inventory via atomic DB transactions.
+- [**VoxFlow (voice AI agent)**](https://www.github.com/faketut/VoxFlow): Twilio Voice real-time agent streaming audio via WebSockets into Ultravox; n8n automation + FastAPI services.
+- [**Anchor (Splunk drift agent)**](https://www.github.com/faketut/Anchor): Captures a healthy-window "golden fingerprint" and explains in plain English what drifted and which SPL to run next.
+- [**ExitLens (AI HR)**](https://www.github.com/faketut/ExitLens): Motivational-interviewing exit interview tool that surfaces real reasons for leaving — Tencent AI-HR 2026 entry.
+- [**PantryPilot (food-waste AI)**](https://www.github.com/faketut/PantryPilot): Bright Data MCP grocery import + Gemini Vision receipts + agent meal-planning around near-expiry items on MongoDB Atlas.
+- [**AccessibilityAlly (Slack bot)**](https://www.github.com/faketut/AccessibilityAlly): Gemini-powered persona rewriter for long threads — bottom line first, acronyms defined, decisions surfaced.
+- [**godot-handrow (game UI)**](https://www.github.com/faketut/godot-handrow): Godot 4.6 + C# Balatro-style card UI — hover, drag, reorder, punch animations, custom shaders, reusable component.
+- [**DungeonSpire (C++ roguelike)**](https://www.github.com/faketut/DungeonSpire): Terminal dungeon crawler with RAII, interface-separated simulation/rendering, reproducible seeded procgen, three DLC expansions.
+- [**ChefCopilot (iOS)**](https://www.github.com/faketut/ChefCopilot): Swift cooking copilot — scan fridge/pantry to discover recipes and follow step-by-step guidance.
+- [**ArmyOfSafeguards (LLM safety)**](https://www.github.com/faketut/ArmyOfSafeguards): Layered safety gating (rules + classifiers + meta-classifier); DeBERTa-v3 + LoRA low-latency inference.
+- [**pdf-flattener (VS Code ext.)**](https://www.github.com/faketut/pdf-flattener): TypeScript extension that flattens PDFs by removing interactive elements.
+- [**Linkit (Chrome extension)**](https://www.github.com/faketut/Linkit): Chrome MV3 extension for LinkedIn auto-connect and bulk skill management.
+- [**audited-pa**](https://www.github.com/faketut/audited-pa): Audited live personal-account track record on IBKR — monthly tear sheets, position-level attribution, redacted statements.
+- [**resume (Typst)**](https://www.github.com/faketut/resume): Typst-based resume toolkit with an automated referral-message generator.
 - [**Smart Handoff (UX Design)**](https://www.figma.com/design/7N032qMJLb08V7UtiYANWd/Cooperators-Designathon?node-id=1-4&t=YVoIVProv4CyeQsa-1): Omni-channel lead-gen UX flows in Figma; backend/data collaboration; marketing strategy.
 
 </details>
@@ -46,7 +71,7 @@ Quality, impact, passion.
 ## Activities & Competitions
 - [**12th SAF Investment Research Challenge**](https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results) (07/2025): **3rd place**.
 - **7th SAF Strategy Case Competition** (05/2025): Finalist
-- **Alpha FMC x CODE Case Competition** (01/2025): Finalist 
+
 
 ## Certificates & Skills
 ### Coursera
