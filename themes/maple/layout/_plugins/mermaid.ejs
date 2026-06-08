@@ -1,15 +1,66 @@
 <% if (theme.mermaid.enable) { %>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
-  $(document).ready(() => {
-    const maraidConfig = {
-      theme: "<%= theme.mermaid.theme %>",
-      logLevel: 3,
-      flowchart: { curve: "linear" },
-      gantt: { axisFormat: "%m/%d/%Y" },
-      sequence: { actorMargin: 50 },
-    };
-    mermaid.initialize(maraidConfig);
-  });
+  (function () {
+    const lightTheme = "<%= theme.mermaid.theme %>" || "default";
+    const darkTheme  = "dark";
+
+    function currentTheme() {
+      return document.documentElement.classList.contains("dark")
+        ? darkTheme
+        : lightTheme;
+    }
+
+    function initMermaid() {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: currentTheme(),
+        logLevel: 3,
+        flowchart: { curve: "linear" },
+        gantt: { axisFormat: "%m/%d/%Y" },
+        sequence: { actorMargin: 50 },
+      });
+    }
+
+    // Keep the original source so we can re-render on theme toggle.
+    function snapshotSources() {
+      document.querySelectorAll("pre.mermaid").forEach((el) => {
+        if (!el.dataset.source) {
+          el.dataset.source = el.textContent;
+        }
+      });
+    }
+
+    async function renderAll() {
+      initMermaid();
+      const nodes = document.querySelectorAll("pre.mermaid");
+      for (let i = 0; i < nodes.length; i++) {
+        const el = nodes[i];
+        const src = el.dataset.source || el.textContent;
+        try {
+          const { svg } = await mermaid.render("mmd-" + Date.now() + "-" + i, src);
+          el.innerHTML = svg;
+        } catch (e) {
+          console.error("mermaid render failed", e);
+        }
+      }
+    }
+
+    $(document).ready(() => {
+      snapshotSources();
+      renderAll();
+
+      // Re-render when the site toggles dark mode.
+      const obs = new MutationObserver((muts) => {
+        for (const m of muts) {
+          if (m.attributeName === "class") {
+            renderAll();
+            break;
+          }
+        }
+      });
+      obs.observe(document.documentElement, { attributes: true });
+    });
+  })();
 </script>
 <% } %>
