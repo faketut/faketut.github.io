@@ -1,6 +1,6 @@
 ---
 title: "How I Made a Quant Paper Reproducible in `make all` Under a Minute"
-date: 2026-06-27 09:00:00
+date: 2026-06-07 09:00:00
 tags:
   - qmj-tsx
   - reproducibility

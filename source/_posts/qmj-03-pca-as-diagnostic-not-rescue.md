@@ -1,6 +1,6 @@
 ---
 title: "PCA as a Diagnostic, Not a Rescue"
-date: 2026-06-20 09:00:00
+date: 2026-06-07 09:00:00
 tags:
   - qmj-tsx
   - quant

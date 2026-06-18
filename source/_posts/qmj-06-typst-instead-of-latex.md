@@ -1,6 +1,6 @@
 ---
 title: "Why I Wrote My Paper in Typst Instead of LaTeX"
-date: 2026-07-11 09:00:00
+date: 2026-06-08 09:00:00
 tags:
   - qmj-tsx
   - typst

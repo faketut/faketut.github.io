@@ -1,6 +1,6 @@
 ---
 title: "Building a Free-Data Canadian Small-Cap Universe: 109 Tickers, Three Sources, Zero Subscriptions"
-date: 2026-07-25 09:00:00
+date: 2026-06-08 09:00:00
 tags:
   - qmj-tsx
   - data-engineering

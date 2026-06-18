@@ -1,6 +1,6 @@
 ---
 title: "What yfinance Survivorship Does to a TSX Small-Cap Backtest"
-date: 2026-07-18 09:00:00
+date: 2026-06-08 09:00:00
 tags:
   - qmj-tsx
   - data-quality

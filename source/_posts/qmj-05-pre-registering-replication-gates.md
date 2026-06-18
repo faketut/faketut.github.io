@@ -1,6 +1,6 @@
 ---
 title: "Pre-Registering Replication Gates for a Solo Quant Project"
-date: 2026-07-04 09:00:00
+date: 2026-06-07 09:00:00
 tags:
   - qmj-tsx
   - reproducibility
