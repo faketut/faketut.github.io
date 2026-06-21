@@ -1,6 +1,6 @@
 ---
 title: "BFS in 50 lines: reachability analysis on a DuckDB call graph"
-date: 2026-06-27 09:00:00
+date: 2026-06-21 09:00:00
 tags:
   - taint-flow-auditor
   - security

@@ -1,6 +1,6 @@
 ---
 title: "Publishing a Duo agent to the GitLab AI Catalog"
-date: 2026-07-11 09:00:00
+date: 2026-06-21 09:00:00
 tags:
   - taint-flow-auditor
   - security

@@ -1,6 +1,6 @@
 ---
 title: "Honest tools are trustworthy tools"
-date: 2026-07-04 09:00:00
+date: 2026-06-21 09:00:00
 tags:
   - taint-flow-auditor
   - security
