@@ -88,12 +88,7 @@ def update_about(projects_section: str) -> None:
         raise ValueError("Could not find a section after ## Projects")
     end = start + next_h2.start()
 
-    existing = content[start:end]
     new_content = content[:start] + projects_section + content[end:]
-
-    print(f"DEBUG repos_count={projects_section.count(chr(10) + '- [')} "
-          f"existing_len={len(existing)} new_len={len(projects_section)}")
-
     if new_content == content:
         print("Projects section is already up to date.")
         return
