@@ -76,6 +76,10 @@ def update_about(projects_section: str) -> None:
         content = f.read()
 
     start_marker = "## Projects\n\n"
+    if start_marker not in content:
+        raise ValueError(f"Marker {start_marker!r} not found in {ABOUT_FILE}. "
+                         f"File starts with: {content[:200]!r}")
+
     start = content.index(start_marker) + len(start_marker)
 
     # Find the next H2 after the projects block
@@ -84,7 +88,12 @@ def update_about(projects_section: str) -> None:
         raise ValueError("Could not find a section after ## Projects")
     end = start + next_h2.start()
 
+    existing = content[start:end]
     new_content = content[:start] + projects_section + content[end:]
+
+    print(f"DEBUG repos_count={projects_section.count(chr(10) + '- [')} "
+          f"existing_len={len(existing)} new_len={len(projects_section)}")
+
     if new_content == content:
         print("Projects section is already up to date.")
         return
