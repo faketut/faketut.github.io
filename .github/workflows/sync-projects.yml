@@ -26,5 +26,6 @@ jobs:
           git diff --quiet && echo "No changes." || (
             git add source/about/index.md
             git commit -m "chore: sync projects from GitHub [skip ci]"
+            git pull --rebase
             git push
           )
