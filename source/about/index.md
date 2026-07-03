@@ -41,7 +41,34 @@ Grew the club from 10 to 318 members, booked a Google UXR keynote with full exte
 
 ## Projects
 
-<!-- populated automatically by .github/workflows/sync-projects.yml -->
+- [**C-class-compiler**](https://github.com/faketut/C-class-compiler): Multi-pass C-class compiler featuring scanning, parsing, type checking, and ARM64 code generation. | 多遍 C 类编译器，涵盖词法、语法、类型检查与 ARM64 代码生成。.
+- [**resume**](https://github.com/faketut/resume): Typst-based resume toolkit with an automated referral-message generator. | 基于 Typst 的简历工具集，附带自动化内推消息生成器。.
+- [**WeAgree**](https://github.com/faketut/WeAgree): Secure web platform for creating, signing, and sharing legally binding agreements with cryptographic verification and blockchain anchoring. | 安全网页平台：以加密验证与区块链锚定方式创建、签署并共享具有法律效力的协议。.
+- [**Syncle**](https://github.com/faketut/Syncle): Android virtual workspace for remote teams. | 适用于远程团队的 Android 虚拟工作空间。.
+- [**PantryPilot**](https://github.com/faketut/PantryPilot): Zero-effort food waste reduction: import groceries via Bright Data MCP, scan receipts with Gemini Vision, and let an AI agent plan meals around near-expiry items on MongoDB Atlas. | 零负担减少食物浪费：通过 Bright Data MCP 导入采购、用 Gemini Vision 扫描小票，AI 智能体基于 MongoDB Atlas 优先消耗临期食材并规划餐食。.
+- [**Anchor**](https://github.com/faketut/Anchor): Healthy-baseline drift agent for Splunk. Capture a golden fingerprint of a healthy window, diff later windows against it, get an LLM narrated report with ranked diffs, suggested SPL, and recalled past incidents. | 面向 Splunk 的健康基线漂移智能体：固化健康窗口的黄金指纹，比对后续窗口，由大模型输出漂移说明、下一步 SPL 与相似历史事件召回。.
+
+<details>
+<summary>More projects</summary>
+
+- [**AccessibilityAlly**](https://github.com/faketut/AccessibilityAlly): Gemini-powered Slack bot that rewrites long threads into clear, persona-specific summaries for new hires, PMs, ESL teammates, and screen-reader users. | 由 Gemini 驱动的 Slack 机器人，将冗长讨论重写为面向新人、PM、非英语母语者和读屏用户的清晰摘要。.
+- [**ExitLens**](https://github.com/faketut/ExitLens): AI-driven exit interview tool using motivational interviewing to surface true reasons for leaving and deliver actionable HR insights. Tencent AI-HR 2026 entry. | AI 离职真因挖掘器：以动机访谈消除权力不对等，提炼真实离职原因并输出可执行的 HR 洞察。腾讯 AI-HR 培训生自由赛道 2026 作品。.
+- [**Linkit**](https://github.com/faketut/Linkit): Chrome MV3 extension that auto-connects with people on LinkedIn and manages profile skills in bulk. | Chrome MV3 浏览器扩展，自动建立 LinkedIn 人脉并批量管理个人技能。.
+- [**schl-take-private-lbo**](https://github.com/faketut/schl-take-private-lbo): Sponsor LBO model + IC memo for a $47/share take-private of Scholastic (SCHL). 4-tranche debt, Y3 dividend recap, 3-case operating model, tornado sensitivity. Verdict: DECLINE at $47 (10.8× true entry, 1.76×/13.8% IRR); rebid at $40–42 with sale-leaseback.  对童书龙头 Scholastic（SCHL）每股 $47 私有化交易的 PE 完整建模与投委会备忘录：四档债务、第三年股息再融资、三情景运营模型、龙卷风敏感性分析。.
+- [**qmj-tsx**](https://github.com/faketut/qmj-tsx): Replicates AQR's Quality-Minus-Junk factor on Canadian equities and extends it with a price-derived Quality proxy for TSX small-caps. | 在加拿大股票上复现 AQR 的 Quality-Minus-Junk 因子，并以价格衍生的质量代理将其拓展至 TSX 小盘股。.
+- [**audited-pa**](https://github.com/faketut/audited-pa): Audited live personal-account track record on IBKR — monthly tear sheets, position-level attribution, redacted statements. | 基于 IBKR 实盘的个人账户业绩记录：月度业绩单、持仓归因、脱敏对账单。.
+- [**SnakeBot**](https://github.com/faketut/SnakeBot): Autonomous Pygame Snake driven by BFS pathfinding with tail-safety fallbacks. | 基于 BFS 寻路与追尾保命策略的 Pygame 自动贪吃蛇。.
+- [**pdf-flattener**](https://github.com/faketut/pdf-flattener): TypeScript extension that flattens PDFs by removing interactive elements. | TypeScript 扩展，通过移除交互元素来扁平化 PDF。.
+- [**Hackathon**](https://github.com/faketut/Hackathon): Collection of personal hackathon projects and experiments. | 个人黑客松项目与实验合集。.
+- [**godot-handrow**](https://github.com/faketut/godot-handrow): Godot 4.6 + C# showcase of Balatro-style card UI — hover, drag, reorder, punch animations, and custom shaders. Reusable component. | Godot 4.6 + C# 实现的 Balatro 风格卡牌 UI：悬停、拖拽、重排、打击动画与自定义着色器，可复用组件。.
+- [**GhostPilot**](https://github.com/faketut/GhostPilot): Real-time desktop interview copilot for Windows: invisible overlay, multi-provider ASR + LLM, Alt+P screenshot vision, and a local hybrid RAG knowledge base. | Windows 桌面实时面试副驾驶：隐形悬浮窗、多家 ASR/LLM、Alt+P 截图视觉问答与本地混合 RAG 知识库。.
+- [**CabStream-ETL**](https://github.com/faketut/CabStream-ETL): End-to-end NYC Yellow Taxi data pipeline built with Terraform, Airflow, GCS, and BigQuery. | NYC 黄色出租车端到端数据管道，基于 Terraform、Airflow、GCS 与 BigQuery 构建。.
+- [**ChefCopilot**](https://github.com/faketut/ChefCopilot): iOS cooking copilot powered by AI — scan your fridge/pantry to discover recipes you can make and follow step-by-step guidance. | AI 驱动的 iOS 烹饪助手：扫描冰箱与食品柜，发现可做的菜谱并获取逐步指导。.
+- [**MiniKV**](https://github.com/faketut/MiniKV): Lightweight, crash-safe, LSM-tree based key-value storage engine written in Go. | 使用 Go 编写的轻量级、崩溃安全、基于 LSM 树的键值存储引擎。.
+- [**DungeonSpire**](https://github.com/faketut/DungeonSpire): Terminal-based single-player dungeon crawler with three DLC expansions. | 基于终端的单人地牢探险游戏，含三部 DLC 扩展。.
+- [**VoxFlow**](https://github.com/faketut/VoxFlow): AI-powered voice receptionist that answers calls, guides conversations, and automates downstream workflows. | AI 驱动的语音接待员：接听电话、引导对话并自动化下游工作流。.
+
+</details>
 
 ## Awards
 - Third place at [12th SAF Investment Research Challenge](https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results) (Jul 2025)
