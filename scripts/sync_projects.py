@@ -49,7 +49,7 @@ def build_projects_section(repos: list[dict]) -> str:
     filtered.sort(key=lambda r: (r["stargazers_count"], r["pushed_at"]), reverse=True)
 
     def line(r: dict) -> str:
-        desc = r["description"].rstrip(".")
+        desc = r["description"].rstrip(".").replace("$", r"\$")
         return f"- [**{r['name']}**]({r['html_url']}): {desc}."
 
     top  = filtered[:TOP_COUNT]
