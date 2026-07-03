@@ -15,29 +15,98 @@ Joint Honours in CS, Finance, and Statistics.
 
 ## Experience
 
-**Manulife** — Co-op, May–Aug 2026  
-Manager: [David Filippelli](https://www.linkedin.com/in/david-filippelli-32bb762/)  
-Automated AKS namespace onboarding end-to-end (Terraform/GitOps + auto change tickets), built a Foundry LLM agent validating cert-SAN PRs against runbooks across 9 clusters, and shipped a Power Apps DL framework with event-driven Graph API sync.
+<div class="not-prose divide-y divide-gray-100 dark:divide-zinc-800/60">
 
-**Treasury Board of Canada Secretariat** — Co-op, Sep–Dec 2025  
-Manager: [Jim Hsu](https://www.linkedin.com/in/jimhsu/)  
-Shipped a .NET MVC job-title normalizer for a 5K-firm public dataset, migrated 30 Selenium tests to Katalon on Azure DevOps CI/CD, and cut page load 30% by refactoring the enterprise data platform.
+  <div class="py-5 first:pt-1">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-1">
+      <div class="flex items-baseline gap-2 flex-wrap">
+        <span class="font-semibold text-gray-900 dark:text-gray-100">Manulife</span>
+        <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-gray-400">Co-op</span>
+      </div>
+      <span class="text-xs text-gray-400 dark:text-zinc-500 tabular-nums shrink-0">May – Aug 2026</span>
+    </div>
+    <p class="text-xs text-gray-400 dark:text-zinc-500 mb-2">
+      Manager: <a href="https://www.linkedin.com/in/david-filippelli-32bb762/" class="underline underline-offset-2 hover:text-gray-700 dark:hover:text-zinc-300 transition-colors duration-150">David Filippelli</a>
+    </p>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Automated AKS namespace onboarding end-to-end (Terraform/GitOps + auto change tickets), built a Foundry LLM agent validating cert-SAN PRs against runbooks across 9 clusters, and shipped a Power Apps DL framework with event-driven Graph API sync.</p>
+  </div>
 
-**Guangdong Tiptop Asset Management** — Intern, Jan–Apr 2025  
-Built a long screen on earnings quality, moat, and capex; modelled Audiowell (3-statement + DCF, ¥3.5B mcap) with WACC/exit sensitivity; and authored a market-entry thesis on Hunan Smartcxi's ¥50–200B EaaS TAM.
+  <div class="py-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-1">
+      <div class="flex items-baseline gap-2 flex-wrap">
+        <span class="font-semibold text-gray-900 dark:text-gray-100">Treasury Board of Canada Secretariat</span>
+        <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-gray-400">Co-op</span>
+      </div>
+      <span class="text-xs text-gray-400 dark:text-zinc-500 tabular-nums shrink-0">Sep – Dec 2025</span>
+    </div>
+    <p class="text-xs text-gray-400 dark:text-zinc-500 mb-2">
+      Manager: <a href="https://www.linkedin.com/in/jimhsu/" class="underline underline-offset-2 hover:text-gray-700 dark:hover:text-zinc-300 transition-colors duration-150">Jim Hsu</a>
+    </p>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Shipped a .NET MVC job-title normalizer for a 5K-firm public dataset, migrated 30 Selenium tests to Katalon on Azure DevOps CI/CD, and cut page load 30% by refactoring the enterprise data platform.</p>
+  </div>
 
-**Lansi Institute of AI in Medicine** — Co-op (Remote), Apr–Dec 2024  
-Built genomic ETL pipelines for ~100GB multi-omics data (89% runtime cut via multiprocessing) and ran XGBoost + SMR/MR² across a 68-study T2D meta-analysis that fed the published paper.
+  <div class="py-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-2">
+      <div class="flex items-baseline gap-2 flex-wrap">
+        <span class="font-semibold text-gray-900 dark:text-gray-100">Guangdong Tiptop Asset Management</span>
+        <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-gray-400">Intern</span>
+      </div>
+      <span class="text-xs text-gray-400 dark:text-zinc-500 tabular-nums shrink-0">Jan – Apr 2025</span>
+    </div>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Built a long screen on earnings quality, moat, and capex; modelled Audiowell (3-statement + DCF, ¥3.5B mcap) with WACC/exit sensitivity; and authored a market-entry thesis on Hunan Smartcxi's ¥50–200B EaaS TAM.</p>
+  </div>
 
-**Sanyang Technology** — Intern, Jul–Nov 2024  
-Built scheduling visualizers and Spring Boot APIs for cloud BI modules.
+  <div class="py-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-2">
+      <div class="flex items-baseline gap-2 flex-wrap">
+        <span class="font-semibold text-gray-900 dark:text-gray-100">Lansi Institute of AI in Medicine</span>
+        <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-gray-400">Co-op · Remote</span>
+      </div>
+      <span class="text-xs text-gray-400 dark:text-zinc-500 tabular-nums shrink-0">Apr – Dec 2024</span>
+    </div>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Built genomic ETL pipelines for ~100GB multi-omics data (89% runtime cut via multiprocessing) and ran XGBoost + SMR/MR² across a 68-study T2D meta-analysis that fed the published paper.</p>
+  </div>
+
+  <div class="py-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-2">
+      <div class="flex items-baseline gap-2 flex-wrap">
+        <span class="font-semibold text-gray-900 dark:text-gray-100">Sanyang Technology</span>
+        <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-gray-400">Intern</span>
+      </div>
+      <span class="text-xs text-gray-400 dark:text-zinc-500 tabular-nums shrink-0">Jul – Nov 2024</span>
+    </div>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Built scheduling visualizers and Spring Boot APIs for cloud BI modules.</p>
+  </div>
+
+</div>
 
 ### Campus
-**UW Fintech** — Analyst, Oct 2025–Present  
-Monthly macro, sector, and single-name reports for a 50-member analyst program.
 
-**UX Research Hub** — Director, Sep 2025–Apr 2026  
-Grew the club from 10 to 318 members, booked a Google UXR keynote with full external sponsorship, and drove sustained inbound growth via a TikTok chapter partnership.
+<div class="not-prose divide-y divide-gray-100 dark:divide-zinc-800/60">
+
+  <div class="py-5 first:pt-1">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-2">
+      <div class="flex items-baseline gap-2 flex-wrap">
+        <span class="font-semibold text-gray-900 dark:text-gray-100">UW Fintech</span>
+        <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-gray-400">Analyst</span>
+      </div>
+      <span class="text-xs text-gray-400 dark:text-zinc-500 tabular-nums shrink-0">Oct 2025 – Present</span>
+    </div>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Monthly macro, sector, and single-name reports for a 50-member analyst program.</p>
+  </div>
+
+  <div class="py-5">
+    <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-2">
+      <div class="flex items-baseline gap-2 flex-wrap">
+        <span class="font-semibold text-gray-900 dark:text-gray-100">UX Research Hub</span>
+        <span class="text-xs font-medium px-1.5 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-gray-400">Director</span>
+      </div>
+      <span class="text-xs text-gray-400 dark:text-zinc-500 tabular-nums shrink-0">Sep 2025 – Apr 2026</span>
+    </div>
+    <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">Grew the club from 10 to 318 members, booked a Google UXR keynote with full external sponsorship, and drove sustained inbound growth via a TikTok chapter partnership.</p>
+  </div>
+
+</div>
 
 ## Projects
 
@@ -74,8 +143,11 @@ Grew the club from 10 to 318 members, booked a Google UXR keynote with full exte
 </details>
 
 ## Awards
-- Third place at [12th SAF Investment Research Challenge](https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results) (Jul 2025)
-- Finalist at 7th SAF Strategy Case Competition (May 2025)
+
+<div class="not-prose flex flex-wrap gap-2 mt-1">
+  <a href="https://uwaterloo.ca/school-of-accounting-and-finance/competitions/past-competition-results" class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-900/20 dark:text-amber-400 dark:border-amber-800/40 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors duration-150 cursor-pointer">12th SAF Investment Research Challenge &mdash; 3rd place &middot; Jul 2025</a>
+  <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200 dark:bg-zinc-800 dark:text-gray-400 dark:border-zinc-700">7th SAF Strategy Case Competition &mdash; Finalist &middot; May 2025</span>
+</div>
 
 
 ## Learning
@@ -193,6 +265,8 @@ Grew the club from 10 to 318 members, booked a Google UXR keynote with full exte
     <span class="text-xs leading-snug text-gray-700 dark:text-gray-200">Data Analytics</span>
   </a>
 </div>
+
+### Skills
 
 <div class="not-prose flex flex-wrap gap-2">
   <span class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-700 dark:border-zinc-700 dark:bg-zinc-900 dark:text-gray-200" title="Python">
