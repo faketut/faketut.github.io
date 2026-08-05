@@ -110,16 +110,17 @@ Joint Honours in CS, Finance, and Statistics.
 
 ## Projects
 
+- [**godot-handrow**](https://github.com/faketut/godot-handrow): Godot 4.6 + C# showcase of Balatro-style card UI — hover, drag, reorder, punch animations, and custom shaders. Reusable component. | Godot 4.6 + C# 实现的 Balatro 风格卡牌 UI：悬停、拖拽、重排、打击动画与自定义着色器，可复用组件。.
 - [**C-class-compiler**](https://github.com/faketut/C-class-compiler): Multi-pass C-class compiler featuring scanning, parsing, type checking, and ARM64 code generation. | 多遍 C 类编译器，涵盖词法、语法、类型检查与 ARM64 代码生成。.
 - [**Chain-Reaction**](https://github.com/faketut/Chain-Reaction): Daily co-op physics puzzle on Reddit (Devvit + Phaser + Matter.js) — one piece per player, deterministic sim replays the community contraption at lock time, MVP named by leave-one-out re-sim. | Reddit 上的每日合作物理拼图（Devvit + Phaser + Matter.js）：每人放一个零件，锁帖时确定性模拟回放众人装置，通过逐一剔除法找出决定胜负的 MVP。.
 - [**Behavioral-Provenance**](https://github.com/faketut/Behavioral-Provenance): Signed behavioral-provenance manifests for Python packages — AST-based source/sink/reachability extraction, ed25519 signatures, policy DSL evaluation without source access, and a cross-package registry (SQLite/MongoDB). | 为 Python 包生成签名行为溯源清单：AST 提取污点可达性，ed25519 签名，无需源码的策略 DSL 评估，支持跨包查询的注册中心（SQLite/MongoDB）。.
 - [**Taint-Flow-Auditor**](https://github.com/faketut/Taint-Flow-Auditor): Interprocedural taint-flow auditor for Python; walks GitLab Orbit's call graph from HTTP/CLI sources to SQL/shell/filesystem sinks, emits SARIF 2.1.0 findings with suggested fixes, and ships extensible YAML catalogs. | 基于 GitLab Orbit 调用图的跨文件污点流审计工具：从 HTTP/CLI 源追踪至 SQL/Shell/文件系统汇，输出 SARIF 2.1.0 报告并附修复建议，支持 YAML 扩展规则。.
 - [**WeAgree**](https://github.com/faketut/WeAgree): Secure web platform for creating, signing, and sharing legally binding agreements with cryptographic verification and blockchain anchoring. | 安全网页平台：以加密验证与区块链锚定方式创建、签署并共享具有法律效力的协议。.
-- [**Syncle**](https://github.com/faketut/Syncle): Android virtual workspace for remote teams. | 适用于远程团队的 Android 虚拟工作空间。.
 
 <details>
 <summary>More projects</summary>
 
+- [**Syncle**](https://github.com/faketut/Syncle): Android virtual workspace for remote teams. | 适用于远程团队的 Android 虚拟工作空间。.
 - [**PantryPilot**](https://github.com/faketut/PantryPilot): Zero-effort food waste reduction: import groceries via Bright Data MCP, scan receipts with Gemini Vision, and let an AI agent plan meals around near-expiry items on MongoDB Atlas. | 零负担减少食物浪费：通过 Bright Data MCP 导入采购、用 Gemini Vision 扫描小票，AI 智能体基于 MongoDB Atlas 优先消耗临期食材并规划餐食。.
 - [**Anchor**](https://github.com/faketut/Anchor): Healthy-baseline drift agent for Splunk. Capture a golden fingerprint of a healthy window, diff later windows against it, get an LLM narrated report with ranked diffs, suggested SPL, and recalled past incidents. | 面向 Splunk 的健康基线漂移智能体：固化健康窗口的黄金指纹，比对后续窗口，由大模型输出漂移说明、下一步 SPL 与相似历史事件召回。.
 - [**Cogniscope**](https://github.com/faketut/Cogniscope): Analyzes how you think, not just what you answer — silently records solve sessions via rrweb, runs a 3-stage LLM pipeline to diagnose cognitive root causes, and tutors you Socratically on your own session. | 录制解题过程（rrweb），三阶段 LLM 诊断认知根因，生成个性化报告与基于本次会话的苏格拉底式辅导。.
@@ -131,7 +132,6 @@ Joint Honours in CS, Finance, and Statistics.
 - [**audited-pa**](https://github.com/faketut/audited-pa): Audited live personal-account track record on IBKR — monthly tear sheets, position-level attribution, redacted statements. | 基于 IBKR 实盘的个人账户业绩记录：月度业绩单、持仓归因、脱敏对账单。.
 - [**SnakeBot**](https://github.com/faketut/SnakeBot): Autonomous Pygame Snake driven by BFS pathfinding with tail-safety fallbacks. | 基于 BFS 寻路与追尾保命策略的 Pygame 自动贪吃蛇。.
 - [**pdf-flattener**](https://github.com/faketut/pdf-flattener): TypeScript extension that flattens PDFs by removing interactive elements. | TypeScript 扩展，通过移除交互元素来扁平化 PDF。.
-- [**godot-handrow**](https://github.com/faketut/godot-handrow): Godot 4.6 + C# showcase of Balatro-style card UI — hover, drag, reorder, punch animations, and custom shaders. Reusable component. | Godot 4.6 + C# 实现的 Balatro 风格卡牌 UI：悬停、拖拽、重排、打击动画与自定义着色器，可复用组件。.
 - [**GhostPilot**](https://github.com/faketut/GhostPilot): Real-time desktop interview copilot for Windows: invisible overlay, multi-provider ASR + LLM, Alt+P screenshot vision, and a local hybrid RAG knowledge base. | Windows 桌面实时面试副驾驶：隐形悬浮窗、多家 ASR/LLM、Alt+P 截图视觉问答与本地混合 RAG 知识库。.
 - [**CabStream-ETL**](https://github.com/faketut/CabStream-ETL): End-to-end NYC Yellow Taxi data pipeline built with Terraform, Airflow, GCS, and BigQuery. | NYC 黄色出租车端到端数据管道，基于 Terraform、Airflow、GCS 与 BigQuery 构建。.
 - [**ChefCopilot**](https://github.com/faketut/ChefCopilot): iOS cooking copilot powered by AI — scan your fridge/pantry to discover recipes you can make and follow step-by-step guidance. | AI 驱动的 iOS 烹饪助手：扫描冰箱与食品柜，发现可做的菜谱并获取逐步指导。.
