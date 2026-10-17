@@ -13,7 +13,7 @@ categories:
   - security
 ---
 
-*Post 1 of 6 in the "Taint-Flow Auditor" series — a security tool built on
+*Post 1 of 4 in the "Taint-Flow Auditor" series — a security tool built on
 the GitLab Knowledge Graph for the Transcend Hackathon.*
 
 ---
@@ -158,4 +158,4 @@ and at <https://github.com/faketut/Taint-Flow-Auditor>.
 
 ---
 
-*Next: {% post_link taint-02-orbit-leverage "What we didn't have to build — 11 languages of parsers, name resolution, and import graphs" %}.*
+*Next: {% post_link taint-02-orbit-leverage "What we didn't have to build — 14 languages of parsers, name resolution, and import graphs" %}.*

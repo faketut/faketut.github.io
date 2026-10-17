@@ -23,7 +23,7 @@ The honest question to start with: **what attacks are we actually defending agai
 
 - **Forged signatures after a vendor breach.** If the signing key lives only on the server, anyone who gets the server can sign anything in the signer's name.
 - **Signer repudiation.** "I never signed that" — without a hardware-attested action, it's hard to argue otherwise.
-- **Tampering after the fact.** Easy to detect with hashing. Easy to ignore without anchoring (see [the next post](./03-onchain-anchoring.md)).
+- **Tampering after the fact.** Easy to detect with hashing. Easy to ignore without anchoring (see {% post_link weagree-03-onchain-anchoring %}).
 
 Single-key designs solve at most two of those.
 
@@ -60,7 +60,7 @@ You could pick a side:
 
 The combination buys:
 
-- **Replayability**: the Ed25519 signature over canonical JSON is small, language-neutral, and verifiable with 30 lines of Node — see [scripts/verify-proof.js](../scripts/verify-proof.js).
+- **Replayability**: the Ed25519 signature over canonical JSON is small, language-neutral, and verifiable with 30 lines of Node — see [scripts/verify-proof.js](https://github.com/faketut/WeAgree/blob/main/scripts/verify-proof.js).
 - **Liveness**: the passkey assertion proves the user was at their device _at signing time_, defeating an attacker who exfiltrates `USER_KEY_ENCRYPTION_KEY`.
 
 The signature row records which mode was used via a string tag:
@@ -76,7 +76,7 @@ That lets older signatures (created before passkey was required) keep verifying 
 
 This is where most "we did cryptography" stories quietly fail. WeAgree's Ed25519 private keys are:
 
-1. Generated at user provisioning (`crypto.generateKeyPairSync("ed25519")`) — see [lib/signing/user-keypair.ts](../lib/signing/user-keypair.ts).
+1. Generated at user provisioning (`crypto.generateKeyPairSync("ed25519")`) — see [lib/signing/user-keypair.ts](https://github.com/faketut/WeAgree/blob/main/lib/signing/user-keypair.ts).
 2. Encrypted with **AES-256-GCM** using a 32-byte server master key (`USER_KEY_ENCRYPTION_KEY`).
 3. Stored as a JSON envelope: `{v:1, alg:"aes-256-gcm", iv, tag, ct}` — explicit version field so we can rotate.
 
@@ -97,7 +97,7 @@ export function encryptPrivateKeyPem(privateKeyPem: string): string {
 }
 ```
 
-This is not a substitute for a real HSM. It's a "raise the bar one level" decision: a database leak alone isn't enough to forge — the attacker also needs `USER_KEY_ENCRYPTION_KEY` (server env) **and** to bypass the passkey requirement on signing. The KMS adapter in [lib/signing/kms/](../lib/signing/kms/) is the on-ramp to swapping AES-GCM for AWS KMS without touching call sites; that story is [post #6](./06-kms-adapter.md).
+This is not a substitute for a real HSM. It's a "raise the bar one level" decision: a database leak alone isn't enough to forge — the attacker also needs `USER_KEY_ENCRYPTION_KEY` (server env) **and** to bypass the passkey requirement on signing. The KMS adapter in [lib/signing/kms/](https://github.com/faketut/WeAgree/blob/main/lib/signing/kms/) is the on-ramp to swapping AES-GCM for AWS KMS without touching call sites; that story is {% post_link weagree-06-kms-adapter %}.
 
 ## What's stored in the proof
 
@@ -112,14 +112,12 @@ The exported proof JSON contains, per signer:
 | `signer_key_fingerprint` | SHA-256 of the public key PEM — so a wrong public key won't silently "verify" |
 | `passkey_assertion`      | The full WebAuthn assertion                                                   |
 
-The verifier script ([scripts/verify-proof.js](../scripts/verify-proof.js)) re-canonicalizes, re-hashes, and runs `crypto.verify(null, payloadBytes, publicKey, sigBytes)`. No special libraries. If it can be verified with the Node standard library, it can be verified anywhere.
+The verifier script ([scripts/verify-proof.js](https://github.com/faketut/WeAgree/blob/main/scripts/verify-proof.js)) re-canonicalizes, re-hashes, and runs `crypto.verify(null, payloadBytes, publicKey, sigBytes)`. No special libraries. If it can be verified with the Node standard library, it can be verified anywhere.
 
 ## Trade-offs I'd revisit
 
 - **Per-user envelope vs per-tenant KMS-managed data keys.** Right now there's one envelope key for everyone. For a multi-tenant deployment, I'd cut a KMS data key per tenant and let KMS audit the unwraps.
 - **No passkey credential rotation flow yet.** Lose your device, you lose the ability to sign new things. The Ed25519 key can still verify old signatures — that's the point — but signing again needs a registered credential.
 - **Passkey enforcement is a server-side flag.** Controlled by `AGREEMENT_PASSKEY_REQUIRED`. In dev I default it off; in production a launch checklist forces it on.
-
-## The take-away
 
 If the bar for "we did digital signatures properly" is "we cryptographically committed to the document hash _and_ proved the signer was at their device," you need two things, not one. They can be the same thing only if you're willing to make your verifier permanently depend on WebAuthn libraries — which I wasn't.

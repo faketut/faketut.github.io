@@ -11,9 +11,6 @@ categories:
   - storage
 ---
 
-> The hardest thing about deletion in an LSM tree is convincing
-> yourself the data is *really* gone.
-
 In a B-tree, deleting a key is just removing it from a node. In an
 LSM, deletion is *itself a write* — a tombstone — and that tombstone
 has to live long enough to shadow every older copy of the key still
@@ -40,7 +37,7 @@ key*.
 
 ## The rule
 
-In MiniKV's compaction kernel ([`kv/compaction.go`](../kv/compaction.go)):
+In MiniKV's compaction kernel ([`kv/compaction.go`](https://github.com/faketut/MiniKV/blob/main/kv/compaction.go)):
 
 > A tombstone can be dropped iff the compaction output is going to a
 > level with **no deeper level holding a key range that could overlap
@@ -98,14 +95,14 @@ TTL has to survive every persistence boundary. In MiniKV:
 | MemTable entry | stored on the skip-list node |
 | SSTable record | trailing `expireAt` after value |
 | Snapshot iterator | `Iterator.ExpireAt()` (added for raft snapshots) |
-| Raft log command | `Command.ExpireAt` ([`kv/raftnode/command.go`](../kv/raftnode/command.go)) |
-| Raft FSM snapshot | `[8: expireAt]` per record ([`kv/raftnode/fsm.go`](../kv/raftnode/fsm.go)) |
+| Raft log command | `Command.ExpireAt` ([`kv/raftnode/command.go`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/command.go)) |
+| Raft FSM snapshot | `[8: expireAt]` per record ([`kv/raftnode/fsm.go`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/fsm.go)) |
 
 If any layer loses the `ExpireAt`, expired entries become permanent
 or live entries become "expired on restart". Both are silent data
 bugs. The way to make sure this is preserved is the
 `TestFSMRestoreExpiredTTLIsSkipped` test in
-[`kv/raftnode/fsm_test.go`](../kv/raftnode/fsm_test.go) — it builds a
+[`kv/raftnode/fsm_test.go`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/fsm_test.go) — it builds a
 snapshot, hand-mutates the `ExpireAt` bytes into the past, restores,
 and asserts the key is *not* present.
 
@@ -113,7 +110,7 @@ and asserts the key is *not* present.
 
 `KV.DeleteRange(start, end)` is sugar over "materialise a point
 tombstone for every key currently in `[start, end)`". MiniKV's
-implementation ([`kv/rangedel.go`](../kv/rangedel.go)) iterates the
+implementation ([`kv/rangedel.go`](https://github.com/faketut/MiniKV/blob/main/kv/rangedel.go)) iterates the
 snapshot in chunks and writes batches of tombstones, so a `1B → 1Z`
 range delete on a 1 M-key store doesn't allocate a 1 M-element slice.
 

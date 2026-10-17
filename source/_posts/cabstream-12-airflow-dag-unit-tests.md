@@ -44,9 +44,9 @@ What this gives you:
 
 That lets you unit-test the actual logic of every task function.
 
-## Three test categories that earn their keep
+## Three test categories
 
-### Category 1: helper functions
+### 1. Helper functions
 
 ```python
 def test_year_month_valid(self):
@@ -59,7 +59,7 @@ def test_year_month_invalid(self):
 
 `_year_month` is at the center of params validation — one bad character in the month string and the whole pipeline misfires. Pure function, cheapest tests, biggest leverage.
 
-### Category 2: side-effecting logic (mock the network/IO)
+### 2. Side-effecting logic (mock the network/IO)
 
 ```python
 @patch("nyc_taxi_pipeline.requests.get")
@@ -96,7 +96,7 @@ def test_raises_on_tiny_file(self, mock_get):
 
 This exercises the "small file = failure" guard. Without a test it's effectively placeholder code.
 
-### Category 3: configuration / static data shape
+### 3. Configuration / static data shape
 
 ```python
 def test_resource_dict_shape(self):
@@ -108,7 +108,7 @@ def test_resource_dict_shape(self):
 
 `EXTERNAL_TABLE_RESOURCE` is a hand-rolled nested dict — the kind that loves to lose a key during a copy-paste. Shape tests don't catch business bugs, but they catch the "wrong key name in a PR" class instantly.
 
-## Bonus: trivial CI
+## CI stays trivial
 
 ```yaml
 - run: pip install ruff pytest pandas pyarrow requests
@@ -116,10 +116,8 @@ def test_resource_dict_shape(self):
 - run: pytest nyc_taxi_pipeline/airflow
 ```
 
-No `apache-airflow` in dependencies. Full config at [.github/workflows/ci.yml](.github/workflows/ci.yml).
+No `apache-airflow` in dependencies. Full config at [.github/workflows/ci.yml](https://github.com/faketut/CabStream-ETL/blob/main/.github/workflows/ci.yml).
 
-## One-liner
+Don't try to test Airflow's scheduling behavior — that's Airflow's job. Test the pure Python that you wrote in the DAG file. Once you stub the imports, it's no different from testing any other module.
 
-> Don't try to test Airflow's scheduling behavior — that's Airflow's job. Test the pure Python that you wrote in the DAG file. Once you stub the imports, it's no different from testing any other module.
-
-> File: [nyc_taxi_pipeline/airflow/test_dag_logic.py](nyc_taxi_pipeline/airflow/test_dag_logic.py)
+> File: [nyc_taxi_pipeline/airflow/test_dag_logic.py](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/airflow/test_dag_logic.py)

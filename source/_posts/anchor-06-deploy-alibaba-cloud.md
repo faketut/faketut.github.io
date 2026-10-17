@@ -179,7 +179,8 @@ share the *same* Splunk backend — they're just different transports:
 | **Custom Skill (HTTP)** | `pip install -e '.[skill]' && uvicorn anchor.skill_server:app` — register [`deploy/qwen_skill/anchor-skill.yaml`](https://github.com/faketut/Anchor/blob/main/deploy/qwen_skill/anchor-skill.yaml) in Qwen Cloud → Application Center |
 
 That's by design. The "application" is the SPL + KV layer
-([posts 2](02-fingerprint.md) and [3](03-diff-and-weights.md)); the
+({% post_link anchor-02-fingerprint %} and
+{% post_link anchor-03-diff-and-weights %}); the
 surfaces are interchangeable. Adding a Slack bot, a Discord bot, or a
 PagerDuty webhook is the same pattern: thin transport, call into
 `agent.compare()`, render the `CompareResult`.
@@ -218,18 +219,7 @@ The hackathon submission asks for two things:
 That second list is the checklist at the bottom of
 [`deploy/alibaba-cloud.md`](https://github.com/faketut/Anchor/blob/main/deploy/alibaba-cloud.md).
 
-## Wrapping the series
-
-Six posts in:
-
-- [**Post 1**](01-why-memoryagent.md) — the on-call problem and the
-  three-memory framing.
-- [**Post 2**](02-fingerprint.md) — five SPL queries → one KV row.
-- [**Post 3**](03-diff-and-weights.md) — the diff engine and decay
-  toward 1.0.
-- [**Post 4**](04-narrator-llm-at-edge.md) — the LLM only narrates.
-- [**Post 5**](05-planner-react-loop.md) — the optional ReAct planner.
-- [**Post 6**](06-deploy-alibaba-cloud.md) — the deploy you're reading.
+## Wrapping up
 
 The common thread across all six: *most of the agent's value lives in
 the deterministic core; the LLM is an edge component*. That's why

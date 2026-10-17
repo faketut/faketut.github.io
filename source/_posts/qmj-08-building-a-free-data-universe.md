@@ -14,7 +14,7 @@ categories:
   - data
 ---
 
-This is the last post in the [QMJ-TSX series](README.md). It's the
+This is the last post in the [QMJ-TSX series](https://github.com/faketut/qmj-tsx). It's the
 most operational of the lot: how I assembled the data layer for a
 Canadian small-cap factor paper using only free, public sources, and
 what that constraint forced me to accept.
@@ -54,7 +54,7 @@ its own special failure mode.
 
 Honest limitations:
 - Survivorship (see
-  [the previous post](2026-07-18-yfinance-survivorship-tsx.md)).
+  {% post_link qmj-07-yfinance-survivorship-tsx "the previous post" %}).
 - Adjusted close handling is yfinance's, not yours. For monthly
   rebalanced long-shorts this is fine; for intraday strategies it
   is not.
@@ -150,7 +150,7 @@ If I were redoing this with a budget, the priority order would be:
    or equivalent). Unlocks the actual AFP construction. Highest
    marginal value.
 2. **Delisting prices and dates.** Kills the survivorship caveat
-   from the [previous post](2026-07-18-yfinance-survivorship-tsx.md).
+   from the {% post_link qmj-07-yfinance-survivorship-tsx "previous post" %}.
    Second-highest marginal value.
 3. **Index constituent histories** (S&P/TSX SmallCap or TMX
    equivalent, monthly). Lets the universe be reconstituted
@@ -178,4 +178,4 @@ contribution than a positive result you can't reproduce.**
 
 ---
 
-*Series index: [README.md](README.md).*
+*Series index: [qmj-tsx on GitHub](https://github.com/faketut/qmj-tsx).*

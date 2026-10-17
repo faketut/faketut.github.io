@@ -95,7 +95,7 @@ One small thing: **there is no `JOIN dim_datetime`** in this mart. The fact alre
 
 The only mart that does join a dim is `mart_location_trips` (to attach borough/zone labels). That kind of "dim provides labels" join is the one worth doing.
 
-## What this layering actually buys you
+## What it buys you
 
 1. **Marts are leaves** — adding or changing one does not propagate
 2. **Changing the fact has a known blast radius** — dbt graphs the affected marts
@@ -110,4 +110,4 @@ The only mart that does join a dim is `mart_location_trips` (to attach borough/z
 
 Any of those, and three layers is over-engineering — flat is fine. This project sits right at the threshold: six models, but the clarity gain is already visible.
 
-> Files: [nyc_taxi_pipeline/dbt/models/fact_trips.sql](nyc_taxi_pipeline/dbt/models/fact_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql](nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql)
+> Files: [nyc_taxi_pipeline/dbt/models/fact_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/fact_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql)

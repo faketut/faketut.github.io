@@ -16,7 +16,7 @@ categories:
 This is the second post in a series on a price-based Quality factor
 ("paper-Q") I built for TSX small-caps. The headline result — that
 paper-Q does not recover the AQR QMJ-Canada premium — is in
-[the previous post](2026-06-06-qmj-tsx-null-result.md). Here I want
+{% post_link qmj-01-null-result "the previous post" %}. Here I want
 to talk about what I found when I cracked the composite open.
 
 If you build any composite signal by averaging *z*-scored components,

@@ -67,8 +67,7 @@ def _spl_patterns(scope: Scope) -> str:
 
 The `head 50` cap is intentional: we want the top-N representative
 patterns, not every long-tail one-off. If a new pattern enters the
-top-50 in a future window, that's a `template:appeared:...` signal in
-[post 3](03-diff-and-weights.md)'s diff engine. If a known pattern
+top-50 in a future window, that's a `template:appeared:...` signal in {% post_link anchor-03-diff-and-weights %}'s diff engine. If a known pattern
 *falls out* of the top-50, that's `template:disappeared:...`.
 
 ## The trust boundary: SPL injection
@@ -122,7 +121,7 @@ Two small things worth noting:
 1. **`ensure_collections()` is idempotent.** The first `anchor capture`
    on a fresh Splunk creates the three collections; subsequent calls
    are a no-op. This is what makes the `setup_ecs.sh` install in
-   [post 6](06-deploy-alibaba-cloud.md) survive re-runs.
+   {% post_link anchor-06-deploy-alibaba-cloud %} survive re-runs.
 2. **`_key = anchor.id`.** KV Store auto-assigns a key if you don't,
    but we want the UUID to *be* the key so `kv_get("anchors", id)` is
    a direct lookup rather than a query.
@@ -154,22 +153,19 @@ You can inspect this in the Splunk Web UI under *Settings → Lookups →
 KV store collections → `anchors`*. Useful sanity check on first
 install.
 
-## What this buys us
+## Next
 
-Two superpowers, one each for the next two posts:
-
-- **Post 3** — every later `compare` re-runs the same five SPL queries
-  on a *different* window, produces a second `Fingerprint`, and the
-  diff engine subtracts the two. Pure functions, no LLM.
-- **Post 4** — when the LLM eventually does see the data, it sees the
-  *ranked diff*, not raw logs. That keeps the prompt small and the
-  cost bounded.
+{% post_link anchor-03-diff-and-weights %} re-runs the same five SPL
+queries on a *different* window and subtracts the two fingerprints —
+pure functions, no LLM. {% post_link anchor-04-narrator-llm-at-edge %}
+shows what happens when the LLM sees the ranked diff instead of raw
+logs.
 
 ## What we didn't include (and why)
 
 - **No raw events.** Anchor stores statistics, not log payloads. PII
   stays in your indexers; the fingerprint is safe to ship anywhere.
-- **No embeddings on the anchor itself.** We embed *signals* (post 3),
+- **No embeddings on the anchor itself.** We embed *signals* ({% post_link anchor-03-diff-and-weights %}),
   not raw text. One embedding per drift, not per event.
 - **No "trends".** A baseline is a single window. If you want to
   capture weekly seasonality, capture multiple baselines and pick the

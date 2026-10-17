@@ -12,7 +12,7 @@ categories:
   - security
 ---
 
-*Post 4 of 6 in the "Taint-Flow Auditor" series.*
+*Post 4 of 4 in the "Taint-Flow Auditor" series.*
 
 The first time we ran Taint-Flow Auditor on its own source code, it
 flagged a MEDIUM-severity finding in our MR-discussion poster. We shipped
@@ -108,21 +108,13 @@ obviously not exploitable. We chose to live with it.
 
 ## The thing this *actually* communicates
 
-The credibility argument is simple: a tool that exempts its own findings
-is making a statement about what it considers worth flagging. That
-statement is "low-confidence findings are noise we don't want to see."
-The same statement, made to a *customer*, becomes: "your low-confidence
-findings are noise *we* didn't want to see, so we won't flag them either."
-
-A tool that does not exempt its own findings makes the opposite
-statement. It says: "we flagged this because we genuinely think a human
-should look at it. We looked at it. We agreed it deserved attention. We
-left it visible."
-
-The second tool gets more trust per finding it raises. It also raises
-fewer findings, because the team building it has been on the receiving
-end of every noisy false positive *first*. The selection pressure runs
-the right way.
+A tool that exempts its own findings is telling its users: "low-confidence
+findings are noise we don't want to see." A tool that does not exempt its
+own findings says the opposite: "we flagged this because we genuinely
+think a human should look at it. We looked at it. We agreed it deserved
+attention. We left it visible." The second tool gets more trust per
+finding it raises — and raises fewer of them, because its builders have
+been on the receiving end of every noisy false positive *first*.
 
 ## A second-order benefit: the tool's failure modes show up in the tool itself
 
@@ -140,29 +132,8 @@ also the entire reason every compiler eventually self-hosts. The tool
 that consumes its own output gets better, faster, than the tool that
 doesn't.
 
-## A small philosophical note
-
-This is *not* an argument that all false positives should be left
-visible forever. It is an argument that the easy path — adding an
-exemption — almost always lets you avoid the harder, more useful
-question, which is: *what predicate would distinguish this real
-non-issue from the genuine issue with the same shape?* The harder
-question is the one that makes the tool better.
-
-The whole point of building security tools is to surface things humans
-should know about. Exemptions are a way of telling the human "we
-already looked at this for you" — but they only work if the *next*
-human can trust that judgement. Most exemption mechanisms can't carry
-that trust. Most exemption authors didn't intend them to.
-
 We chose not to ship one. So far we have not regretted it.
-
-In **the next post** we'll get out of the philosophy and back into
-shipping things — specifically, how we published the auditor as an agent
-on the GitLab AI Catalog, and what we learned about Duo agent system
-prompts the hard way.
 
 ---
 
 *Previous: {% post_link taint-03-bfs-on-call-graph "BFS in 50 lines" %}*
-*Next: {% post_link taint-05-duo-agent-walkthrough "Publishing a Duo agent to the GitLab AI Catalog — a hands-on walkthrough" %}*

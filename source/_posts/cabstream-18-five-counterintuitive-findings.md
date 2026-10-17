@@ -13,6 +13,8 @@ categories:
 
 > The most fun part of the whole project wasn't getting the DAG green — it was the moment the data started telling stories. These five findings come from this project's `mart_*` tables; each one is a couple of Looker Studio charts away.
 
+All numbers below are what my runs produced on the mart tables — re-run them against your own data before trusting exact figures. The shapes are the point.
+
 ## 1. Friday's evening rush is at 22:00, not 18:00
 
 Intuition: evening peak should be 18:00 ~ 19:00 (commute home).
@@ -23,9 +25,7 @@ Data (`mart_hourly_trips` split by weekday):
 - **Friday: a second peak appears at 21:00 ~ 23:00, ~15% higher than the 18:00 one**
 - Weekends: commute peak vanishes entirely; gentle climb from 10:00, max between 22:00 ~ 02:00
 
-Plausible explanation: Manhattan nightlife shifts "taxi home" deep into the evening. "Taxi" is essentially two different businesses on weekdays vs. weekends.
-
-Business implication: a dynamic-pricing model that uses only a "weekday vs. weekend" binary feature misses Friday — which behaves like neither.
+Plausible explanation: Manhattan nightlife shifts "taxi home" deep into the evening. "Taxi" is essentially two different businesses on weekdays vs. weekends. A dynamic-pricing model with only a "weekday vs. weekend" binary misses Friday entirely — it behaves like neither.
 
 ## 2. The real culprit behind rising fares isn't fuel
 
@@ -38,9 +38,7 @@ Decompose `mart_location_trips`:
 - **`congestion_surcharge` rose from ~5% to ~9% of total**
 - Average `tip_amount` up ~18%
 
-So: surcharge plus tipping behavior dwarfs the base fare effect. "Drivers raised prices" is the cover story; **passengers tipping more** is most of it.
-
-Business implication: a piece headlined "Taxi fares up 12%, blamed on fuel" gets contradicted by the underlying data.
+So: surcharge plus tipping behavior dwarfs the base fare effect. "Drivers raised prices" is the cover story; **passengers tipping more** is most of it. A "fares up 12%, blame fuel" headline gets contradicted by this breakdown.
 
 ## 3. The top pickup zones are scary concentrated
 
@@ -51,9 +49,7 @@ Business implication: a piece headlined "Taxi fares up 12%, blamed on fuel" gets
 - Top 50 account for ~75%
 - The long tail of 200 zones contributes less than 10% combined
 
-The hot zones are nearly all in Manhattan; JFK and LGA airports are the two non-Manhattan exceptions.
-
-Business implication: dispatch optimization that focuses on Top 50 covers the vast majority of business. "Cover the whole city" is an expense without proportional return.
+The hot zones are nearly all in Manhattan; JFK and LGA airports are the two non-Manhattan exceptions. Dispatch optimization aimed at the top 50 covers the vast majority of trips — "cover the whole city" is an expense without proportional return.
 
 ## 4. Credit-card tip median is 3× cash
 
@@ -62,12 +58,7 @@ Group by `payment_type` (1 = credit card, 2 = cash):
 - Credit card: median tip ~$3.5 (~18% of fare)
 - **Cash: median tip = $0**
 
-Note: that's exactly $0, not "near zero". The reason is that **NYC TLC data doesn't record cash tips** — the driver pockets it and the system never sees it.
-
-Business implication:
-
-- Any "tipping by payment method" analysis must drop cash rows, otherwise conclusions are severely biased low
-- A textbook data trap: missing isn't "no tip given"; it's "the system doesn't know".
+Note: that's exactly $0, not "near zero". The reason is that **NYC TLC data doesn't record cash tips** — the driver pockets it and the system never sees it. Any "tipping by payment method" analysis must drop cash rows, otherwise conclusions skew severely low: a textbook data trap where missing isn't "no tip given" but "the system doesn't know".
 
 ## 5. JFK round-trip duration has 3× the variance of typical trips
 
@@ -82,12 +73,10 @@ Why so much variance?
 - BQE during rush hour is 30 min; the same route at 3 AM is 10 min — 3× swing
 - Some trips use ride-share lanes; others go via tolled bridges
 
-Business implication: ETA estimation for JFK pickups **cannot use the citywide average**. You need to bucket by time-of-day × destination borough. High-variance segments like this are where data science earns its keep.
-
-## Closing
+ETA estimation for JFK pickups **cannot use the citywide average** — bucket by time-of-day × destination borough. High-variance segments like this are where data science earns its keep.
 
 After weeks of pipeline work, the most satisfying moment wasn't the green DAG — it was watching the data tell its own story. Building the infra without ever doing this is like building a kitchen and never cooking.
 
-Next post: how to turn these five findings into five Looker Studio tiles in 30 minutes.
+Next: {% post_link cabstream-17-looker-studio-30min %} turns these five findings into five Looker Studio tiles in 30 minutes.
 
-> Sources: [nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql](nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_location_trips.sql](nyc_taxi_pipeline/dbt/models/mart_location_trips.sql), [nyc_taxi_pipeline/dbt/models/fact_trips.sql](nyc_taxi_pipeline/dbt/models/fact_trips.sql)
+> Sources: [nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_location_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/mart_location_trips.sql), [nyc_taxi_pipeline/dbt/models/fact_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/fact_trips.sql)

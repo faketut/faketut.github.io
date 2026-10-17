@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Ten commits, three workflows, a security pass, an observability pass, a coverage pass. What the agent got right, what it got wrong, and where the friction actually was.*
-
 ## Why write this
 
 There's an enormous amount of LLM-coding marketing in 2026 and very little honest retrospective. This is one project, one developer, one agent, over one stretch — but it's specific enough to be useful. The goal isn't "agents are great" or "agents are dumb." It's "here's what working with one actually looked like at the line-of-code level."
@@ -94,7 +92,3 @@ For *this codebase at this size*, working with an agent feels like having an ext
 The framing I've landed on: the agent is best at the *execution* of decisions I've already made, and at *exploration* when I tell it explicitly to explore. It's worst when I ask it to make the decision for me.
 
 Plan the surgery yourself. Let the agent hold the instruments.
-
-## Takeaway
-
-Use an agent. Be specific about scope. Give it verification commands. Read every diff with the eye of someone who will be on call when it breaks. Push back on its drafts; the second version is almost always better. And keep notes on what worked — your next 10-commit session will go faster than this one.

@@ -11,14 +11,12 @@ categories:
   - storage
 ---
 
-> Two halves of a hard problem: "send every commit to every
-> follower" and "tell the leader when it's safe to ack". The second
-> half is what makes you reach for a bidirectional stream.
-
-MiniKV's replication ([`kv/grpcapi/`](../kv/grpcapi/),
-[`kv/acktracker.go`](../kv/acktracker.go)) is primary-backup. The
-leader streams every commit to followers; followers apply each event
-and stream `ack_seq` frames back. This post is the design tour.
+MiniKV's replication ([`kv/grpcapi/`](https://github.com/faketut/MiniKV/blob/main/kv/grpcapi/),
+[`kv/acktracker.go`](https://github.com/faketut/MiniKV/blob/main/kv/acktracker.go)) is primary-backup: the leader streams every commit
+to followers; followers apply each event and stream `ack_seq` frames
+back. Sending commits is the easy half; the bidirectional stream
+exists for the hard half — telling the leader when it's safe to ack.
+This post is the design tour.
 
 ## The stream
 
@@ -59,7 +57,7 @@ if followerLastSeq + maxLagWindow < leaderLastSeq {
 ```
 
 The snapshot is the same `KV.Snapshot()` machinery used for local
-consistent reads (see the [snapshot post](05-snapshot-refcounts.md)).
+consistent reads (see the [snapshot post]({% post_link minikv-05-snapshot-refcounts %})).
 The follower receives a stream of `(key, value, expireAt)` triples,
 applies them via `KV.ApplyReplica`, and then transitions into tail
 mode at the snapshot's seq.
@@ -77,7 +75,7 @@ to want them anyway:
 
 `Config.SyncReplicas == N` (`N > 0`) blocks a write until `N`
 followers have acked it. The implementation lives in
-[`kv/acktracker.go`](../kv/acktracker.go):
+[`kv/acktracker.go`](https://github.com/faketut/MiniKV/blob/main/kv/acktracker.go):
 
 ```go
 type AckTracker struct {
@@ -91,27 +89,6 @@ A `Wait(seq, n, timeout)` blocks until at least `n` peers have acked
 ≥ `seq`, or the timeout fires (then `ErrReplicationTimeout`). The
 write is still durable locally regardless of the timeout; the timeout
 just gates the *ack to the client*.
-
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Leader
-    participant T as AckTracker
-    participant F1
-    participant F2
-    Client->>Leader: Put(k, v)
-    Leader->>Leader: WAL + MemTable
-    Leader->>T: Wait(seq, n=1, 5s)
-    par
-        Leader-->>F1: event seq
-        F1-->>Leader: ack seq
-        Leader->>T: notify F1 acked seq
-    and
-        Leader-->>F2: event seq
-    end
-    T-->>Leader: quorum reached
-    Leader-->>Client: 204 No Content
-```
 
 ### Reason 2: backpressure
 
@@ -127,7 +104,7 @@ backpressure is already there.
 ## The HTTP variant exists, but it's async-only
 
 There's also an NDJSON endpoint at `/v1/replicate/stream`
-([`kv/httpapi/`](../kv/httpapi/)). It is one-way: leader streams,
+([`kv/httpapi/`](https://github.com/faketut/MiniKV/blob/main/kv/httpapi/)). It is one-way: leader streams,
 client consumes. There is no place to put an ack frame in a
 streaming HTTP response without inventing a second request, and at
 that point you've reinvented bidi gRPC.
@@ -164,16 +141,4 @@ in the AckTracker.
 - **Two leaders (split brain)**: this layer doesn't prevent it. The
   operator is supposed to pick exactly one leader. If you want
   automatic prevention, that's what
-  [the raft layer](08-master-slave-to-raft.md) is for.
-
-## What this design is good for
-
-Primary-backup async replication is the right tool when:
-
-- You have one obvious "writer" (a single region, a single primary).
-- Read replicas are for read scaling or DR, not for write
-  availability.
-- You can tolerate a small RPO (recovery-point objective) on leader
-  failure.
-
-When you need automatic failover and RPO=0, raft is the next stop.
+  [the raft layer]({% post_link minikv-08-master-slave-to-raft %}) is for.

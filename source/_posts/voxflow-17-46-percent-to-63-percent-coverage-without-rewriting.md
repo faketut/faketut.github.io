@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Coverage is not a number to chase. It's a flashlight pointed at the code you don't understand yet.*
-
 ## Why this number changed
 
 VoxFlow's test suite went from 26 tests at 46% line coverage to 58 tests at 63% in a single sitting. The two biggest movers:
@@ -98,7 +96,7 @@ monkeypatch.setattr(svc.session_manager, "find_by_uv_ws",
 
 No dependency injection rewrite. No "make this code testable" refactor. The function under test is unchanged; only its module-level names are swapped for the duration of the test.
 
-For media_stream, the same patterns let you exercise the message-parsing branches (`_handle_ultravox_text`, `_forward_agent_audio`, `_on_twilio_media`) without standing up a real WebSocket. The bits that *require* a live socket (the `asyncio.wait_for` idle timeout, the `TaskGroup` orchestration) you leave for integration tests — or, more honestly, for production observability via the metrics from the earlier post.
+For media_stream, the same patterns let you exercise the message-parsing branches (`_handle_ultravox_text`, `_forward_agent_audio`, `_on_twilio_media`) without standing up a real WebSocket. The bits that *require* a live socket (the `asyncio.wait_for` idle timeout, the `TaskGroup` orchestration) you leave for integration tests — or, more honestly, for production observability via the metrics in {% post_link voxflow-12-prometheus-metrics-for-conversational-ai %}.
 
 ## What you should *not* cover
 
@@ -126,7 +124,3 @@ Behaviors pinned by test: ~12
 ```
 
 Zero bugs in the existing code is good news. The point wasn't to find bugs *today* — it was to make sure that next month's refactor can't introduce them.
-
-## Takeaway
-
-Don't chase coverage; let it chase the parts of the codebase you can't yet describe in plain English. Mock at the module level with `AsyncMock` and `monkeypatch.setattr`. Write tests that pin contracts ("the dispatcher special-cases `schedule_meeting`"), not lines. Stop when the marginal test is more brittle than the bug it would catch. Past 60% on a real codebase is plenty; past 80% is usually self-harm.

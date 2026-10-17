@@ -24,24 +24,20 @@ psychology it is a formal mechanism; in solo quant work it is
 usually just a habit, and a rare one. This post is the case for
 adopting it even when nobody is forcing you to.
 
-## The two gates
+## The gates, briefly
 
-I committed to two numerical gates in writing before the analysis:
+The gates themselves are laid out in {% post_link qmj-01-null-result "the QMJ-TSX post" %}'s
+two steps, but the shape is what matters here. I committed in writing to
+two numerical bands *before* the analysis:
 
-**Gate 1 — Replication tolerance.** The Sharpe ratio of my
-recomputed AQR QMJ-Canada series, over the comparable sample, must
-fall within ±0.30 of the 0.65 figure reported in AFP (2019) Table II
-for Canada.
+**Gate 1 — replication tolerance.** My recomputed AQR QMJ-Canada Sharpe
+must fall within ±0.30 of the 0.65 reported in AFP (2019) Table II.
+Outcome: 0.64. Pass.
 
-> Outcome: replicated Sharpe = 0.64. Within tolerance. **Pass.**
-
-**Gate 2 — Calibration of the extension.** The Spearman rank
-correlation between my fundamentals-free paper-Q long-short and the
-AQR QMJ-Canada series, over the common sample, must be ≥ 0.3 for me
-to claim paper-Q "captures the same construct."
-
-> Outcome: contemporaneous correlation = −0.03, regression β = −0.08
-> (*t* = −0.38), R² ≈ 0. **Fail.**
+**Gate 2 — extension calibration.** The Spearman rank correlation between
+paper-Q and the AQR QMJ-Canada series must be ≥ 0.3 for me to claim
+paper-Q "captures the same construct." Outcome: −0.03, regression β =
+−0.08 (*t* = −0.38), R² ≈ 0. Fail.
 
 These are not p-values. They are pre-committed numerical bands on
 the actual quantities the paper is making claims about. Setting them
@@ -85,9 +81,7 @@ The pre-committed claim — "if a price-based proxy captures the same
 underlying Quality construct, rank correlation with the
 fundamentals-based version should be at least 0.3" — is the
 thing being tested. The observed correlation of −0.03 is not "small
-and inconclusive." It is "comprehensively below the bar I set." That
-is publishable evidence about the limits of fundamentals-free
-proxies, not a strategy I am still fishing for.
+and inconclusive." It is "comprehensively below the bar I set."
 
 ## How to actually do it, lightly
 
@@ -116,8 +110,8 @@ and a discipline about not editing them after the fact.
 ## A second-order benefit
 
 A pleasant side effect of gate 2 failing is that the
-[per-component decomposition](2026-06-13-low-vol-unwind-hiding-in-a-composite.md)
-and the [PCA analysis](2026-06-20-pca-as-diagnostic-not-rescue.md)
+{% post_link qmj-02-low-vol-unwind-hiding-in-a-composite "per-component decomposition" %}
+and the {% post_link qmj-03-pca-as-diagnostic-not-rescue "PCA analysis" %}
 became the most interesting parts of the paper. If the gate had
 passed I would have written a competent replication-plus-extension
 paper that nobody would have cared about. Because it failed, I was

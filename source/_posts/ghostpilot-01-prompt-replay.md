@@ -121,18 +121,7 @@ After a few weeks of dogfooding:
 - **No prompt versioning system.** Git already does this. The replay's input is "a recording + an in-memory override," not "a versioned prompt artifact."
 - **No semantic diff.** Plain text + scroll-synced split view catches 95% of regressions in 5% of the code.
 
-## Takeaways
-
-```mermaid
-graph TD
-    A[Prompt change] --> B{Do you have real inputs?}
-    B -->|No| C[You are guessing]
-    B -->|Yes| D{Can you replay them<br/>without redoing the work?}
-    D -->|No| C
-    D -->|Yes| E[You can iterate honestly]
-```
-
-The minimum viable prompt debugger is:
+## The minimum viable prompt debugger
 
 1. Capture **the full prompt and the full answer** alongside metadata. Token counts alone are useless.
 2. Pair user→assistant rows at write time so replay doesn't have to guess.

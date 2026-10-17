@@ -3,14 +3,14 @@ title: "Closing 25 GitHub issues with an LLM agent"
 date: 2026-05-06 15:00:00
 tags:
   - weagree
-  - cryptography
-  - security
+  - llm
+  - workflow
 categories:
   - engineering
   - web3
 ---
 
-Most "LLM in my dev workflow" posts are either marketing or hand-wringing. This is neither — it's a postmortem of one week where I filed 25 GitHub issues from a static review of [WeAgree](https://github.com/faketut/WeAgree) and resolved them in five batched commits with an LLM coding agent driving the keyboard.
+One week: I filed 25 GitHub issues from a static review of [WeAgree](https://github.com/faketut/WeAgree) and resolved them in five batched commits with an LLM coding agent driving the keyboard.
 
 Numbers, what worked, what didn't, what I'd change.
 
@@ -18,22 +18,18 @@ Numbers, what worked, what didn't, what I'd change.
 
 - One developer (me), one product, two months of code.
 - VS Code with an agentic coding assistant. The agent can read files, run terminal commands, edit code, run tests, and call the GitHub CLI.
-- A 25-item static-review document ([docs/code-quality-issues.md](../docs/code-quality-issues.md)) describing the issues in enough detail to act on without further clarification.
+- A 25-item static-review document ([docs/code-quality-issues.md](https://github.com/faketut/WeAgree/blob/main/docs/code-quality-issues.md)) describing the issues in enough detail to act on without further clarification.
 - Direct-to-`main` workflow. I'm the only committer. Branches and PRs would be ceremony.
 
 ## The flow
 
-```mermaid
-flowchart TD
-    A[Static review doc<br/>25 issues] --> B[Agent files 25 issues<br/>via gh issue create]
-    B --> C[Group issues into<br/>5 thematic batches A-E]
-    C --> D[Batch A: shared helpers<br/>Closes #7,#22,#21,#24]
-    D --> E[Batch B: dedupe + StatusBadge<br/>Closes #2,#9,#13,#18]
-    E --> F[Batch C: security pass<br/>Closes #3,#4,#5,#6,#11,#19]
-    F --> G[Batch D: refactor logger,<br/>ActionResult, canonicalize<br/>Closes #10,#14,#25,#1]
-    G --> H[Batch E: tooling/tests<br/>Closes #8,#12,#17,#20]
-    H --> I[Roadmap phases 1-4<br/>follow-on optimization work]
-```
+The agent filed the 25 issues via `gh issue create`, I grouped them into five thematic batches, and each batch landed as one commit:
+
+- **Batch A** — shared helpers: Closes #7, #22, #21, #24
+- **Batch B** — dedupe + StatusBadge: Closes #2, #9, #13, #18
+- **Batch C** — security pass: Closes #3, #4, #5, #6, #11, #19
+- **Batch D** — refactor logger, ActionResult, canonicalize: Closes #10, #14, #25, #1
+- **Batch E** — tooling/tests: Closes #8, #12, #17, #20
 
 Each commit:
 
@@ -64,7 +60,7 @@ That last bullet was the single highest-leverage thing in the whole workflow. Wi
 
 **1. The agent's first instinct is to over-fix.** When asked to "remove `any` types," it would also re-format the file, add docstrings, and tighten unrelated logic. Every time I let this through, the diff got harder to review and the chance of a regression went up.
 
-The fix was a one-line rule in my project instructions: _"Don't 'improve' adjacent code, comments, or formatting. Match existing style."_ After that the diffs were surgical. The rule lives in [/Users/fenjian/.claude/rules/rule.instructions.md](../../.claude/rules/rule.instructions.md) and equivalent.
+The fix was a one-line rule in my project instructions: _"Don't 'improve' adjacent code, comments, or formatting. Match existing style."_ After that the diffs were surgical. The rule lives in `~/.claude/rules/rule.instructions.md` and equivalent.
 
 **2. The agent did not push back enough.** A few of my 25 issues were not actually a good idea (one "improvement" would have made the code more complex for no benefit). The agent implemented them anyway. The fix: an explicit "if you think this is a bad idea, say so before implementing" line in the rule file. It now does, sometimes.
 
@@ -87,7 +83,7 @@ Most of the "agent driving" was actually two kinds of prompts:
 
 > Do batch D.
 
-Prompt B works because the rule file, the issue doc, and the session-memory plan all give the agent enough context that I don't have to re-state the workflow every time. **The setup investment pays off the longer the session lasts.**
+Prompt B works because the rule file, the issue doc, and the session-memory plan all give the agent enough context that I don't have to re-state the workflow every time.
 
 ## The post-batch roadmap
 
@@ -123,8 +119,4 @@ LLM agents are bad at:
 - Resisting the urge to "improve" unrelated code.
 - Picking up nuance from one-line prompts.
 
-The workflow I landed on is the agent does the doing; I do the deciding. The leverage is real. The "do nothing, the AI will figure it out" version isn't.
-
-## The take-away
-
-If you're a solo developer with a static-review-able codebase and a working test suite, you can probably ship a quarter of mechanical cleanup in a week with an LLM agent. You'll need: an explicit rule file, an explicit acceptance-criteria-formatted issue doc, and the discipline to make the agent run tests before committing. The leverage is on the order of 3–5x for the right kind of work, and zero for the wrong kind. Knowing which kind you're looking at is the skill.
+The workflow I landed on: the agent does the doing; I do the deciding. The leverage is on the order of 3–5x for the right kind of work, and zero for the wrong kind — knowing which kind you're looking at is the skill. To use it you'll need an explicit rule file, an acceptance-criteria-formatted issue doc, and the discipline to make the agent run tests before committing.

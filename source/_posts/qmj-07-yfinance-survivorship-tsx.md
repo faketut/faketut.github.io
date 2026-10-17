@@ -151,5 +151,5 @@ claim built on data that can't support it.
 *Universe file:
 [`data/raw/universe/tsx_smallcap.csv`](https://github.com/faketut/qmj-tsx/blob/main/data/raw/universe/tsx_smallcap.csv).
 A companion post on
-[how that universe was built](2026-07-25-building-a-free-data-universe.md)
+{% post_link qmj-08-building-a-free-data-universe "how that universe was built" %}
 covers the construction in more detail.*

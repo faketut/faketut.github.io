@@ -99,18 +99,11 @@ Defaults: `retries_per_provider=1`, `backoff_base=0.5`. So a single retryable er
 
 ## Mid-stream errors are not retryable
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant Provider
-    Client->>Provider: chat_stream(...)
-    Provider-->>Client: token "Hello"
-    Provider-->>Client: token " world"
-    Provider--xClient: ConnectionError mid-stream
-    Note over Client: Do NOT restart.<br/>The user already saw "Hello world".
-```
-
-If tokens have already been emitted to the UI, retrying the call would replay them — the user sees `Hello worldHello world, my name is...`. Worse, vision replays would re-bill the image. The right behavior is to let the error propagate to the UI as a stream interruption.
+If tokens have already been emitted to the UI, retrying the call
+would replay them — the user sees `Hello worldHello world, my name
+is...`. Worse, vision replays would re-bill the image. The right
+behavior is to let the error propagate to the UI as a stream
+interruption.
 
 The implementation:
 
@@ -141,23 +134,12 @@ The overlay footer shows it for one second. That's enough for the user to know "
 
 ## Test matrix that earned its keep
 
-```mermaid
-graph LR
-    T1[401 from primary] --> A1[no retry, no failover, raise]
-    T2[429 from primary] --> A2[retry once in 0.5s, succeed]
-    T3[503 from primary] --> A3[retry, still fail, try fallback, succeed]
-    T4[ConnectionError mid-stream] --> A4[propagate, no restart]
-    T5[Unknown exception] --> A5[fail over without retry]
-```
+- `401 from primary` → no retry, no failover, raise
+- `429 from primary` → retry once in 0.5s, succeed
+- `503 from primary` → retry, still fail, try fallback, succeed
+- `ConnectionError` mid-stream → propagate, no restart
+- unknown exception → fail over without retry
 
 Five tests. Five real production scenarios. Each one used to be a bug.
-
-## TL;DR
-
-- Classify errors into `fatal | retryable | unknown` before deciding.
-- Retry in place at most once with exponential backoff.
-- Fail over only after retries are exhausted *or* the error is unknown.
-- Never retry once tokens have been emitted to the user.
-- Surface every switch on the UI for one second.
 
 The whole module is ~250 lines. It used to be ~80 and behaved much worse.

@@ -18,7 +18,7 @@ This is what I shipped and why.
 
 ## The CSP I currently run
 
-From [next.config.mjs](../next.config.mjs):
+From [next.config.mjs](https://github.com/faketut/WeAgree/blob/main/next.config.mjs):
 
 ```js
 const isProd = process.env.NODE_ENV === "production";
@@ -130,6 +130,4 @@ You need to verify hydration on the routes that stream SSR — for WeAgree that'
 
 I haven't done step 2 yet. I have it in the comments at the top of the CSP block, with the explicit failure mode noted, and I'd rather ship step 1 today than wait for the perfect-policy month.
 
-## The take-away
-
-"Solo project with no security team" is an excuse people use to ship no CSP. It shouldn't be — most of the value is in the **other** directives, not in being heroic about `script-src`. Get the easy wins on day one, label your compromises in the code, and migrate the hard parts when you can actually verify them.
+Most of CSP's value is in the other directives, not in being heroic about `script-src`. Get the easy wins on day one, label your compromises in the code, and migrate the hard parts when you can actually verify them.

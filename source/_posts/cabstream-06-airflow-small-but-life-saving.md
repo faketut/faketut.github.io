@@ -11,7 +11,7 @@ categories:
   - data
 ---
 
-After enough years with Airflow you realize: the stable DAGs aren't the ones with the cleanest operator choices, they're the ones full of tiny "looks unnecessary" details. This project's DAG only has five tasks, but four of those details are in it.
+Stable DAGs aren't the ones with the cleanest operator choices — they're the ones full of tiny details that look unnecessary. This project's DAG only has five tasks, but four of those details are in it.
 
 ## 1. Per-run download directory, keyed by `run_id`
 
@@ -80,15 +80,13 @@ Three notes:
 - Bucket and dataset have defaults but can be overridden, so the same code runs in test
 - There is no `if env == "prod":` branch anywhere; environment differences are entirely env-var driven
 
-## A blunt checklist
-
-When writing a new DAG, run through this:
+When writing a new DAG, run through this checklist:
 
 - [ ] Is the temp directory isolated by `run_id`?
 - [ ] Does each external dependency have the cheapest possible sanity check (size, row count, required field)?
 - [ ] Is cleanup `all_done` and idempotent?
 - [ ] Is config read from env vars, failing loudly on missing required ones?
 
-Four boxes ticked = the DAG will mostly leave you alone for six months.
+Four boxes ticked and the DAG will mostly leave you alone for six months.
 
-> File: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py)
+> File: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py)

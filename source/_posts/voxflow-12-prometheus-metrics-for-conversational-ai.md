@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Generic "instrument your FastAPI" advice doesn't help. Here are the five signals that actually predict and explain voice-agent incidents.*
-
 ## "Use Prometheus" is not a metrics strategy
 
 Most metrics tutorials end at "expose `/metrics` and scrape it." That's the easy part. The hard part is picking *which* metrics, with *which* labels, that will actually answer the questions your on-call asks at 2am:
@@ -38,7 +36,7 @@ Five. That's the whole list. Resist the urge to add more before you've used thes
 
 ## Why these labels and no others
 
-**Don't put `call_sid` on a counter.** Unbounded label cardinality kills Prometheus. The call_sid belongs in logs (see the contextvars post), not in metrics.
+**Don't put `call_sid` on a counter.** Unbounded label cardinality kills Prometheus. The call_sid belongs in logs ({% post_link voxflow-11-per-call-context-with-contextvars %}), not in metrics.
 
 **Do put `outcome` on every counter that can fail.** A single counter with `{outcome="ok"|"error"}` lets you compute error rate as `rate(...{outcome="error"}[5m]) / rate(...[5m])` — the canonical Google SRE "fraction of bad requests" recipe.
 
@@ -140,12 +138,12 @@ histogram_quantile(0.95,
 sum(rate(voxflow_call_disconnects_total[5m])) by (reason)
 ```
 
-**Calls in flight (gauge derived from counters):**
+**Calls in flight (Little's law: rate × avg duration):**
 ```promql
-sum(rate(voxflow_calls_total[1m])) * 60 * <avg_call_duration_seconds>
+sum(rate(voxflow_calls_total[5m])) * <avg_call_duration_seconds>
 ```
 
-…or instrument an actual `Gauge` if you need exact concurrency.
+Substitute your measured average call duration in seconds. (Or instrument an actual `Gauge` if you need exact concurrency.)
 
 ## Alerts that won't page you for nothing
 
@@ -177,7 +175,3 @@ Two are enough to start:
 - **Audio-quality histograms.** Belongs in Twilio Voice Insights.
 
 Every metric is a permanent commitment. Start with five.
-
-## Takeaway
-
-For a voice agent, the five metrics worth instrumenting are: calls (by direction), disconnects (by reason), tool invocations (by tool + outcome), n8n requests (by outcome), and n8n latency. Five counters/histograms, four instrumentation sites, two alerts. Anything else can wait until you have a question those don't answer.

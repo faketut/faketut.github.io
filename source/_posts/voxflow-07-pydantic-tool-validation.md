@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*LLMs hallucinate parameters. Schema validation is your safety net.*
-
 ## The fundamental problem
 
 When an LLM "calls a tool," it generates JSON that *looks* like a function call. The platform parses it and hands you the dict. You execute the function.
@@ -153,7 +151,3 @@ def test_schedule_meeting_accepts_valid_input():
 ```
 
 You're testing the *contract*, not the LLM. If the contract is right, the LLM either complies or gets a useful error.
-
-## Takeaway
-
-LLM tool calls are untrusted input. Treat them like form submissions from the internet. Pydantic v2 + a registry-based dispatcher = small code, big safety net, easy to extend.
