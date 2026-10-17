@@ -11,14 +11,14 @@ categories:
 ---
 
 > Second in a 3-part series on the [DungeonSpire](https://github.com/faketut/DungeonSpire) modernization.
-> **Previously:** [A one-line constant kept the UI alive for 8 years](blog-01-hud-bug.md).
-> **This post:** the four `*Stats` files look like four copies of the same class. I left them that way on purpose. **Next:** [why my `EventBus` is deliberately under-built](blog-03-deliberate-half-built-eventbus.md).
+> **Previously:** {% post_link dungeonspire-blog-01-hud-bug %}.
+> **This post:** the four `*Stats` files look like four copies of the same class. I left them that way on purpose. **Next:** {% post_link dungeonspire-blog-03-deliberate-half-built-eventbus %}.
 
 ---
 
 ## What the repo looks like today
 
-There are four files in [src/](../src/) whose silhouettes are basically identical:
+There are four files in [src/](https://github.com/faketut/DungeonSpire/tree/main/src) whose silhouettes are basically identical:
 
 ```
 src/EnemyStats.h   ~120 lines    backs data/enemies.json
@@ -71,7 +71,7 @@ The base class would save you maybe 15 lines per subclass and cost you a layer o
 
 ## The full smallest one, for reference
 
-[src/FloorStats.h](../src/FloorStats.h) in full (80 lines including license-shaped docblock):
+[src/FloorStats.h](https://github.com/faketut/DungeonSpire/blob/main/src/FloorStats.h) in full (80 lines including license-shaped docblock):
 
 ```cpp
 class FloorStats {
@@ -165,7 +165,7 @@ I prefer the visible cost.
 
 ---
 
-**Files referenced:** [src/EnemyStats.h](../src/EnemyStats.h), [src/ItemStats.h](../src/ItemStats.h), [src/RaceStats.h](../src/RaceStats.h), [src/FloorStats.h](../src/FloorStats.h).
-**JSON data:** [data/enemies.json](../data/enemies.json), [data/items.json](../data/items.json), [data/races.json](../data/races.json), [data/floor.json](../data/floor.json).
+**Files referenced:** [src/EnemyStats.h](https://github.com/faketut/DungeonSpire/blob/main/src/EnemyStats.h), [src/ItemStats.h](https://github.com/faketut/DungeonSpire/blob/main/src/ItemStats.h), [src/RaceStats.h](https://github.com/faketut/DungeonSpire/blob/main/src/RaceStats.h), [src/FloorStats.h](https://github.com/faketut/DungeonSpire/blob/main/src/FloorStats.h).
+**JSON data:** [data/enemies.json](https://github.com/faketut/DungeonSpire/blob/main/data/enemies.json), [data/items.json](https://github.com/faketut/DungeonSpire/blob/main/data/items.json), [data/races.json](https://github.com/faketut/DungeonSpire/blob/main/data/races.json), [data/floor.json](https://github.com/faketut/DungeonSpire/blob/main/data/floor.json).
 
-**Next:** [Why my `EventBus` is deliberately half-built](blog-03-deliberate-half-built-eventbus.md).
+**Next:** {% post_link dungeonspire-blog-03-deliberate-half-built-eventbus %}.

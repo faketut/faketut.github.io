@@ -13,7 +13,7 @@ categories:
 ---
 
 By the time Qwen sees a request, the hard work is already done. The
-diff engine ([post 3](03-diff-and-weights.md)) has ranked the top
+diff engine ({% post_link anchor-03-diff-and-weights %}) has ranked the top
 diffs. The recall system has fetched the top-3 most similar past
 incidents. The LLM's job is *narration*: turn structured rows into a
 2-4 sentence summary, a hypothesis, and one drill-in SPL query.
@@ -194,7 +194,7 @@ gets:
 | Graceful degradation | If Qwen is down, you still see the ranked diffs in the rendered report; the narration just says "(empty)" |
 
 The same principle applies to the optional `--deep` planner in
-[post 5](05-planner-react-loop.md): the model only gets to call
+{% post_link anchor-05-planner-react-loop %}: the model only gets to call
 *tools that wrap deterministic code*. It never gets to make up SPL
 that we then execute blind.
 
@@ -207,7 +207,7 @@ that we then execute blind.
   We don't ask the model to re-rank; we ask it to *narrate* the existing
   ranking. The diff engine is the source of truth, not Qwen.
 - **No tool calls in the basic narrator.** That's the planner's job
-  ([post 5](05-planner-react-loop.md)). Keeping the basic narrator
+  ({% post_link anchor-05-planner-react-loop %}). Keeping the basic narrator
   tool-free means `anchor compare` is always one LLM round-trip and
   the latency is predictable.
 - **No retries on JSON parse failure.** With JSON mode + temperature

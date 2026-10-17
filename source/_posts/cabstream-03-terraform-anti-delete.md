@@ -28,7 +28,7 @@ Effect: any `terraform plan` that shows a destroy/replace on this bucket **fails
 
 When to use: resources that "should never be deleted" — data buckets, production datasets, KMS keys.
 
-Cost: when you legitimately want to delete it, you must first comment the line out and re-apply. The extra ceremony is the point.
+Cost: when you legitimately want to delete it, you must first comment the line out and re-apply. The extra ceremony is intentional — only put `prevent_destroy` on resources that truly should never be deleted, otherwise it becomes noise.
 
 ## Layer 2: `allow_destroy` variable blocks data loss
 
@@ -52,7 +52,7 @@ variable "allow_destroy" {
 }
 ```
 
-With `force_destroy = false`, GCS refuses to delete a bucket that still has objects. The provider default is actually `true`, so you have to opt out explicitly.
+With `force_destroy = false`, GCS refuses to delete a bucket that still has objects. The provider default is `false`, so the guard is already on for GCS — the `allow_destroy` variable exists so the teardown playbook can flip it on explicitly, for GCS and BigQuery, in one place.
 
 The variable name `allow_destroy` is deliberately blunt — you cannot run `terraform apply -var="allow_destroy=true"` without knowing what you're doing.
 
@@ -84,10 +84,4 @@ terraform apply -var="allow_destroy=true" -var="project_id=..." -var="admin_cidr
 
 Three steps, two diffs, one apply. Skipping any of them gets you stuck — which is exactly how destructive operations on data infra should feel.
 
-## Habits worth borrowing
-
-- Separate "safe defaults" from "release valves"; name the valve to make people pause (`allow_destroy` > `enable_delete`).
-- Only put `prevent_destroy` on resources that truly should never be deleted — otherwise it becomes noise.
-- Prefer `lifecycle_rule` to transition to `NEARLINE` instead of deleting. Wrong delete = data gone; wrong transition = a small retrieval fee.
-
-> See [nyc_taxi_pipeline/terraform/main.tf](nyc_taxi_pipeline/terraform/main.tf) and [nyc_taxi_pipeline/terraform/variables.tf](nyc_taxi_pipeline/terraform/variables.tf).
+> See [nyc_taxi_pipeline/terraform/main.tf](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/terraform/main.tf) and [nyc_taxi_pipeline/terraform/variables.tf](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/terraform/variables.tf).

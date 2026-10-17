@@ -25,14 +25,6 @@ Here's a better path: **gradual strictness**. Three stages, each cheap, each ind
 
 ## The three stages
 
-```mermaid
-flowchart LR
-    S0[No linter] --> S1[Stage 1<br/>continue-on-error<br/>see the truth]
-    S1 --> S2[Stage 2<br/>fix in batches<br/>still non-blocking]
-    S2 --> S3[Stage 3<br/>make blocking<br/>tree is clean]
-    S3 --> S4[New rule?<br/>back to stage 1]
-```
-
 The key insight: **the only stage where you tolerate noise is stage 1, and only briefly.** The point of stage 1 is to see the real shape of the problem, not to live there.
 
 ## Stage 1: install, run, collect — 5 minutes
@@ -155,8 +147,6 @@ known-first-party = ["src"]
 ruff check --select=ALL --ignore=ANN --ignore=D .
 ```
 
-## The lesson
-
-**A linter that doesn't fail the build is a comment in a config file.** It signals intent without enforcing it, and intent decays. The gradual path lets you go from zero to enforced in three small steps, each one shippable on its own day, without ever blocking the team on a single mega-cleanup.
+The gradual path goes from zero to enforced in three small steps, each one shippable on its own day, without ever blocking the team on a single mega-cleanup.
 
 In this repo: from "no linter" to "ruff CI-blocking on Windows × Py 3.9 + 3.12" was three commits over two days. Zero painful PRs. The repo has stayed clean since.

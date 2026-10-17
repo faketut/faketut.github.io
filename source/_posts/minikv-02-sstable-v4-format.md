@@ -11,11 +11,11 @@ categories:
   - storage
 ---
 
-> An SSTable is an immutable, sorted key-value file. Every detail of
-> the layout exists to make one of three operations cheap: building
-> the file once, looking up one key, or scanning a range.
+An SSTable is an immutable, sorted key-value file. Every detail of
+the layout exists to make one of three operations cheap: building
+the file once, looking up one key, or scanning a range.
 
-MiniKV's SSTable lives in [`kv/sstable.go`](../kv/sstable.go) and is
+MiniKV's SSTable lives in [`kv/sstable.go`](https://github.com/faketut/MiniKV/blob/main/kv/sstable.go) and is
 on its fourth on-disk format ("v4"). This post is a tour from
 outermost to innermost.
 
@@ -81,12 +81,10 @@ block read above. For workloads that miss often — caches, dedup,
 "have I seen this key?" — that wastes most of the work.
 
 Each SSTable carries a file-level Bloom filter
-([`kv/bloom.go`](../kv/bloom.go)) sized for ~1% false-positive rate.
+([`kv/bloom.go`](https://github.com/faketut/MiniKV/blob/main/kv/bloom.go)) sized for ~1% false-positive rate.
 The read path checks Bloom first; on "definitely not present", the
-read returns immediately without touching the index or any block.
-
-You can see the effect in the README benchmarks: `Get` miss is
-sub-microsecond per call, because nothing past the filter ran.
+read returns immediately without touching the index or any block —
+nothing past the filter runs on a miss.
 
 ## Compression
 
@@ -133,7 +131,7 @@ index, which is small).
 The format has bumped versions for: introducing restart points
 (v2-ish), adding the Bloom filter (v3), and adding per-block
 compression metadata (v4). The header carries the version byte and
-`LoadSSTableHandle` ([`kv/sstable.go`](../kv/sstable.go#L601))
+`LoadSSTableHandle` ([`kv/sstable.go`](https://github.com/faketut/MiniKV/blob/main/kv/sstable.go#L601))
 rejects unknown versions with `ErrUnsupportedFormat`. There is no
 in-place migration; you compact old files into new format files.
 
@@ -146,6 +144,3 @@ in-place migration; you compact old files into new format files.
 | Point lookup (hit) | 1 block ReadAt + decompress + scan |
 | Range scan | sequential block reads, no random I/O |
 | Build | single pass over sorted input, one fsync at end |
-
-Those four lines are why every LSM engine in production looks roughly
-the same on disk.

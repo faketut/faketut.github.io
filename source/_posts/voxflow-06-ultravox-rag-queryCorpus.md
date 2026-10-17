@@ -11,14 +11,6 @@ categories:
   - voice-ai
 ---
 
-*The `queryCorpus` tool, and why letting your platform handle RAG is sometimes the right call.*
-
-## What RAG means on a phone call
-
-Retrieval-Augmented Generation lets an LLM cite facts from your private knowledge base — clinic hours, insurance policies, return policy, FAQ — without those facts being baked into the model.
-
-On a phone call this is essential: callers ask questions that the model has no way to know ("What's your address?", "Do you take Aetna?", "What time do you open Sunday?"). Without RAG you either hallucinate or refuse.
-
 ## Two ways to do it
 
 **Option A: Build it yourself.**
@@ -61,8 +53,6 @@ and questions about clinic services, hours, or pricing.
 
 The model decides per turn whether the question needs retrieval. Asking "How are you?" → no retrieval. Asking "What time do you close on Sundays?" → `queryCorpus(question="Sunday closing hours")`.
 
-This judgment is genuinely good in modern models. You waste fewer tokens than always-retrieve, and the model knows when it doesn't need to look something up.
-
 ## What the client-side handler does
 
 In VoxFlow it does almost nothing:
@@ -95,27 +85,3 @@ The retrieval happens inside Ultravox. The "tool call" is just an event the plat
 - You need to combine RAG with live API calls in one retrieval step
 - Compliance requires data not leaving your VPC
 - Your retrieval scoring needs custom rerankers
-
-## A realistic corpus for VoxFlow
-
-For a dental clinic, the corpus might contain:
-- Services and procedures with pricing
-- Accepted insurance providers
-- Office hours per location
-- Booking policies (cancellation windows, etc.)
-- Emergency protocols
-- Staff bios
-
-~20 short documents. Total embedding cost on Ultravox: pennies. Updates: drag-and-drop in their UI.
-
-## What "max_results: 5" actually controls
-
-It's the number of chunks the retriever returns. Five is a reasonable default:
-- Too few (1-2): model misses related context
-- Too many (10+): noise dilutes the answer, latency creeps up
-
-If callers ask broad questions ("tell me about your practice"), bump it. If they ask specific ones ("Sunday hours"), keep it low.
-
-## Takeaway
-
-You don't always need to build RAG from scratch. Voice platforms with built-in retrieval erase a huge chunk of operational complexity. Reach for self-built RAG only when the platform constraints actually bite.

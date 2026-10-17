@@ -47,7 +47,7 @@ in-flight read.
 
 ## The fix: per-SSTable atomic refcount
 
-Every `SSTable` metadata struct ([`kv/sstable.go`](../kv/sstable.go))
+Every `SSTable` metadata struct ([`kv/sstable.go`](https://github.com/faketut/MiniKV/blob/main/kv/sstable.go))
 carries an `atomic.Int32` refcount. The rules:
 
 1. **Snapshot creation** holds the LSM read lock, snapshots the live
@@ -88,7 +88,7 @@ against every in-flight read. With a refcount:
 The cost is that disk usage can temporarily exceed steady-state by
 the size of all snapshot-pinned files. For long-running snapshots
 this is real; the engine exposes per-snapshot age in
-[`KV.Stats()`](../kv/stats.go) so an operator can spot a leak.
+[`KV.Stats()`](https://github.com/faketut/MiniKV/blob/main/kv/stats.go) so an operator can spot a leak.
 
 ## The index cache eviction subtlety
 

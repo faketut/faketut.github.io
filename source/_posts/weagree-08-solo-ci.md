@@ -3,8 +3,8 @@ title: "CI for one person: fast, strict, low-noise"
 date: 2026-05-06 21:00:00
 tags:
   - weagree
-  - cryptography
-  - security
+  - ci
+  - engineering
 categories:
   - engineering
   - web3
@@ -16,7 +16,7 @@ This is the CI I run for [WeAgree](https://github.com/faketut/WeAgree). It's one
 
 ## The file
 
-[.github/workflows/ci.yml](../.github/workflows/ci.yml), in full:
+[.github/workflows/ci.yml](https://github.com/faketut/WeAgree/blob/main/.github/workflows/ci.yml), in full:
 
 ```yaml
 name: CI
@@ -50,19 +50,6 @@ jobs:
 
 That's it. Four steps after install: lint → test → build. No matrix, no caching tricks beyond `setup-node`'s built-in, no codecov, no Slack notifier.
 
-```mermaid
-flowchart LR
-    A[git push] --> B[checkout]
-    B --> C[setup-node 20<br/>+ npm cache]
-    C --> D[npm ci]
-    D --> E[npm run lint]
-    E --> F[npm test -- --ci]
-    F --> G[npm run build]
-    G --> H{all green?}
-    H -->|yes| I[done]
-    H -->|no| J[GitHub email me]
-```
-
 ## The four decisions worth explaining
 
 ### 1. Placeholder env vars in the workflow
@@ -88,7 +75,7 @@ This is a one-flag difference that turns "test suite says it's green" into "test
 
 ### 3. `npm run build`, not just `next build` in a script
 
-The `build` script in [package.json](../package.json) is `next build`, and I run the named script in CI rather than the underlying command. The reason: if I ever change what "build" means (add a prebuild step, switch to Turbo, etc.), CI follows automatically. The workflow doesn't need to know.
+The `build` script in [package.json](https://github.com/faketut/WeAgree/blob/main/package.json) is `next build`, and I run the named script in CI rather than the underlying command. The reason: if I ever change what "build" means (add a prebuild step, switch to Turbo, etc.), CI follows automatically. The workflow doesn't need to know.
 
 ### 4. Lint runs before tests, tests run before build
 
@@ -110,7 +97,7 @@ When a commit breaks CI, the failure is almost always lint or test. The cheap st
 
 ## The strictness lever: ESLint config
 
-The other half of "low-noise CI" is having an ESLint config that fails on things you actually care about. WeAgree's [.eslintrc.json](../.eslintrc.json) is short:
+The other half of "low-noise CI" is having an ESLint config that fails on things you actually care about. WeAgree's [.eslintrc.json](https://github.com/faketut/WeAgree/blob/main/.eslintrc.json) is short:
 
 ```json
 {
@@ -126,7 +113,7 @@ The other half of "low-noise CI" is having an ESLint config that fails on things
 
 The promoted `no-unused-vars: error` is the most impactful change. Unused imports and variables are the single most common signal that a refactor was incomplete. They were warnings; warnings get ignored. Making it `error` made CI catch them. The underscore-prefix exception keeps the interface-declaration pattern viable.
 
-`no-console: warn` with named exceptions exists so my structured logger ([lib/log.ts](../lib/log.ts) — see [post #4](./04-no-dep-receipts.md)) can keep using `console.log` for JSON output without my call sites accidentally drifting back to `console.log("debugging:", x)`.
+`no-console: warn` with named exceptions exists so my structured logger ([lib/log.ts](https://github.com/faketut/WeAgree/blob/main/lib/log.ts) — see {% post_link weagree-04-no-dep-receipts %}) can keep using `console.log` for JSON output without my call sites accidentally drifting back to `console.log("debugging:", x)`.
 
 ## What CI has actually caught
 
@@ -138,7 +125,5 @@ In commit history order, things CI flagged that I didn't notice locally:
 - A test that passed locally but failed on CI because I had a `.env.local` value the CI didn't have. Forced me to fix the test to not depend on env.
 
 None of these are dramatic. Each one would have been an embarrassing "oh I forgot" merge.
-
-## The take-away
 
 CI for one person is not a smaller version of team CI. It's a different shape: fewer steps, stricter on each step, optimized for the "I'm tired and would skip checking this" case. Four steps, fifteen-minute cap, placeholder envs, single Node version. If it doesn't pay rent on every push, cut it.

@@ -52,9 +52,9 @@ The decision rule is one sentence: **one person should be able to rebuild the wh
 
 ## Repo tour
 
-- [nyc_taxi_pipeline/terraform/main.tf](nyc_taxi_pipeline/terraform/main.tf) — ~140 lines of IaC covers all resources
-- [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py) — a 5-task DAG
-- [nyc_taxi_pipeline/dbt/models/](nyc_taxi_pipeline/dbt/models/) — 1 fact + 2 dims + 3 marts
+- [nyc_taxi_pipeline/terraform/main.tf](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/terraform/main.tf) — ~140 lines of IaC covers all resources
+- [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py) — a 5-task DAG
+- [nyc_taxi_pipeline/dbt/models/](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/) — 1 fact + 2 dims + 3 marts
 
 ## What the rest of this series drills into
 

@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Twilio sometimes goes quiet without sending `stop`. Your handler waits forever, your worker leaks, and your bill grows. Here's the 15-line fix.*
-
 ## The bug you'll only see in production
 
 In every Twilio Media Stream tutorial, the receive loop looks like this:
@@ -64,7 +62,7 @@ Three things to notice:
 
 **1. We raise `WebSocketDisconnect`, not `cancel()`.** This is the key insight. The whole call lifecycle is wrapped in a `TaskGroup` that already knows how to tear down on `WebSocketDisconnect`. Reusing that path means cleanup runs uniformly — sockets close, transcripts flush, sessions get popped — whether the disconnect was natural or synthetic. One teardown code path, zero special cases.
 
-**2. We label the disconnect.** This is why `voxflow_call_disconnects_total{reason="idle_timeout"}` from the metrics post matters. Without the label, your "disconnect" graph blurs together call ends and zombies. With it, idle timeouts become a dedicated SLI: a sudden spike means an upstream network problem.
+**2. We label the disconnect.** This is why `voxflow_call_disconnects_total{reason="idle_timeout"}` (from {% post_link voxflow-12-prometheus-metrics-for-conversational-ai %}) matters. Without the label, your "disconnect" graph blurs together call ends and zombies. With it, idle timeouts become a dedicated SLI: a sudden spike means an upstream network problem.
 
 **3. We log the timeout duration.** When you tune `WS_IDLE_TIMEOUT_SECONDS` later, you want to see *which* calls actually crossed the line. A bare "timeout" log line is useless six months in.
 
@@ -107,7 +105,3 @@ sum(rate(voxflow_call_disconnects_total{reason="idle_timeout"}[5m]))
 ```
 
 A non-zero baseline is normal (zombies exist). A sudden spike means an upstream problem — Twilio incident, your TLS termination flaking, ISP routing event. Either way it's noticed in 5 minutes instead of "next time the on-call notices replicas are slow."
-
-## Takeaway
-
-Every long-lived WebSocket loop needs an idle timeout, every timeout needs to feed the normal disconnect path, and every disconnect needs a labeled metric. Fifteen lines of code prevents a class of production memory leaks that's invisible in dev and obvious in prod. Add it on day one, not after the first incident.

@@ -16,7 +16,7 @@ categories:
 > decoder. The cheap, ugly, correct answer is a sentinel.
 
 When MiniKV's raft mode learned to replicate peer HTTP addresses (see
-[the replicated peer map post](11-replicated-peer-map.md)), the
+[the replicated peer map post]({% post_link minikv-11-replicated-peer-map %})), the
 question became: *where do those peer addresses live in the FSM
 snapshot?* They aren't real KV keys, but they have to survive
 `Snapshot → Persist → Restore`.
@@ -39,7 +39,7 @@ EOF
 
 `keyLen` and `valLen` are `uint32` big-endian; `expireAt` is `int64`
 big-endian (0 = no TTL). The full code is the
-[`fsmSnapshot.Persist`](../kv/raftnode/fsm.go#L256) function.
+[`fsmSnapshot.Persist`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/fsm.go#L256) function.
 
 Decoding is the inverse: read until EOF, one record at a time.
 
@@ -92,7 +92,7 @@ A peer entry is:
 
 The sentinel is `0xFFFFFFFF`, which would otherwise mean "a key 4
 GiB long" — impossible in practice. The constant is named
-`peerBlockSentinel` in [`kv/raftnode/fsm.go`](../kv/raftnode/fsm.go).
+`peerBlockSentinel` in [`kv/raftnode/fsm.go`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/fsm.go).
 
 ## The decoder
 
@@ -145,12 +145,14 @@ was free; the second would force a real envelope. If you anticipate
 more than one metadata block, just go to TLV from the start.
 
 It is, however, the smallest correct change to add one piece of
-metadata to an existing flat stream. That's the niche.
+metadata to an existing flat stream. That's the niche. Document the
+sentinel as a named constant, and don't reach for this trick more
+than once — the second extension would force a real envelope anyway.
 
 ## Testing
 
 Both ends of the format are exercised by the
-[`TestFSMSnapshotRestoreRoundTrip`](../kv/raftnode/fsm_test.go)
+[`TestFSMSnapshotRestoreRoundTrip`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/fsm_test.go)
 test:
 
 1. Build a fresh FSM, `Apply` some KV writes and `OpSetPeer`
@@ -164,10 +166,3 @@ Plus `TestFSMRestoreExpiredTTLIsSkipped` mutates the `ExpireAt` bytes
 in the persisted buffer to a past timestamp and verifies the expired
 record is dropped on restore — testing the record-level part of the
 format independent of the peer block.
-
-## Take-away
-
-When you need to extend a flat stream format that already has
-consumers, "sentinel + new section" is the smallest viable trick.
-Pick a value that can't occur in real data, document it as a
-constant, and don't reach for it more than once.

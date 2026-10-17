@@ -158,14 +158,6 @@ This is the unsung superpower of qasync: **the Qt thread *is* the asyncio thread
 
 ## What I will not do again
 
-```mermaid
-graph LR
-    A[Bug] --> B[Thought:<br/>spawn a QThread]
-    B --> C[Now you have<br/>two threads]
-    C --> D[Race conditions]
-    D --> A
-```
-
 I started this project with a `QThread` per worker. Every interesting bug was a race condition between Qt's event loop and the worker thread. The rewrite to "one qasync loop, workers are thin shims that marshal back via `run_coroutine_threadsafe`" deleted the entire category.
 
 If you reach for `QThread`, stop and ask: can this work be an async task instead? Almost always, yes.
@@ -180,5 +172,3 @@ If you reach for `QThread`, stop and ask: can this work be an async task instead
 | File system watcher → expensive work | qasync slot → `loop.create_task` |
 | Long task cancellation | `asyncio.Event` checked at clean boundaries |
 | **Anything else that wants a thread** | First try: make it an async task |
-
-One loop. One thread. One mental model. The whole app fits in your head.

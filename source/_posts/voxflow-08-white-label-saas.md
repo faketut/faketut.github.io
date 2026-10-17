@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Turn one codebase into many products without forking.*
-
 ## The opportunity
 
 You built an AI receptionist for a dental clinic. A real-estate agency calls and wants the same thing — different greeting, different company name, different calendar list, otherwise identical.
@@ -81,20 +79,7 @@ def get_system_prompt() -> str:
     )
 ```
 
-Best of both worlds: the prompt structure stays in code (readable, version-controlled, type-checked), and the per-tenant identity lives in env vars.
-
-## The `{now}` foot-gun
-
-You'll see this pattern everywhere:
-
-```python
-now = datetime.datetime.now(datetime.UTC).strftime(...)
-SYSTEM_PROMPT = f"Today is {now}. You are an AI assistant..."
-```
-
-It's wrong. `now` is computed **once**, when Python imports the module. The first call gets the correct time. Every call after that gets the same stale timestamp. A long-running server tells callers the date of when the process started.
-
-The fix is the template approach above: substitute at call time, not import time. This is one of the highest-ROI bug fixes you can make in any LLM codebase.
+A middle ground: **template strings** with config-injected placeholders. The prompt structure stays in code (readable, version-controlled, type-checked), and the per-tenant identity lives in env vars.
 
 ## Configuring lists and maps via env
 
@@ -140,16 +125,4 @@ def validate_config() -> None:
 
 Wire this into FastAPI's lifespan so a misconfigured deployment fails loudly at boot instead of breaking mid-call.
 
-## Per-tenant deployment patterns
-
-| Pattern | When |
-|---------|------|
-| One process per tenant | <50 tenants, low traffic each. Trivial to operate. |
-| Single process, tenant resolved per call | High volume, many small tenants. Needs per-call config lookup (DB, not env vars). |
-| Kubernetes namespace per tenant | Enterprise tier, isolation required. |
-
-VoxFlow today is the first pattern. Migrating to the second means swapping `from app.core.config import AGENT_NAME` for a `get_tenant_config(call.to_number)` call. The interfaces don't change.
-
-## Takeaway
-
-White-labeling is mostly about discipline: never hardcode anything that varies between clients. Identity, branding, knowledge base IDs, calendar maps, webhook URLs — all of it goes in env vars. The codebase becomes the product; deployments become the product instances.
+VoxFlow today deploys one process per tenant. Migrating to per-call tenant resolution would mean swapping `from app.core.config import AGENT_NAME` for a `get_tenant_config(call.to_number)` call — the interfaces don't change.

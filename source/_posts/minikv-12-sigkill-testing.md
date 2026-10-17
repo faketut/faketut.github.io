@@ -21,7 +21,7 @@ read the write back". Everything else — replication, transactions,
 TTL — is layered on top of that one promise.
 
 MiniKV's version of that test is
-[`tests/faultinject_test.go`](../tests/faultinject_test.go). This
+[`tests/faultinject_test.go`](https://github.com/faketut/MiniKV/blob/main/tests/faultinject_test.go). This
 post is about how it's structured and why each piece is the way it
 is.
 

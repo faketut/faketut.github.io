@@ -18,18 +18,9 @@ A dense-only retriever would be the wrong tool here. Here's what actually works.
 
 ## The retrieval pipeline
 
-```mermaid
-flowchart LR
-    Q[Question] --> S1[BM25<br/>top-k1]
-    Q --> S2[Dense<br/>top-k2]
-    S1 --> M[RRF merge]
-    S2 --> M
-    M --> R[Re-rank by score]
-    R --> T[Top-N chunks]
-    T --> P[Inject into prompt]
-```
-
-Three observations drove this:
+BM25 and dense search run in parallel, their rankings merge via
+RRF, and the top-N chunks get injected into the prompt. Three
+observations drove this:
 
 1. **BM25 alone catches all the high-recall named-entity queries.** "Did you work at Stripe?" — `Stripe` appears in exactly one chunk. Dense retrieval will return the right chunk *plus three near-misses about other fintech experience*. BM25 returns one chunk with a huge score gap.
 2. **Dense alone catches all the paraphrased queries.** "Tell me about a time you mentored someone" — the word `mentored` may not appear in the resume, but `helped junior engineers` and `led the intern program` will embed close.
@@ -51,20 +42,6 @@ def rrf(rankings: list[list[str]], k: int = 60) -> list[tuple[str, float]]:
 `k=60` is the canonical choice from the original RRF paper. Larger `k` flattens the rank decay; smaller `k` makes top-1 matter more. 60 is fine. Stop tuning it.
 
 ## Why BM25 still wins on small corpora
-
-```mermaid
-graph TB
-    subgraph Small[Corpus: ~50 chunks]
-        S1[BM25: precise on named entities]
-        S2[Dense: catches paraphrasing]
-        S1 -.equal value.- S2
-    end
-    subgraph Large[Corpus: ~5M chunks]
-        L1[BM25: query needs exact terms]
-        L2[Dense: handles vocabulary mismatch at scale]
-        L2 -.dominates.- L1
-    end
-```
 
 The dense-retrieval orthodoxy assumes the corpus is large enough that vocabulary mismatch is the main failure mode. On a 50-chunk corpus:
 
@@ -129,15 +106,5 @@ The threshold for needing a vector DB is much higher than the marketing implies.
 - **Cross-encoder re-ranker.** Tested, added ~150ms and ~3% recall. Not worth it at this scale.
 - **Query expansion.** The LLM does this implicitly — adding it in retrieval was redundant noise.
 - **Chunk overlap.** Tried 20% overlap, made BM25 fire twice on the same content, hurt RRF. Pure non-overlapping chunks at sentence boundaries won.
-
-## TL;DR
-
-For corpora under ~10k chunks:
-
-1. Use BM25 *and* dense embeddings. Each catches what the other misses.
-2. Merge with RRF, not weighted scores. Stop tuning weights.
-3. Keep everything in memory. Hot-reload on file change.
-4. Run embeddings locally. The 80MB model is enough.
-5. Resist the urge to add a vector DB. You don't need it.
 
 The whole `rag_manager.py` is ~200 lines including the watcher. Total p95 retrieval latency on my machine: 47ms.

@@ -43,7 +43,7 @@ For WeAgree's purposes I don't need full RFC 8785 — but I do need:
 3. **Cycle detection** — refuses to crash, refuses to infinite-loop.
 4. **No special number formatting** — but documented as a constraint: only safe integers and finite floats.
 
-Here's the core, from [lib/signing/json-canonical.ts](../lib/signing/json-canonical.ts):
+Here's the core, from [lib/signing/json-canonical.ts](https://github.com/faketut/WeAgree/blob/main/lib/signing/json-canonical.ts):
 
 ```ts
 export function canonicalize(value: unknown): string {
@@ -102,7 +102,7 @@ flowchart LR
     B -.must equal.-> E
 ```
 
-The CLI verifier ([scripts/verify-proof.js](../scripts/verify-proof.js)) is intentionally a single self-contained file that runs with no `npm install`. It can't `import` from the app — it has to embed its own copy. So now there are **two** implementations that have to stay byte-for-byte identical. The day they drift, every previously-anchored hash becomes unverifiable.
+The CLI verifier ([scripts/verify-proof.js](https://github.com/faketut/WeAgree/blob/main/scripts/verify-proof.js)) is intentionally a single self-contained file that runs with no `npm install`. It can't `import` from the app — it has to embed its own copy. So now there are **two** implementations that have to stay byte-for-byte identical. The day they drift, every previously-anchored hash becomes unverifiable.
 
 What worked for me:
 
@@ -116,10 +116,8 @@ I considered moving the verifier to TypeScript and importing from `lib/`. I reje
 
 Most "canonical JSON" stories end with "we picked RFC 8785 and used a library." That's correct for interop with other systems. For a closed signing system, the spec is whatever both your implementations agree on, and the only thing that matters is that the spec is **explicit, loud on violations, and not silently changeable**.
 
-The version flag in the encryption envelope (`{v:1, alg:"aes-256-gcm", ...}` — see [post #1](./01-passkey-plus-ed25519.md)) exists because envelopes will change. The canonical JSON format has no version flag, on purpose: changing it would invalidate every previously-anchored hash. The only way to "fix" it later is to define a v2, leave v1 verifiable forever, and start hashing new signatures with v2.
+The version flag in the encryption envelope (`{v:1, alg:"aes-256-gcm", ...}` — see {% post_link weagree-01-passkey-plus-ed25519 %}) exists because envelopes will change. The canonical JSON format has no version flag, on purpose: changing it would invalidate every previously-anchored hash. The only way to "fix" it later is to define a v2, leave v1 verifiable forever, and start hashing new signatures with v2.
 
 Plan for that day. Today, just don't let `undefined` through.
 
-## The one-liner take-away
-
-Hash a `Map<string, unknown>` through `JSON.stringify` and you'll get `"{}"`. Hash it through a canonicalizer that throws on bad inputs and you'll get an error message that points at the line that betrayed you. Pick the second one.
+One more reason for loudness: hash a `Map<string, unknown>` through `JSON.stringify` and you'll get `"{}"`; hash it through a canonicalizer that throws on bad inputs and you'll get an error message pointing at the line that betrayed you.

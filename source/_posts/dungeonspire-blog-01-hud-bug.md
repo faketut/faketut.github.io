@@ -11,11 +11,11 @@ categories:
 ---
 
 > First in a 3-part series on the [DungeonSpire](https://github.com/faketut/DungeonSpire) modernization.
-> **This post:** one specific bug that lived in the source from 2018 to 2026 without anyone noticing — and what it taught me about where bugs actually hide. **Next:** [why I left four nearly identical files un-deduplicated](blog-02-stats-registry-pattern.md).
+> **This post:** one specific bug that lived in the source from 2018 to 2026 without anyone noticing — and what it taught me about where bugs actually hide. **Next:** {% post_link dungeonspire-blog-02-stats-registry-pattern %}.
 
 ---
 
-## The crime scene
+## The bug
 
 DungeonSpire started life as `cc3k`, a CS246 final project I submitted in 2018. Eight years later, somewhere in the original `Board.cc`, this function existed verbatim:
 
@@ -32,7 +32,7 @@ void Board::displayBoard() {
 
 `displayBoard()` was called **once**, by `Game::restart()`, the very first frame after the dungeon was generated. Its job was to print the initial board so the player could see the room they spawned in. That last line — the hardcoded HUD — was supposed to be a stand-in until the real HUD kicked in on the next turn.
 
-The kicker: this function was called **before the player object existed**. The `PlayerCharacter` is constructed inside the race-selection prompt, which happens *after* `restart()` calls `displayBoard()`. So the HUD was hardcoded because, in the literal sense, there was no player to ask.
+The reason it was hardcoded: this function was called **before the player object existed**. The `PlayerCharacter` is constructed inside the race-selection prompt, which happens *after* `restart()` calls `displayBoard()`. So the HUD was hardcoded because, in the literal sense, there was no player to ask.
 
 In 2018 the line happened to be correct. The default Human race had HP=20, Atk=20, Def=20. The marker saw it, the grade was fine, the file was forgotten.
 
@@ -52,7 +52,7 @@ If I had to file this bug, the title would be `Hardcoded display value drifts fr
 
 The renderer was a method on `Board`. The state lived on `PlayerCharacter`. To render the HUD you needed the player. To get the player you needed the board to be constructed. To construct the board you went through `displayBoard()`. The dependency graph was a circle; the placeholder was the workaround.
 
-The fix was [src/Renderer.h](../src/Renderer.h):
+The fix was [src/Renderer.h](https://github.com/faketut/DungeonSpire/blob/main/src/Renderer.h):
 
 ```cpp
 struct HudInfo {
@@ -126,4 +126,4 @@ The line `HP: 20\nAtk: 20\nDef: 20` is now gone. The dungeon you see on the firs
 
 **Commit that introduced the fix:** [`9c4ac35`](https://github.com/faketut/DungeonSpire/commit/9c4ac35) (HUD placeholder removal + restart reorder), built on top of [`d92d1d3`](https://github.com/faketut/DungeonSpire/commit/d92d1d3) (IRenderer extraction).
 
-**Next in the series:** [Four nearly identical files, and why I didn't extract a base class](blog-02-stats-registry-pattern.md).
+**Next in the series:** {% post_link dungeonspire-blog-02-stats-registry-pattern %}.

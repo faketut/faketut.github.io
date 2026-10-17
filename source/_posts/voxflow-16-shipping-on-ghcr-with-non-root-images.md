@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*A small Dockerfile and a small workflow, with the choices that matter.*
-
 ## Why ship images at all
 
 For a long time VoxFlow was deployed via "git pull and restart". Fine for a side project. Three problems show up the moment a second person joins:
@@ -148,7 +146,3 @@ Three things change the day you start shipping immutable images to GHCR:
 3. **Incidents have a name.** "We were running `voxflow:a1b2c3d4` at 14:22 UTC." That string is portable: someone six months later can `docker pull` and reproduce the exact behavior.
 
 Plus, the CI job runs ~25 seconds. The cost is negligible.
-
-## Takeaway
-
-A useful Dockerfile is `python:3.11-slim`, requirements layer before source, non-root user, no `HEALTHCHECK` if k8s owns probes. A useful GHCR workflow is `GITHUB_TOKEN` (no PAT), SHA-tagged immutable images, GHA layer cache. Both fit on a screen. Both pay back the first time you need to roll back.

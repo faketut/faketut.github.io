@@ -14,7 +14,7 @@ categories:
   - security
 ---
 
-*Post 3 of 6 in the "Taint-Flow Auditor" series.*
+*Post 3 of 4 in the "Taint-Flow Auditor" series.*
 
 In {% post_link taint-02-orbit-leverage "post 2" %} we showed that GitLab
 Orbit hands you the interprocedural call graph as a DuckDB table. This

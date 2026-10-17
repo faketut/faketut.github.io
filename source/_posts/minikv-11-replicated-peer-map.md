@@ -16,7 +16,7 @@ categories:
 > data-plane log is smaller than you'd think.
 
 When a follower wants to forward a write to the leader (see
-[the forwarding post](10-follower-leader-proxy.md)), it needs the
+[the forwarding post]({% post_link minikv-10-follower-leader-proxy %})), it needs the
 leader's HTTP address. Raft will happily tell it the leader's *raft
 transport* address (`127.0.0.1:7001`), but that's not where the HTTP
 API lives (`127.0.0.1:8081`).
@@ -29,7 +29,7 @@ The answer MiniKV landed on: **put it in the raft log**.
 
 ## The mechanism
 
-A new opcode in [`kv/raftnode/command.go`](../kv/raftnode/command.go):
+A new opcode in [`kv/raftnode/command.go`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/command.go):
 
 ```go
 const (
@@ -39,7 +39,7 @@ const (
 )
 ```
 
-`OpSetPeer` is applied by the FSM ([`fsm.go`](../kv/raftnode/fsm.go))
+`OpSetPeer` is applied by the FSM ([`fsm.go`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/fsm.go))
 into a `map[string]string` stored alongside the KV:
 
 ```go
@@ -77,7 +77,7 @@ sequenceDiagram
     Note over L,N2: OpSetPeer replicated to every FSM
 ```
 
-There's also a **self-announce loop** in [`cmd/raft.go`](../cmd/raft.go)
+There's also a **self-announce loop** in [`cmd/raft.go`](https://github.com/faketut/MiniKV/blob/main/cmd/raft.go)
 that re-announces the local HTTP address whenever the node observes
 itself becoming leader and its own entry in the peer map is stale.
 This handles the case where the previous leader crashed before
@@ -118,7 +118,7 @@ E.g. `http_port = raft_port + 1000`.
 ### Option D (chosen): put it in the raft log
 
 - **Pro:** single source of truth, automatic replication, survives
-  snapshot via the [sentinel format](09-raft-fsm-snapshot-sentinel.md),
+  snapshot via the [sentinel format]({% post_link minikv-09-raft-fsm-snapshot-sentinel %}),
   consistent with raft's view of membership.
 - **Con:** raft now carries a tiny bit of "control plane" data. As
   long as the data is small and rare, the cost is real but negligible.
@@ -141,7 +141,7 @@ control entries don't move the needle.
 When the FSM takes a snapshot, the peer map has to go along —
 otherwise a restored node would lose every peer it learned. The
 serialised format is described in
-[the snapshot post](09-raft-fsm-snapshot-sentinel.md): a sentinel
+[the snapshot post]({% post_link minikv-09-raft-fsm-snapshot-sentinel %}): a sentinel
 keyLen `0xFFFFFFFF` introduces the peer block, followed by
 `peerCount` and per-peer `(idLen, id, addrLen, addr)`.
 

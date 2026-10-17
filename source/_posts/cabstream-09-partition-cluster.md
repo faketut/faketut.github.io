@@ -71,7 +71,7 @@ Reasoning:
 
 ## Step 3: in mart layers, use a different cluster key
 
-Note that [fact_trips](nyc_taxi_pipeline/dbt/models/fact_trips.sql) is `CLUSTER BY pickup_location_id`, but [mart_hourly_trips](nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql) flips to:
+Note that [fact_trips](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/fact_trips.sql) is `CLUSTER BY pickup_location_id`, but [mart_hourly_trips](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql) flips to:
 
 ```sql
 {{ config(
@@ -87,9 +87,9 @@ Why? The query patterns differ:
 
 **The same underlying data can — and should — have different cluster keys at different layers.** A side benefit of multi-layer dbt modeling.
 
-## Approximate savings
+## Estimated savings
 
-Take a typical query:
+Rough estimates from my runs — not benchmarks. Take a typical query:
 
 ```sql
 SELECT SUM(total_amount)
@@ -106,10 +106,10 @@ WHERE DATE(tpep_pickup_datetime) BETWEEN '2023-01-15' AND '2023-01-21'
 
 The cluster gain shows up most when the filter value is concentrated on a high-cardinality column.
 
-## Three counter-intuitive takeaways
+## Rules of thumb
 
 - **More partitions is not better.** Hourly partitions are almost always a trap; daily is enough.
 - **More cluster columns is not better.** Only the first one prunes aggressively; later ones decay fast.
 - **Same data, multiple cluster variants is fine.** Maintain a fact-table cluster and a mart-table cluster independently.
 
-> Files: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py), [nyc_taxi_pipeline/dbt/models/fact_trips.sql](nyc_taxi_pipeline/dbt/models/fact_trips.sql)
+> Files: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py), [nyc_taxi_pipeline/dbt/models/fact_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/fact_trips.sql)

@@ -31,7 +31,7 @@ solve adjacent problems:
 - **Static dashboards** show you the numbers but don't say what's
   *different*. You're still the one doing the diff in your head.
 
-Anchor's bet is that what an SRE actually wants is closer to
+For a baseline you can diff against, what an SRE wants is closer to
 `git diff` than to `kibana --auto-detect`. Pick a reference state,
 compare a window against it, and get a *narrative* about the delta —
 not just the delta itself.
@@ -80,7 +80,7 @@ not detection. That keeps the system:
   ranked diffs and decide whether the diff engine or the LLM was the
   weak link.
 
-We'll come back to this in [post 4](04-narrator-llm-at-edge.md).
+The LLM's role is covered in {% post_link anchor-04-narrator-llm-at-edge %}.
 
 ## Why on top of Splunk?
 
@@ -96,8 +96,7 @@ Three pragmatic reasons:
 3. **KV Store survives log retention.** Your raw logs roll off in
    90 days; your healthy anchor doesn't.
 
-We'll look at how a single `anchor capture` call becomes one row in
-KV Store in [post 2](02-fingerprint.md).
+The fingerprint's path to KV storage is in {% post_link anchor-02-fingerprint %}.
 
 ## The hackathon framing (briefly)
 
@@ -114,16 +113,3 @@ track. The track asks for four specific properties:
 
 Posts 3 and 5 dig into the math behind two of those — *timely
 forgetting* and *bounded recall*.
-
-## What you'll get from the rest of the series
-
-- **[Post 2](02-fingerprint.md)** — how five SPL queries become a
-  `Fingerprint` object and one KV row.
-- **[Post 3](03-diff-and-weights.md)** — the diff engine and the
-  decay-toward-1.0 trick that lets the agent forget on a schedule.
-- **[Post 4](04-narrator-llm-at-edge.md)** — what we send to Qwen,
-  what we get back, and why JSON-mode + low temperature beat free-text.
-- **[Post 5](05-planner-react-loop.md)** — the optional `--deep`
-  function-calling planner, with a real transcript.
-- **[Post 6](06-deploy-alibaba-cloud.md)** — three commands to bring
-  the backend up on Alibaba Cloud ECS, with OSS backups.
