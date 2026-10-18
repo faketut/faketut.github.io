@@ -102,4 +102,4 @@ A previous project hand-created this kind of table in BigQuery. An analyst once 
 
 After moving to dbt seed, `git log seeds/taxi_zone_lookup.csv` is the version history and `dbt seed --full-refresh` is the rollback.
 
-> Files: [nyc_taxi_pipeline/dbt/seeds/taxi_zone_lookup.csv](nyc_taxi_pipeline/dbt/seeds/taxi_zone_lookup.csv), [nyc_taxi_pipeline/dbt/models/dim_zones.sql](nyc_taxi_pipeline/dbt/models/dim_zones.sql)
+> Files: [nyc_taxi_pipeline/dbt/seeds/taxi_zone_lookup.csv](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/seeds/taxi_zone_lookup.csv), [nyc_taxi_pipeline/dbt/models/dim_zones.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/dim_zones.sql)

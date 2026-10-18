@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Liveness probes tell you the process is up. Readiness probes tell you it can actually do its job. For a voice agent, the difference is whether the next call connects or drops.*
-
 ## The default health check is too generous
 
 The standard FastAPI starter ships something like:
@@ -73,7 +71,7 @@ You'll see "deep health check" tutorials that recommend pinging every downstream
 - **Cascading failures** — if Ultravox has a 2-minute blip, every replica suddenly fails readiness and your traffic dies, even though calls in flight would still complete.
 - **Truth** — "the env var is set" is a meaningful production invariant; "the downstream answered our probe in the last second" is noise.
 
-If you want downstream health, gauge it from real call outcomes (your Prometheus metrics, the next blog post in this series) — not from a synthetic probe.
+If you want downstream health, gauge it from real call outcomes (the Prometheus metrics in {% post_link voxflow-12-prometheus-metrics-for-conversational-ai %}) — not from a synthetic probe.
 
 ## Kubernetes wiring
 
@@ -90,13 +88,3 @@ readinessProbe:
 ```
 
 Liveness is loose (don't kill the container for transient stalls). Readiness is tight (pull the pod from the load balancer fast when config goes bad).
-
-## A war story
-
-The bug this would have prevented: a rolling deploy on a Friday afternoon. New `Secret` resource was missing one env var. Pods came up healthy. `/health` returned 200. Twilio dispatched calls. Every call returned 500 because the missing var blew up inside the request handler. Pager went off four minutes later, after callers had already complained.
-
-With `/ready` checking env-var presence, the orchestrator would never have routed a single call to those pods. The bad deploy would have stalled at "0/3 pods ready" — visible, contained, fixable before any user noticed.
-
-## Takeaway
-
-`/health` answers "am I alive?" `/ready` answers "should you trust me?" Voice agents need both. The readiness endpoint is twenty lines of code that turns a class of production outages into a deployment-time error. Add it before you ship.

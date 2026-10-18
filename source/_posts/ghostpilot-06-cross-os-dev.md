@@ -74,16 +74,6 @@ class AudioCapturer(Protocol):
 
 Calling code never branches on platform. It calls `make_capturer()` and iterates. The factory is the only place that knows.
 
-```mermaid
-flowchart LR
-    Caller[ASR client] --> F[make_capturer]
-    F -->|win32| W[WasapiLoopbackCapturer]
-    F -->|darwin/linux| S[SoundDeviceCapturer]
-    W --> I[bytes async iterator]
-    S --> I
-    I --> Caller
-```
-
 **The win**: when a macOS dev tests "does the ASR pipeline work end-to-end?", they `export AUDIO_BACKEND=sounddevice`, speak into the mic, and the entire app runs. They lose system-audio loopback (a Windows-specific feature requiring BlackHole on Mac) but they can test 100% of the application logic. Iterations don't require a Windows VM.
 
 ## Rule 2: every "where do I store this?" question goes through one function
@@ -121,13 +111,6 @@ This is the rule I learned the hard way, three Windows CI failures in a row:
 ```
 
 `Path` is platform-aware for *interacting with the OS*. For *serializing* (JSONL, config files, anything that might be read on a different machine), normalize to forward slashes. `.as_posix()` is the magic. Always use it before writing a path string to disk.
-
-```mermaid
-graph LR
-    A[Path object] -->|interact with OS<br/>open, exists, stat| B[Native separator]
-    A -->|serialize<br/>JSON, YAML, db column| C[.as_posix → forward slash]
-    C -->|read back on any OS| D[Path parses correctly]
-```
 
 ## CI matrix: test where you ship, dev where you're fast
 
@@ -183,4 +166,4 @@ What doesn't work — and is fine:
 | Windows-only CI, multi-Python matrix | Catch the real bugs (3.9 vs 3.12), skip the fake ones |
 | `from __future__ import annotations` at the top of every module | 3.9 keeps parsing |
 
-You can build a Windows-only app from a Mac. You just have to draw the line cleanly between *what your app does* and *how it does it on this specific OS*. Cross-platform code is the asset. Platform-specific shims are the cost. Keep the ratio honest and the dev loop stays tight.
+You can build a Windows-only app from a Mac. You just have to draw the line cleanly between *what your app does* and *how it does it on this specific OS*.

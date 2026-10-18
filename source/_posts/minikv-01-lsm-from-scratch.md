@@ -11,27 +11,14 @@ categories:
   - storage
 ---
 
-> The minimum viable LSM is three boxes and one rule: every byte you
-> acknowledge must already be on disk.
+The minimum viable LSM is small: three components (WAL, MemTable,
+SSTable) and one rule — every byte you acknowledge must already be
+on disk.
 
 When people say "LSM-Tree", they usually mean something the size of
 RocksDB — version sets, MANIFEST logs, block caches, six levels of
-compaction. That's the destination, not the entry point. The entry
-point is much smaller: three components and a write path that fsyncs
-before returning.
-
-This post walks through MiniKV's minimum closed loop:
-
-```mermaid
-flowchart LR
-    Client -->|Put k=v| API
-    API --> WAL[(WAL segment)]
-    WAL -->|fsync| Disk
-    API --> MT[Active MemTable]
-    MT -->|size threshold| IMT[Immutable MemTable]
-    IMT --> Flush[Flush worker]
-    Flush --> SST[(SSTable on disk)]
-```
+compaction. This post walks through MiniKV's minimum closed loop,
+skipping all of that:
 
 ## The rule: never ack before fsync
 
@@ -52,7 +39,7 @@ step (3) returns. After a crash, the WAL is replayed into a fresh
 MemTable and the user sees the same store they last acked.
 
 In MiniKV that fsync policy is a knob — see
-[`Config.SyncMode`](../kv/kv.go) — but the only mode that actually
+[`Config.SyncMode`](https://github.com/faketut/MiniKV/blob/main/kv/kv.go) — but the only mode that actually
 survives power loss is `SyncAlways`. The default is `SyncAlways` for
 exactly that reason.
 
@@ -60,7 +47,7 @@ exactly that reason.
 
 ### WAL: append-only, CRC-checked, segmented
 
-The WAL ([`kv/wal.go`](../kv/wal.go)) is a directory of fixed-named
+The WAL ([`kv/wal.go`](https://github.com/faketut/MiniKV/blob/main/kv/wal.go)) is a directory of fixed-named
 segment files. Each record carries a CRC32C so we can stop replay at
 the first torn write instead of reading garbage into the MemTable.
 
@@ -76,13 +63,15 @@ Segmenting matters for two reasons:
    record that contributed to it becomes redundant. Deleting whole
    segment files is `unlink(2)`. Truncating a single huge file is a
    surgical operation that needs careful fsync ordering.
-2. **Rotation latency**: an `Append` to a 4 MiB segment fsyncs 4 MiB
-   worth of dirty pages. Rotating to a fresh segment every N MiB caps
-   per-call latency.
+2. **Rotation latency**: fsync flushes the file's dirty pages, not
+   just the new bytes. If a segment has accumulated a few MiB of
+   unflushed data, one `Append`'s fsync can block on flushing all
+   of it. Rotating to a fresh segment every N MiB bounds how much
+   any single fsync is asked to write.
 
 ### MemTable: a skip list keyed by `(user_key, seq desc)`
 
-The MemTable ([`kv/memtable.go`](../kv/memtable.go)) is a skip list
+The MemTable ([`kv/memtable.go`](https://github.com/faketut/MiniKV/blob/main/kv/memtable.go)) is a skip list
 because:
 
 - We need ordered iteration for flush (writing an SSTable in key
@@ -110,7 +99,7 @@ An SSTable is just three things glued together:
 +----------+-----------------+--------+-------+--------+
 ```
 
-The block layout has its own [dedicated post](02-sstable-v4-format.md);
+The block layout has its own [dedicated post]({% post_link minikv-02-sstable-v4-format %});
 for the minimum loop you just need to know that an SSTable is sorted,
 immutable, and has a sparse index so a point lookup is one binary
 search plus one block read.
@@ -155,6 +144,6 @@ Things MiniKV grew later, none of which the minimum loop needs:
 The one test that matters more than all the others is the crash test:
 write something, ack it, kill the process with `SIGKILL`, restart,
 read it back. MiniKV's version of that test lives in
-[`tests/faultinject_test.go`](../tests/faultinject_test.go) and is the
-subject of [its own post](12-sigkill-testing.md). If that test passes,
+[`tests/faultinject_test.go`](https://github.com/faketut/MiniKV/blob/main/tests/faultinject_test.go) and is the
+subject of [its own post]({% post_link minikv-12-sigkill-testing %}). If that test passes,
 your WAL works. If it doesn't, nothing else matters.

@@ -57,12 +57,12 @@ Three sharp edges:
    real error.
 
 MiniKV's solution to (1) is a separate post:
-[the replicated peer-HTTP map](11-replicated-peer-map.md). With that
+[the replicated peer-HTTP map]({% post_link minikv-11-replicated-peer-map %}). With that
 machinery in place, the proxy itself is small.
 
 ## The 30-line proxy
 
-The whole forwarder, from [`kv/raftnode/http.go`](../kv/raftnode/http.go):
+The whole forwarder, from [`kv/raftnode/http.go`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/http.go):
 
 ```go
 func proxyToLeader(w http.ResponseWriter, r *http.Request, node *Node) bool {
@@ -158,7 +158,7 @@ A small piece of "where ops convenience meets URL strictness" glue.
 
 ## What the tests prove
 
-[`TestHTTPForwardingProxiesNonLeaderWrites`](../kv/raftnode/http_test.go)
+[`TestHTTPForwardingProxiesNonLeaderWrites`](https://github.com/faketut/MiniKV/blob/main/kv/raftnode/http_test.go)
 spins up a 3-node cluster behind `httptest` servers, announces every
 node's HTTP address through the leader, then PUTs against a
 *follower* and asserts:

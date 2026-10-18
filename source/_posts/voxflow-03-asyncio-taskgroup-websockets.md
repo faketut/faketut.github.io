@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Why Python 3.11's TaskGroup makes dual-WebSocket bridging finally bearable.*
-
 ## The problem
 
 VoxFlow holds two WebSockets at once: one to Twilio (caller's audio), one to Ultravox (AI's audio). It must:
@@ -108,7 +106,16 @@ Now both tasks live inside the same `TaskGroup`, and the ordering happens via th
 
 ## When TaskGroup is the wrong tool
 
-- **Fire-and-forget background work** — TaskGroup blocks on completion. Use `asyncio.create_task` and accept the leak risk.
+- **Fire-and-forget background work** — TaskGroup blocks on completion. Keep a module-level task set instead:
+
+```python
+_background_tasks: set[asyncio.Task] = set()
+
+task = asyncio.create_task(foo())
+_background_tasks.add(task)
+task.add_done_callback(_background_tasks.discard)
+```
+
 - **Tasks with vastly different lifetimes** — a 1-second task and a 1-hour task in the same group means the group lives for an hour. Split them.
 
 ## Migration checklist
@@ -121,7 +128,3 @@ asyncio.wait([t1, t2], return_when=asyncio.FIRST_COMPLETED)
 for task in pending: task.cancel()
 try: ... finally: for t in tasks: t.cancel()
 ```
-
-## Takeaway
-
-Structured concurrency turns a 30-line tangle of `try/except/cancel/await` into 6 lines of declarative code. Required reading: [PEP 654 (Exception Groups)](https://peps.python.org/pep-0654/) and the [`asyncio.TaskGroup` docs](https://docs.python.org/3/library/asyncio-task.html#task-groups).

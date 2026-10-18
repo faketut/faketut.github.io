@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Why a single system prompt is never enough, and how to use tool calls as state transitions.*
-
 ## The temptation: one giant prompt
 
 The first instinct when building a conversational AI is to cram everything into one system prompt:
@@ -27,37 +25,17 @@ This works for two turns and falls apart for ten. The model loses track of which
 
 ## The pattern: prompts as states
 
-Treat each conversational phase as a state with its own system prompt:
-
-```mermaid
-stateDiagram-v2
-    [*] --> Greet
-    Greet: Stage 1: Greet & Verify<br>• Greet politely<br>• Collect name + phone<br>• Call verify()
-    Main: Stage 2: Main Conversation<br>• Answer questions<br>• Schedule meetings<br>• Resolve issues
-    Summary: Stage 3: Summary & Close<br>• Recap key points<br>• Confirm next steps<br>• Goodbye + hangUp
-    Greet --> Main: move_to_main_convo
-    Main --> Summary: move_to_call_summary
-    Summary --> [*]
-```
-
-Each stage gets:
-- Its **own focused prompt** (200 lines instead of 600)
-- **Strict transition criteria** (e.g., "ONLY proceed if verification = Confirmed")
-- A **dedicated tool** to trigger the next state (`move_to_main_convo`, `move_to_call_summary`)
+Treat each conversational phase as a state with its own system prompt. VoxFlow's stages are Greet (verify identity), Main (questions, meetings), and Summary (recap, close) — each with its own focused prompt, strict transition criteria, and a dedicated tool (`move_to_main_convo`, `move_to_call_summary`) that triggers the next state.
 
 ## How transitions happen
 
-The AI doesn't change state on its own. It calls a tool. The tool handler is what actually swaps the system prompt:
+The AI doesn't change state on its own. It calls a tool. The tool handler is what actually swaps the stage prompt server-side:
 
 ```python
 async def handle_move_to_main_convo(uv_ws, invocation_id, params):
     prompt = get_stage_prompt('main_convo')
     voice = get_stage_voice('main_convo')
-    await uv_ws.send(json.dumps({
-        "type": "stage_transition",
-        "newSystemPrompt": prompt,
-        "newVoice": voice,
-    }))
+    await _apply_stage(uv_ws, prompt, voice)  # server-side prompt/voice swap
     await _send_tool_result(uv_ws, invocation_id, "Transitioned")
 ```
 
@@ -117,7 +95,3 @@ For the main convo stage:
 - Tools: `queryCorpus`, `schedule_meeting`, `move_to_call_summary`, `hangUp`
 
 Writing these criteria *first* makes the prompt almost write itself.
-
-## Takeaway
-
-Multi-stage conversation = multi-prompt + tool-triggered transitions. It's a state machine the LLM happens to drive. Code stays in charge of the transitions; the LLM stays in charge of the conversation.

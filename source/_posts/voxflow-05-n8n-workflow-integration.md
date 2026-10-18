@@ -11,23 +11,9 @@ categories:
   - voice-ai
 ---
 
-*Use VoxFlow as the AI brain, n8n as the business logic.*
-
 ## The separation of concerns
 
-VoxFlow does one thing: it makes a phone call into an AI conversation. It doesn't know about your CRM, your calendar, your email templates, or your business rules. That's deliberate.
-
-```mermaid
-flowchart LR
-    Caller([Caller]) --> VoxFlow[VoxFlow<br/>AI]
-    VoxFlow --> N8N[n8n workflow]
-    N8N --> CRM[CRM lookup]
-    N8N --> Cal[Calendar booking]
-    N8N --> Email[Email confirmations]
-    N8N --> Slack[Slack notifications]
-```
-
-VoxFlow is the **mouth and ears**. n8n is the **hands**.
+VoxFlow does one thing: it makes a phone call into an AI conversation. It doesn't know about your CRM, your calendar, your email templates, or your business rules. That's deliberate — the business logic lives in n8n, where it can be edited without touching the voice middleware.
 
 ## The contract: three webhook routes
 
@@ -41,22 +27,6 @@ VoxFlow posts to a single `N8N_WEBHOOK_URL`, distinguishing intent with a `route
 
 This is the entire integration surface. Implement these three routes and you've integrated VoxFlow with whatever system you want.
 
-## The minimal n8n workflow
-
-```mermaid
-flowchart TD
-    WH[Webhook Trigger<br/>POST /webhook/abc123] --> SW{Switch on<br/>$json.route}
-    SW -- "1" --> R1[HTTP Request: CRM lookup by phone]
-    R1 --> R1b["Set: {firstMessage: 'Hi {{name}}, ...'}"]
-    SW -- "2" --> R2[Postgres: INSERT INTO call_log]
-    R2 --> R2b[Optional: Slack notification]
-    SW -- "3" --> R3[Google Calendar: Create event]
-    R3 --> R3b[Email: Send confirmation]
-    R3b --> R3c["Set: {message: 'Booked for {{datetime}}'}"]
-```
-
-That's it. Three branches. No code.
-
 ## Why personalize the greeting?
 
 Route `"1"` fires at the start of every call. If you have any record of this phone number, you can greet them by name:
@@ -66,7 +36,7 @@ Anonymous caller:   "Hello, this is Sara. How can I help?"
 Returning customer: "Hi John, welcome back! Calling about your appointment Tuesday?"
 ```
 
-The second one cuts 15 seconds off the call by skipping identity verification. Over 1000 calls/month that's hours of phone time saved.
+The second one skips identity verification, cutting seconds off every returning-caller call.
 
 If n8n returns nothing or fails, VoxFlow falls back to `DEFAULT_FIRST_MESSAGE`. The call never breaks.
 
@@ -93,36 +63,16 @@ The AI doesn't care. From its perspective, `schedule_meeting()` returned a messa
 
 ## A complete n8n flow for a dental clinic
 
-```mermaid
-flowchart TD
-    WH[Webhook trigger] --> SW{Switch on route}
+The receptionist now talks to HubSpot and books appointments on a real calendar. Three branches, one per route:
 
-    SW -- "1: greeting" --> G1[HubSpot: find contact by phone]
-    G1 --> G2{Found?}
-    G2 -- yes --> G3[Build personalized greeting]
-    G2 -- no --> G4[Return generic greeting]
-
-    SW -- "2: transcript" --> T1[HubSpot: append to timeline]
-    T1 --> T2[GPT-4: extract intent + sentiment]
-    T2 --> T3{Sentiment<br/>negative?}
-    T3 -- yes --> T4[Slack alert to manager]
-
-    SW -- "3: booking" --> B1[Google Calendar: check availability]
-    B1 --> B2{Available?}
-    B2 -- yes --> B3[Create event + send SMS]
-    B2 -- no --> B4[Return alt slot to AI]
-```
-
-Zero lines of Python written. The receptionist now talks to HubSpot and books appointments on a real calendar.
+- **Route "1" (greeting):** HubSpot lookup by phone → found? → personalized greeting, else generic.
+- **Route "2" (transcript):** append to HubSpot timeline → LLM extracts intent + sentiment → negative sentiment alerts the manager on Slack.
+- **Route "3" (booking):** check availability → yes → create event + SMS, else return an alternate slot to the AI.
 
 ## Authentication
 
-n8n webhooks support HMAC signatures. VoxFlow doesn't sign requests today, so for production you should either:
+n8n webhook nodes do **not** have native HMAC auth. VoxFlow doesn't sign requests today, so for production you should either:
 
 - Put n8n behind a reverse proxy with IP allowlisting (VoxFlow's outbound IP)
-- Add `Authorization` headers in `send_to_webhook()` and validate in n8n
-- Use n8n's built-in webhook auth (username/password or header token)
-
-## Takeaway
-
-VoxFlow + n8n is two specialists doing what they're each good at. Don't put business logic in your AI middleware; put it where business analysts can edit it themselves.
+- Add an `Authorization` header in `send_to_webhook()` and validate it with n8n's header-credential auth on the webhook node
+- Use an unguessable webhook URL path (long random token) — not real auth, but raises the bar for casual probing

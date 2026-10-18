@@ -43,7 +43,7 @@ SELECT * FROM `{PROJECT_ID}.{BIGQUERY_DATASET}.external_yellow_tripdata`
 
 Why bother, when `LoadJob` is one step?
 
-## Three reasons
+## Why the extra step
 
 ### 1. Schema declared once, in code
 
@@ -85,7 +85,7 @@ Real example: if the upstream timestamp arrives as a string, one `PARSE_TIMESTAM
 
 For this project's monthly, GB-scale data, the clarity of the two-step approach beats the marginal slot savings.
 
-## A side benefit people forget
+## Side benefit: layered debuggability
 
 External tables are free to keep around (no storage charge — you pay only when queried). That means:
 
@@ -94,4 +94,4 @@ External tables are free to keep around (no storage charge — you pay only when
 
 That "layered debuggability" is not something `LoadJob` can give you.
 
-> File: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py)
+> File: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py)

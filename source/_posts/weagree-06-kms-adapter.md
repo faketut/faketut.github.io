@@ -15,7 +15,7 @@ WeAgree's signing path has two things that look like the same thing but aren't:
 - The **user's** Ed25519 signing key, encrypted at rest, decrypted per sign request.
 - The **server's** signing identity, used to sign server-generated artifacts (anchor receipts, internal attestations).
 
-In the original code both lived in [`lib/signing/kms-client.ts`](../lib/signing/kms-client.ts). It was ~290 lines, did its own AES-GCM, its own env validation, its own caching, and had no abstraction boundary. Which meant: when I wanted to swap the local key store for AWS KMS later, every call site had to change.
+In the original code both lived in [`lib/signing/kms-client.ts`](https://github.com/faketut/WeAgree/blob/main/lib/signing/kms-client.ts). It was ~290 lines, did its own AES-GCM, its own env validation, its own caching, and had no abstraction boundary. Which meant: when I wanted to swap the local key store for AWS KMS later, every call site had to change.
 
 This post is about the refactor I did and the pattern I'd use again next time.
 
@@ -79,7 +79,7 @@ export function _resetKmsAdapterForTests(): void {
 }
 ```
 
-The AWS adapter is a stub that throws "not implemented" with a JSDoc outline of what each method needs to do (`RSASSA_PSS_SHA_256` for sign, `GenerateDataKey` for envelope encryption). When the day comes, the only file I touch is `lib/signing/kms/aws.ts`.
+The AWS adapter is a stub that throws "not implemented" with a JSDoc outline of what each method needs to do — and the JSDoc I wrote was wrong in one detail: it proposed `RSASSA_PSS_SHA_256` for `sign`, but the server identity is Ed25519 and **AWS KMS does not support Ed25519** (its asymmetric key types are RSA and ECDSA only). So "fill in the stub" was never the whole story for `sign`: either rotate the server identity key to ECDSA — a breaking change for every existing signature — or keep `sign` on the local adapter and use KMS only for key wrap (`GenerateDataKey`), which is exactly the split the "What I'd do differently" section already anticipates. When the day comes, the file I touch is still `lib/signing/kms/aws.ts`, but the honest plan is "KMS for key wrap, signing stays local" until the identity key rotates.
 
 The original `kms-client.ts` is now a ~28-line facade:
 
@@ -146,6 +146,4 @@ The pattern is **"factory + interface + cached singleton + explicit reset for te
 
 The pattern only pays off if you actually have a current implementation that works. **Don't write an adapter without an implementation.** A stub today + a working local impl is the minimum viable form; pure stubs are theater.
 
-## The take-away
-
-A 28-line facade and a stub for the future-provider isn't over-engineering — it's the smallest possible answer to "could you move to KMS if you had to?" Done at the time you write the original 290 lines, it's cheap. Done a year later under audit pressure, it's a project.
+Done at the time you write the original 290 lines, this is cheap. Done a year later under audit pressure, it's a project.

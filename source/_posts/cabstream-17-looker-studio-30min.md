@@ -13,7 +13,7 @@ categories:
 
 A finished pipeline without a dashboard is a half-finished pipeline. Looker Studio (formerly Data Studio) is "free + one-click to BigQuery" inside the GCP ecosystem, and 30 minutes is plenty.
 
-Here's how to turn the five findings from the [previous post](18-five-counterintuitive-findings.md) into charts.
+Here's how to turn the five findings from the {% post_link cabstream-18-five-counterintuitive-findings next post %} into charts.
 
 ## 0 ~ 5 min: connect data sources
 
@@ -36,14 +36,14 @@ Why not connect `fact_trips` directly?
 
 Top row of the dashboard, the "snapshot at a glance":
 
-| Metric | Source | Definition |
-|---|---|---|
-| Total trips | mart_daily_trips | `SUM(trip_count)` |
-| Total revenue | mart_daily_trips | `SUM(total_revenue)` |
-| Avg fare | mart_daily_trips | `AVG(avg_total)` |
-| Avg tip ratio | mart_daily_trips | `AVG(avg_tip)/AVG(avg_total)` |
+| Metric | Source |
+|---|---|
+| Total trips | mart_daily_trips |
+| Total revenue | mart_daily_trips |
+| Avg fare | mart_daily_trips |
+| Avg tip ratio | mart_daily_trips |
 
-Add a date range control (default: last 30 days). All cards react to it.
+Looker's field list shows the mart's columns — pick the count, revenue, and average fields. Add a date range control (default: last 30 days). All cards react to it.
 
 ## 10 ~ 17 min: temporal charts
 
@@ -51,7 +51,7 @@ Add a date range control (default: last 30 days). All cards react to it.
 
 - Source: mart_daily_trips
 - X: pickup_date
-- Y: trip_count
+- Y: the trip-count metric
 
 One line, but reveals the week-over-week cadence (weekends flatter) plus holidays (note: the week before Christmas is a trough, not a peak — counterintuitive).
 
@@ -60,7 +60,7 @@ One line, but reveals the week-over-week cadence (weekends flatter) plus holiday
 - Source: mart_hourly_trips
 - X: pickup_hour
 - Y: EXTRACT(DAYOFWEEK FROM pickup_date)
-- Color: AVG(trip_count)
+- Color: the trip-count metric
 
 Heatmaps beat line charts for spotting patterns like "Friday rush shifted to 22:00".
 
@@ -69,9 +69,9 @@ Heatmaps beat line charts for spotting patterns like "Friday rush shifted to 22:
 ### Chart 3: Top 20 pickup zones (bar chart)
 
 - Source: mart_location_trips
-- Dimensions: zone, borough
-- Metrics: trip_count, total_revenue
-- Sort: trip_count DESC
+- Dimensions: zone, borough (the mart joins dim_zones, so both exist)
+- Metrics: the count and revenue metrics
+- Sort: trip-count DESC
 - Limit: 20
 
 Add a borough filter so you can flip between "Manhattan Top 20" and "Queens Top 20".
@@ -80,7 +80,7 @@ Add a borough filter so you can flip between "Manhattan Top 20" and "Queens Top 
 
 - Source: mart_location_trips
 - Dimension: borough
-- Metric: SUM(total_revenue)
+- Metric: the total-revenue metric
 
 Visualizes business concentration; pairs well with Chart 3 to tell the "long tail is long but contributes little" story.
 
@@ -113,9 +113,8 @@ This project's marts are a few MB. Extract mode is essentially free here — str
 
 ## One detail that's easy to miss
 
-Every mart is partitioned by `pickup_date`. **Add a date range filter to every chart in Looker Studio** and BigQuery automatically prunes to those partitions — easily 90% fewer bytes scanned than "let Looker do the filtering after a full GROUP BY".
+Every mart is partitioned by `pickup_date`. **Add a date range filter to every chart in Looker Studio** and BigQuery automatically prunes to those partitions — far fewer bytes scanned than "let Looker do the filtering after a full GROUP BY".
 
 That's why every mart in this project has `partition_by`: not for dbt's sake — for BI tools to ride for free.
 
-> Design sketch: [dashboard_design.svg](dashboard_design.svg)
-> Mart definitions: [nyc_taxi_pipeline/dbt/models/mart_daily_trips.sql](nyc_taxi_pipeline/dbt/models/mart_daily_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql](nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_location_trips.sql](nyc_taxi_pipeline/dbt/models/mart_location_trips.sql)
+> Mart definitions: [nyc_taxi_pipeline/dbt/models/mart_daily_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/mart_daily_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/mart_hourly_trips.sql), [nyc_taxi_pipeline/dbt/models/mart_location_trips.sql](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/dbt/models/mart_location_trips.sql)

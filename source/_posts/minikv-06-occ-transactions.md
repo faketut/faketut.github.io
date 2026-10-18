@@ -17,7 +17,7 @@ categories:
 > running concurrently against an LSM tree.
 
 MiniKV ships serializable transactions in
-[`kv/txn.go`](../kv/txn.go). They are short, optimistic, and bounded.
+[`kv/txn.go`](https://github.com/faketut/MiniKV/blob/main/kv/txn.go). They are short, optimistic, and bounded.
 This post is about why each of those words is there.
 
 ## The shape
@@ -41,7 +41,7 @@ Four steps, three pieces of state per transaction:
 ## The validation: a bounded commit log
 
 The interesting code lives in
-[`kv/txn.go`](../kv/txn.go):
+[`kv/txn.go`](https://github.com/faketut/MiniKV/blob/main/kv/txn.go):
 `validateReadSetLocked`. The pseudocode:
 
 ```go
@@ -134,7 +134,7 @@ return nil
 The `writeBatchLocked` is the same path as `KV.Write(b)` — a single
 WAL append with a commit marker followed by MemTable inserts. Either
 all of the writes are durable or none of them are; the commit marker
-([`kv/wal.go`](../kv/wal.go)) is how recovery decides.
+([`kv/wal.go`](https://github.com/faketut/MiniKV/blob/main/kv/wal.go)) is how recovery decides.
 
 So the txn commit is exactly as atomic as a `Batch` write, which is
 exactly as atomic as the WAL's commit marker. That's the chain of

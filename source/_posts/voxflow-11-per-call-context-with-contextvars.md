@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Auto-tagging every log line with the active `CallSid` — without passing it through every function signature.*
-
 ## The pain you don't notice until you have it
 
 A single voice call generates 50–200 log lines: WebSocket frames, tool invocations, n8n calls, transcript fragments, errors. Now imagine three concurrent calls. Your log file is a braided mess:
@@ -142,8 +140,4 @@ The same pattern scales to anything else you want to correlate by:
 - `request_id` for HTTP request tracing
 - `trace_id` for OpenTelemetry interop (it's literally how OTel propagates context)
 
-Add a second ContextVar. Add a second filter (or extend the first). Every log line now carries both. Your future self, three months in, will thank you.
-
-## Takeaway
-
-You don't need a logging framework, a tracing SDK, or a dedicated correlation library. You need 20 lines: a `ContextVar`, a `logging.Filter`, and three `bind_call_sid()` calls at request entry. Every log line, in every module, gets the active call's ID. Your post-mortems get 10× faster.
+Add a second ContextVar. Add a second filter (or extend the first). Every log line now carries both.

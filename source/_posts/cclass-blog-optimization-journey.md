@@ -70,7 +70,7 @@ The expanded corpus was deliberately picked to cover the parts of `wlp4gen` most
 
 ### The portable runner
 
-[`scripts/run-tests.sh`](../scripts/run-tests.sh) does one branch at the top:
+[`scripts/run-tests.sh`](https://github.com/faketut/C-class-compiler/blob/main/scripts/run-tests.sh) does one branch at the top:
 
 ```bash
 if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -98,7 +98,7 @@ Commit [`c254eac`](https://github.com/faketut/C-class-compiler/commit/c254eac).
 
 The original scanner printed `ERROR: unexpected character`. Type errors printed `ERROR: type mismatch`. Useless once your program is more than 20 lines.
 
-The fix in [src/wlp4scan.cc](../src/wlp4scan.cc) is mechanical but worth describing because the **shape of the change matters**:
+The fix in [src/wlp4scan.cc](https://github.com/faketut/C-class-compiler/blob/main/src/wlp4scan.cc) is mechanical but worth describing because the **shape of the change matters**:
 
 ```cpp
 size_t line_no = 1;
@@ -116,11 +116,11 @@ auto advancePos = [&](size_t k) {
 
 Two state variables, one lambda. Every `pos += longest` became `advancePos(longest)`; whitespace and comment skips update inline. Now errors say `ERROR scan at line 14 col 9: unexpected '@'`. The point is: this is a **non-invasive** instrumentation. The scanner's hot path got one extra `if (input[pos+i] == '\n')` per character — negligible — and the rest of the file is untouched.
 
-For [`wlp4type`](../src/wlp4type.cc), the trick was a single file-scoped `static string g_curProc;` that gets set at the top of each `for (Node* proc : procedureNodes)` iteration. Every existing `reportError(detail)` site now produces `ERROR type in foo(): <detail>` without touching the dozens of error sites individually. Surgical change > rewrite.
+For [`wlp4type`](https://github.com/faketut/C-class-compiler/blob/main/src/wlp4type.cc), the trick was a single file-scoped `static string g_curProc;` that gets set at the top of each `for (Node* proc : procedureNodes)` iteration. Every existing `reportError(detail)` site now produces `ERROR type in foo(): <detail>` without touching the dozens of error sites individually. Surgical change > rewrite.
 
 ## 5. The optimizations that earned their keep
 
-Now the meaty part. The codegen in [src/wlp4gen.cc](../src/wlp4gen.cc) is 1300 lines. Here are the ideas that actually moved the benchmark needle, in approximate order of contribution.
+Now the meaty part. The codegen in [src/wlp4gen.cc](https://github.com/faketut/C-class-compiler/blob/main/src/wlp4gen.cc) is 1300 lines. Here are the ideas that actually moved the benchmark needle, in approximate order of contribution.
 
 ### 5.1 Trivial-leaf frame elision (pre-existing)
 
@@ -152,7 +152,7 @@ This is the most architecturally interesting piece, because the ARM64 subset *fo
 
 The reference compiler's approach: every time you need a constant, emit a 5-instruction sequence (`ldr xN, 8; b 12; .8byte K; ...`) that hops over an inline 8-byte literal. Three uses of `4` → three inline literals → 60 bytes.
 
-Our approach in [`finalizeLiteralPool`](../src/wlp4gen.cc):
+Our approach in [`finalizeLiteralPool`](https://github.com/faketut/C-class-compiler/blob/main/src/wlp4gen.cc):
 
 ```cpp
 void emitLoadLitPayload(int reg, const string& payload) {
@@ -180,7 +180,7 @@ long wain(long a, long b) {
 }
 ```
 
-[`isConst`](../src/wlp4gen.cc#L228) walks the expression tree and folds `+ − × ÷ %` into a single literal. Combined with §5.1 (trivial-leaf elision), the entire procedure becomes:
+[`isConst`](https://github.com/faketut/C-class-compiler/blob/main/src/wlp4gen.cc#L228) walks the expression tree and folds `+ − × ÷ %` into a single literal. Combined with §5.1 (trivial-leaf elision), the entire procedure becomes:
 
 ```
 Pwain:
@@ -201,13 +201,13 @@ This is *the* single optimization most likely to break things — register alloc
 
 ## 6. Phase 5 — Measuring like we mean it
 
-Commit [`55a2576`](https://github.com/faketut/C-class-compiler/commit/55a2576) added [`tools/bench.sh`](../tools/bench.sh). Three things matter about how it's structured:
+Commit [`55a2576`](https://github.com/faketut/C-class-compiler/commit/55a2576) added [`tools/bench.sh`](https://github.com/faketut/C-class-compiler/blob/main/tools/bench.sh). Three things matter about how it's structured:
 
 1. **It runs the full compile + link pipeline on both sides**, then `wc -c` the resulting `.com` files. Both go through the same `linkasm`, so footer/header overhead cancels out — the delta is the program section.
 2. **It re-execs into colima on macOS automatically**, same trick as the test runner. Zero friction to run locally.
 3. **It generates CSV** rather than a pretty table, so I can pipe it into anything (the GitHub Actions step posts a summary to `$GITHUB_STEP_SUMMARY` and uploads the raw CSV as a downloadable artifact).
 
-Commit [`2350dc4`](https://github.com/faketut/C-class-compiler/commit/2350dc4) added [`tools/gen_random_wlp4.py`](../tools/gen_random_wlp4.py): 8 parametric templates (arithmetic chains, local sums, if-ladders, while-sums, multi-arg procs, nested calls, pointer walks, recursive fib) seeded deterministically. This grew the benchmark from 25 hand-written tests to 65 programs.
+Commit [`2350dc4`](https://github.com/faketut/C-class-compiler/commit/2350dc4) added [`tools/gen_random_wlp4.py`](https://github.com/faketut/C-class-compiler/blob/main/tools/gen_random_wlp4.py): 8 parametric templates (arithmetic chains, local sums, if-ladders, while-sums, multi-arg procs, nested calls, pointer walks, recursive fib) seeded deterministically. This grew the benchmark from 25 hand-written tests to 65 programs.
 
 ### The data
 
@@ -247,9 +247,9 @@ Lesson: **a noisy parser is a feature, not a bug**. If you can't tell what's wro
 
 ## 7. Phase 4 — CMake + a real driver
 
-Commit [`ebd2f47`](https://github.com/faketut/C-class-compiler/commit/ebd2f47). The repo had `build-toolchain.sh` (4 invocations of `g++`) which was fine — but for anyone running the project from an IDE that has CMake integration, it was friction. Adding a minimal [`CMakeLists.txt`](../CMakeLists.txt) was 30 lines of cmake + a `WLP4_WERROR` option for CI. The shell script stays as the zero-dependency fast path.
+Commit [`ebd2f47`](https://github.com/faketut/C-class-compiler/commit/ebd2f47). The repo had `build-toolchain.sh` (4 invocations of `g++`) which was fine — but for anyone running the project from an IDE that has CMake integration, it was friction. Adding a minimal [`CMakeLists.txt`](https://github.com/faketut/C-class-compiler/blob/main/CMakeLists.txt) was 30 lines of cmake + a `WLP4_WERROR` option for CI. The shell script stays as the zero-dependency fast path.
 
-The [`bin/wlp4`](../bin/wlp4) driver is more interesting. It does:
+The [`bin/wlp4`](https://github.com/faketut/C-class-compiler/blob/main/bin/wlp4) driver is more interesting. It does:
 
 ```
 wlp4 [-S | -c] [-o OUT] SRC.wlp4
@@ -281,7 +281,7 @@ The benefit: native macOS testing without colima. *Real value, but not on the cr
 
 ### Parse-table extraction (constexpr arrays)
 
-[`src/parse_tables.h`](../src/parse_tables.h) embeds the LR tables as giant raw string literals; `wlp4parse` re-tokenizes them at startup. Replacing with `constexpr` arrays would shave the parser binary by ~30 KB and save a few ms of startup. Skipped: zero impact on any benchmark, full impact on the risk of breaking the parser on a `.wlp4i` shape we don't have a test for.
+[`src/parse_tables.h`](https://github.com/faketut/C-class-compiler/blob/main/src/parse_tables.h) embeds the LR tables as giant raw string literals; `wlp4parse` re-tokenizes them at startup. Replacing with `constexpr` arrays would shave the parser binary by ~30 KB and save a few ms of startup. Skipped: zero impact on any benchmark, full impact on the risk of breaking the parser on a `.wlp4i` shape we don't have a test for.
 
 ### Further wlp4gen micro-optimizations (dead-branch elimination, register-resident `i = i + 1`)
 
@@ -313,7 +313,7 @@ A few generalizable things, in order of how often I had to re-learn them:
 
 ## 10. Appendix: full benchmark table
 
-See [docs/benchmark.csv](benchmark.csv) for the raw 65-row table. The columns:
+See [docs/benchmark.csv](https://github.com/faketut/C-class-compiler/blob/main/docs/benchmark.csv) for the raw 65-row table. The columns:
 
 - `name` — program identifier (test file basename)
 - `our_bytes` — `wc -c` of `wlp4{scan|parse|type|gen} | linkasm` output

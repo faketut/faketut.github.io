@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Exponential backoff is one of those things everybody knows, and almost everybody implements wrong on the first try.*
-
 ## The "happy path" trap
 
 The minimal n8n integration in every tutorial:
@@ -47,6 +45,16 @@ That distinction — *not retrying 4xx* — is the single biggest source of over
 ## What the loop actually looks like
 
 ```python
+import hashlib
+import hmac
+
+def build_signed_headers(body: bytes) -> dict[str, str]:
+    sig = hmac.new(WEBHOOK_SIGNING_KEY, body, hashlib.sha256).hexdigest()
+    return {
+        "Content-Type": "application/json",
+        "X-VoxFlow-Signature": f"sha256={sig}",
+    }
+
 async def send_to_webhook(payload: dict[str, Any]) -> str:
     body = json.dumps(payload).encode("utf-8")
     headers = build_signed_headers(body)
@@ -139,11 +147,7 @@ Retries make every webhook arrive *at least once* (sometimes more — the networ
 
 Two parts:
 
-- **Sign the body.** VoxFlow attaches `X-VoxFlow-Signature: sha256=<hmac>` so n8n can reject anything not from us. (One leaked webhook URL ≠ takeover.)
+- **Sign the body.** `build_signed_headers` attaches `X-VoxFlow-Signature: sha256=<hmac>` so n8n can reject anything not from us. (One leaked webhook URL ≠ takeover.)
 - **Carry an idempotency key.** Add a UUID to every payload; n8n's first node deduplicates.
 
 Without these, retries are a liability instead of a safety net.
-
-## Takeaway
-
-A retry loop done right is: exponential backoff with a bounded ceiling, *only* on transient failures, with metrics on every outcome and a fail-soft return value. About 30 lines. Pair it with body signing and idempotency keys so retries can't double-trigger your downstream. Then forget about it — the SLO graphs will be flat.

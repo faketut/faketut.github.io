@@ -50,8 +50,8 @@ That `base * w + mag * 0.01` is the entire learned-ranking story:
 The result: if `template:payment_4xx_upstream` has been *confirmed*
 five times in the last quarter, its `w` is around 1.5. When it shows
 up again at MEDIUM severity, it ranks ahead of a HIGH-severity
-`volume:foo` change with `w = 1.0`. That's the system telling you:
-*"You've cared about this before. Look here first."*
+`volume:foo` change with `w = 1.0`. Confirmed signals get looked at
+first.
 
 ## The three classes of diff
 
@@ -81,7 +81,7 @@ divisions-by-zero adds noise.
 ### Template diff
 
 Three sub-cases against the `log_patterns` list from
-[post 2](02-fingerprint.md):
+{% post_link anchor-02-fingerprint %}:
 
 | Set operation | Signal name | Severity |
 |---|---|---|
@@ -231,10 +231,8 @@ feedback re-bias-ifies it from scratch.
 
 ## Why this matters for the LLM
 
-The narrator in [post 4](04-narrator-llm-at-edge.md) only sees the
-top 15 diffs (`diff_all(..., limit=15)`). So the *ranking* is the most
-consequential piece of state in the whole pipeline. Get the ranking
-right and the LLM has a fighting chance. Get it wrong — by leaving
-weights flat at 1.0 forever, say — and Qwen ends up narrating noise.
-
-The weight table *is* the system getting smarter across sessions.
+The narrator in {% post_link anchor-04-narrator-llm-at-edge %} only
+sees the top 15 diffs (`diff_all(..., limit=15)`), so the *ranking* is
+the most consequential piece of state in the whole pipeline. Leave
+weights flat at 1.0 forever and Qwen ends up narrating noise. The
+weight table is how the system gets smarter across sessions.

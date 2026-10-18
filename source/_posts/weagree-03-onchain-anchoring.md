@@ -22,7 +22,7 @@ This post is the receipt for that decision.
 
 ## What "anchoring" actually buys you
 
-The proof file ([scripts/verify-proof.js](../scripts/verify-proof.js)) contains everything needed to validate signatures cryptographically — the canonical payloads, the Ed25519 signatures, the public key fingerprints. So what does a chain anchor add?
+The proof file ([scripts/verify-proof.js](https://github.com/faketut/WeAgree/blob/main/scripts/verify-proof.js)) contains everything needed to validate signatures cryptographically — the canonical payloads, the Ed25519 signatures, the public key fingerprints. So what does a chain anchor add?
 
 **One thing**: an independently-witnessed timestamp that proves the proof file existed at or before a certain block height. The chain doesn't validate signatures. It doesn't store the document. It stores a 32-byte hash — `final_proof_hash` — and the fact that it was committed by a transaction included in a block.
 
@@ -51,7 +51,7 @@ sequenceDiagram
 Key properties:
 
 - **The signing path doesn't block on the chain.** If the RPC is down, we log and move on; the signature is already valid by itself. Anchoring is "icing on the cake" provability, not a gate.
-- **One route, no daemon.** [app/api/anchor/route.ts](../app/api/anchor/route.ts) is a normal Next.js route. No separate worker, no queue, no infra.
+- **One route, no daemon.** [app/api/anchor/route.ts](https://github.com/faketut/WeAgree/blob/main/app/api/anchor/route.ts) is a normal Next.js route. No separate worker, no queue, no infra.
 - **The contract is a one-liner.** `mapping(bytes32 => uint256) public anchoredAt;` plus an `anchor(bytes32)` setter that emits an event. That's the whole thing.
 
 ## Why I didn't build a Merkle tree
@@ -59,7 +59,7 @@ Key properties:
 The "obvious" optimization is to batch N final-proof-hashes into a Merkle root and anchor only the root, then store inclusion proofs alongside each agreement. For an enterprise platform doing thousands of signatures per hour, this is correct. For WeAgree it's a category error:
 
 - **Latency tax**: now an agreement only becomes "anchored" once the next batch runs. Either you sit at "anchor pending" in the UI or you commit synchronously and lose the batching win.
-- **Verifier complexity**: the CLI verifier now needs to walk a Merkle proof, not just hash a JSON file. Two implementations to maintain (see [post #2](./02-canonical-json.md)) becomes much harder.
+- **Verifier complexity**: the CLI verifier now needs to walk a Merkle proof, not just hash a JSON file. Two implementations to maintain (see {% post_link weagree-02-canonical-json %}) becomes much harder.
 - **Failure modes**: the batcher is now load-bearing. If it falls behind, everything queues. If it crashes, you lose unbatched anchors.
 - **Cost win**: real, but on Arbitrum Sepolia we're talking fractions of a cent per anchor. The cost saving doesn't pay for one hour of debugging the batcher.
 
@@ -77,7 +77,7 @@ I considered:
 | Custom L2 / rollup          | Total control                     | Operating an L2 is its own product                               |
 | Polygon                     | Cheap                             | Marketing baggage; some users actively distrust it               |
 
-Arbitrum Sepolia won because: free RPC providers exist, ethers v6 just works, contract deployment is a couple of commands, and the cost of a real-network upgrade later is one env var flip. The [BLOCKCHAIN_EVM_RPC_URL](../.env.example) / contract address pair is configurable; there's no hardcoded chain assumption in the app code.
+Arbitrum Sepolia won because: free RPC providers exist, ethers v6 just works, contract deployment is a couple of commands, and the cost of a real-network upgrade later is one env var flip. The [BLOCKCHAIN_EVM_RPC_URL](https://github.com/faketut/WeAgree/blob/main/.env.example) / contract address pair is configurable; there's no hardcoded chain assumption in the app code.
 
 ## The "self-anchor" trick
 
@@ -107,6 +107,4 @@ const res = await fetch(rpcUrl, {
 - **No anchor cost dashboard.** The contract emits events. If I cared, I'd subscribe and tally them. I don't yet.
 - **No multi-chain anchoring.** Anchoring to two chains for redundancy is a Real Compliance Feature for enterprise customers. For a launch, one chain is enough.
 
-## The take-away
-
-A document hash on-chain is a 32-byte timestamp. You don't need an L2, a batcher, or a token. You need a contract with one `mapping`, an RPC URL, and a queue of zero. Build the rest only when someone is paying you to.
+A document hash on-chain is a 32-byte timestamp. You don't need an L2, a batcher, or a token — you need a contract with one `mapping`, an RPC URL, and a queue of zero. Build the rest only when someone is paying you to.

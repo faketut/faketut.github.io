@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Your `/incoming-call` endpoint is on the public internet. Treat it that way.*
-
 ## The threat that nobody mentions in the tutorial
 
 The "five-minute Twilio quickstart" ends at:
@@ -107,6 +105,4 @@ def test_incoming_call_rejects_missing_signature(client_with_validation_on):
 
 And one positive test using `RequestValidator` to mint a valid signature.
 
-## Takeaway
-
-Twilio gives you a tamper-evident channel for free. Not using it is choosing to leave the front door unlocked because the lock looks complicated. The whole thing is one dependency, one env var, and a 30-line module. Ship it before the first malicious POST does.
+Twilio gives you a tamper-evident channel for free. The whole thing is one dependency, one env var, and a 30-line module. Ship it before the first malicious POST does.

@@ -12,8 +12,8 @@ categories:
 
 > Third in a 3-part series on the [DungeonSpire](https://github.com/faketut/DungeonSpire) modernization.
 > **Previously:**
-> 1. [A one-line constant kept the UI alive for 8 years](blog-01-hud-bug.md)
-> 2. [Four nearly identical files, and why I didn't extract a base class](blog-02-stats-registry-pattern.md)
+> 1. {% post_link dungeonspire-blog-01-hud-bug %}
+> 2. {% post_link dungeonspire-blog-02-stats-registry-pattern %}
 >
 > **This post:** the project ships a header-only `EventBus` with three publishers, basically zero in-tree subscribers, and a deliberate decision not to finish it. Here's why a half-built abstraction can be the right amount of abstraction.
 
@@ -21,7 +21,7 @@ categories:
 
 ## What the code does today
 
-[src/EventBus.h](../src/EventBus.h) is ~130 lines, header-only, no dependencies beyond the standard library. The whole thing fits in your head:
+[src/EventBus.h](https://github.com/faketut/DungeonSpire/blob/main/src/EventBus.h) is ~130 lines, header-only, no dependencies beyond the standard library. The whole thing fits in your head:
 
 ```cpp
 namespace cc3k {
@@ -169,9 +169,9 @@ That's what `EventBus.h` is. Not a TODO. Not a half-finished feature. A delibera
 
 ---
 
-**Files referenced:** [src/EventBus.h](../src/EventBus.h), [src/Board.cc](../src/Board.cc), [src/BoardCombat.cc](../src/BoardCombat.cc), [src/BoardPlayer.cc](../src/BoardPlayer.cc), [src/EffectManager.h](../src/EffectManager.h).
+**Files referenced:** [src/EventBus.h](https://github.com/faketut/DungeonSpire/blob/main/src/EventBus.h), [src/Board.cc](https://github.com/faketut/DungeonSpire/blob/main/src/Board.cc), [src/BoardCombat.cc](https://github.com/faketut/DungeonSpire/blob/main/src/BoardCombat.cc), [src/BoardPlayer.cc](https://github.com/faketut/DungeonSpire/blob/main/src/BoardPlayer.cc), [src/EffectManager.h](https://github.com/faketut/DungeonSpire/blob/main/src/EffectManager.h).
 
 **Series index:**
-1. [A one-line constant kept the UI alive for 8 years](blog-01-hud-bug.md)
-2. [Four nearly identical files, and why I didn't extract a base class](blog-02-stats-registry-pattern.md)
+1. {% post_link dungeonspire-blog-01-hud-bug %}
+2. {% post_link dungeonspire-blog-02-stats-registry-pattern %}
 3. *(this post)* Why my `EventBus` is deliberately half-built

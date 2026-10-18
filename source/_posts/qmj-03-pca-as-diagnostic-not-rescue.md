@@ -12,8 +12,8 @@ categories:
   - quant
 ---
 
-This is the third post in the [QMJ-TSX series](README.md). The
-[previous post](2026-06-13-low-vol-unwind-hiding-in-a-composite.md)
+This is the third post in the [QMJ-TSX series](https://github.com/faketut/qmj-tsx). The
+{% post_link qmj-02-low-vol-unwind-hiding-in-a-composite "previous post" %}
 showed that four of the five components of my paper-Q composite are
 mechanically the same low-volatility signal, all flipping sign
 post-COVID; the fifth (rolling Sharpe) behaves differently. A natural
@@ -63,7 +63,7 @@ Three things to notice.
 
 **One.** **PC1 reproduces the regime flip cleanly.** Pre-COVID +0.34,
 post-COVID −0.85. This is the smoking gun for the
-[previous post's](2026-06-13-low-vol-unwind-hiding-in-a-composite.md)
+{% post_link qmj-02-low-vol-unwind-hiding-in-a-composite "the previous post's" %}
 claim that the post-pandemic break is a one-factor phenomenon, not
 an artefact of equal-weighting correlated proxies. When you collapse
 the five proxies onto their dominant common axis, the regime story

@@ -13,7 +13,7 @@ categories:
 ---
 
 `anchor compare` does one LLM round-trip and returns a narrative
-([post 4](04-narrator-llm-at-edge.md)). That's enough for ~80% of
+({% post_link anchor-04-narrator-llm-at-edge %}). That's enough for ~80% of
 drift investigations. For the remaining 20% — where the engineer
 wants the agent to *follow a thread* — there's `anchor compare --deep`.
 

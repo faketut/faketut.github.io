@@ -100,6 +100,4 @@ You need four checks before considering streaming. Zero checks and you're tradin
 
 Those are the parts of "modern data stack" that **survive over time** — and they matter much more than streaming-vs-batch.
 
-## One-liner
-
-> Selection should run from "shape of the problem" → "tool", not "tool I want to use" → "problem". Not using Kafka isn't embarrassing. Forcing it in is.
+Selection should run from "shape of the problem" → "tool", not "tool I want to use" → "problem". Not using Kafka isn't embarrassing. Forcing it in is.

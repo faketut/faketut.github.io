@@ -14,7 +14,7 @@ categories:
   - security
 ---
 
-*Post 2 of 6 in the "Taint-Flow Auditor" series.*
+*Post 2 of 4 in the "Taint-Flow Auditor" series.*
 
 In {% post_link taint-01-why-sast-misses-sqli "post 1" %} we showed why
 pattern matchers miss SQL injections that cross function boundaries: they
@@ -36,9 +36,6 @@ One command, in any directory with a `.git`:
 
 ```
 $ orbit index .
-  Found 6 files, 5 parseable (python: 5)
-parse + graph [████████████████████████████████████████] 5/5
-resolve       [████████████████████████████████████████] 5/5
 {
   "repository": "demo-app",
   "graph": {
@@ -54,8 +51,8 @@ resolve       [█████████████████████�
 
 That `relationships: 49` includes the only number that matters for our
 purposes: the count of `Definition CALLS Definition` edges. Every function
-call across this six-file demo, name-resolved, in 48 milliseconds, written
-into a DuckDB file we can read from any language with a SQL client.
+call across this six-file demo, name-resolved, written into a DuckDB file
+we can read from any language with a SQL client.
 
 ## What's actually in the graph
 
@@ -85,7 +82,7 @@ That's the adjacency list of the interprocedural call graph for the
 entire repository. Already resolved across files. Already resolved across
 import aliases. Already resolved across re-exports.
 
-## The eleven languages we got for free
+## The fourteen languages we got for free
 
 Orbit currently indexes:
 
@@ -105,7 +102,7 @@ Pause on this. Each of those languages required someone to write:
   receiver) from `foo.bar.baz()` (a chain)
 
 Doing this **once**, for **one** language, is a senior-eng quarter at
-minimum. Doing it for eleven languages well enough to be the substrate
+minimum. Doing it for fourteen languages well enough to be the substrate
 for code intelligence at GitLab's scale is **tens of thousands of lines of
 parser frontend** and years of cumulative work.
 
@@ -125,10 +122,10 @@ Concretely, if we had to build only the Python piece ourselves from scratch:
    honest cut, *years* to do it well.
 
 That's roughly **3 months of one engineer's full-time work** to reach a
-prototype that handles Python *only*. Multiply by 11 languages and the
-arithmetic falls apart: nobody on a hackathon team has 33 engineer-months.
+prototype that handles Python *only*. Multiply by 14 languages and the
+arithmetic falls apart: nobody on a hackathon team has 42 engineer-months.
 
-With Orbit: `orbit index .` runs in 48 ms.
+With Orbit: `orbit index .`.
 
 ## What we wrote on top
 
@@ -160,7 +157,7 @@ the SARIF renderer, and the CLI.
 
 **Roughly**: the security tool is 700 LoC. The graph that makes the
 700 LoC possible is on the order of 100,000 LoC of Rust in the Orbit
-codebase. We are the visible 0.7%.
+codebase.
 
 ## Why this matters for the hackathon, and why it matters for you
 

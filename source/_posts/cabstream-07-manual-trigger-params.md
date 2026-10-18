@@ -68,9 +68,9 @@ Make "which months" an explicit parameter and all three problems vanish.
 
 Flip side: if the business needs "today's report by 9 AM", go back to cron + SLA.
 
-## Two supporting pieces
+## Supporting pieces
 
-**Piece 1: a working default**
+**Working default**
 
 ```python
 DEFAULT_MONTHS = ["2023-01", "2023-02", "2023-03"]
@@ -78,7 +78,7 @@ DEFAULT_MONTHS = ["2023-01", "2023-02", "2023-03"]
 
 Triggering without params still gives a smoke-test run. Hugely friendly for new maintainers.
 
-**Piece 2: validate the params**
+**Validate the params**
 
 ```python
 def _year_month(month: str) -> tuple[str, str]:
@@ -90,8 +90,6 @@ def _year_month(month: str) -> tuple[str, str]:
 
 The Airflow UI form is untyped. The first time a user types `"2023-1"`, fail fast with a clear message.
 
-## One-liner
+When your DAG's shape is "one run = process one discrete batch of inputs", `schedule_interval=None` + `params` is simpler than cron + `catchup`, and it unifies backfill and routine runs through the same surface.
 
-> When your DAG's shape is "one run = process one discrete batch of inputs", `schedule_interval=None` + `params` is simpler than cron + `catchup`, and it unifies backfill and routine runs through the same surface.
-
-> File: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py)
+> File: [nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/airflow/nyc_taxi_pipeline.py)

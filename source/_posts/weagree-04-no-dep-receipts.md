@@ -24,7 +24,7 @@ In the three cases below the library was glue. In every case where I _did_ insta
 
 What `pino` gives you: structured JSON logs in production, child loggers, transports, async logging. The honest list of what I actually use across the WeAgree codebase: `log.info`, `log.warn`, `log.error`, and one helper for serializing caught errors. That's it.
 
-What I wrote ([lib/log.ts](../lib/log.ts)):
+What I wrote ([lib/log.ts](https://github.com/faketut/WeAgree/blob/main/lib/log.ts)):
 
 ```ts
 const isProd = process.env.NODE_ENV === "production";
@@ -129,7 +129,7 @@ The whole thing is 80 lines including the tests' mock. The SDK + its deps is a f
 
 WeAgree has one place that reads the theme: the toggle button itself. So I:
 
-1. **Wrote the inline script myself** ([app/layout.tsx](../app/layout.tsx)):
+1. **Wrote the inline script myself** ([app/layout.tsx](https://github.com/faketut/WeAgree/blob/main/app/layout.tsx)):
 
    ```html
    <script dangerouslySetInnerHTML={{ __html: `
@@ -148,7 +148,7 @@ WeAgree has one place that reads the theme: the toggle button itself. So I:
 
    It runs blocking, before the first paint. No flash.
 
-2. **Wrote a ~50-line `ThemeToggle`** ([components/theme-toggle.tsx](../components/theme-toggle.tsx)) that cycles light → dark → system, persists to `localStorage`, applies/removes the `.dark` class on `<html>`, and listens for OS preference changes while on "system".
+2. **Wrote a ~50-line `ThemeToggle`** ([components/theme-toggle.tsx](https://github.com/faketut/WeAgree/blob/main/components/theme-toggle.tsx)) that cycles light → dark → system, persists to `localStorage`, applies/removes the `.dark` class on `<html>`, and listens for OS preference changes while on "system".
 
 3. **Used Tailwind's `darkMode: "class"`** with `.dark` overrides in `globals.css`. The `.light` class wins over the media query, so a user who picks light over a system-dark OS gets light.
 
@@ -165,7 +165,5 @@ In all three cases the answer to "should I install the package?" looked like:
 If (2) and (3) are both yes, write it. Keep the **shape API-compatible** with the library you'd otherwise install — so the day you outgrow your version, the swap is a rename and a `npm install`.
 
 The dep tax is real, especially in a private-key-handling codebase: every `npm install` is a security review I might not do. Every dep is an upgrade-pressure source. Every transitive dep is a CVE that might wake me up. Not installing has a real cost in features I don't get, but it has a real benefit in things that can't go wrong.
-
-## The take-away
 
 You don't need to be hardcore about avoiding dependencies. You need to be honest about whether the library's value to you exceeds 100 lines of obvious code. For loggers, simple rate limiters, and one-toggle theme switchers, it usually doesn't.

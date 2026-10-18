@@ -11,7 +11,7 @@ categories:
   - data
 ---
 
-When people write GCS lifecycle rules they reach for one verb: **delete at age N**. The habit worth picking up in data engineering is the other one: **demote at age N**.
+When people write GCS lifecycle rules they reach for one verb: **delete at age N**. The habit worth picking up in data engineering is the other one: **demote at age N**. The default verb for data-asset lifecycle rules should be "demote", not "delete" — delete is the last optimization, not the first move.
 
 This project has a short rule:
 
@@ -66,8 +66,4 @@ GCS lifecycle is asynchronous and can lag by hours. If your business logic depen
 
 If the bucket has object versioning on, a plain `Delete` just creates a noncurrent version — no actual savings. You'd also need `NumberOfNewerVersions` conditions. This project doesn't enable versioning, so this trap doesn't bite — **but the fact that versioning is off deserves a wiki note of its own.**
 
-## One-liner
-
-> The default verb for data-asset lifecycle rules should be "demote", not "delete". Delete is the last optimization, not the first move.
-
-> File: [nyc_taxi_pipeline/terraform/main.tf](nyc_taxi_pipeline/terraform/main.tf#L57-L74)
+> File: [nyc_taxi_pipeline/terraform/main.tf](https://github.com/faketut/CabStream-ETL/blob/main/nyc_taxi_pipeline/terraform/main.tf#L57-L74)

@@ -112,17 +112,16 @@ The paper is in Typst (`paper/main.typ` + `paper/sections/*.typ` +
 produces `paper/main.pdf`. There is no separate "build the paper"
 ritual disconnected from "build the numbers." The same `make all`
 that regenerates the backtest also re-compiles the paper that cites
-the backtest. (More on the Typst choice in a
-[later post](2026-07-11-typst-instead-of-latex.md).)
+the backtest. (Typst rather than LaTeX — one binary, no TeX distribution to
+install, and fast enough to keep the paper inside the `make all` loop.)
 
 ## What this buys you
 
 Three things that compound:
 
 1. **Reviewers and readers can verify you.** Anyone who suspects a
-   number can reproduce it without asking me a single question.
-   That is — and this is the dirty secret of empirical finance — far
-   from the default.
+   number can reproduce it without asking me a single question —
+   which is far from the default in empirical finance.
 2. **Future-you can extend without archaeology.** Six months from
    now, when I want to add a new robustness cell, I add a CLI
    subcommand and a `make` target. I do not re-derive what `paper-Q`
@@ -130,18 +129,6 @@ Three things that compound:
 3. **The repo is its own demo.** A hiring manager reading the
    README sees the acceptance test and either runs it or doesn't.
    Either way the bar is concrete.
-
-## What I would skip if you're starting from scratch
-
-- **Don't bother with Docker** for a project this size. `uv` plus
-  pinned Python in `pyproject.toml` is enough.
-- **Don't ship notebooks as primary deliverables.** Ship a CLI and a
-  `make` target. A notebook can be a *demo* of the CLI; it cannot be
-  the canonical source of any number that ends up in your paper.
-- **Don't over-engineer the data layer.** Parquet files in a flat
-  `data/processed/` directory, named after what produced them. No
-  database. No DVC. You can graduate to those when the dataset
-  outgrows a laptop.
 
 The whole pipeline is maybe 1,500 lines of Python plus a hundred
 lines of Typst. The point isn't that the project is small — it's

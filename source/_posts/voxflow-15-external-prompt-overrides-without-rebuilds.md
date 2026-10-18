@@ -11,8 +11,6 @@ categories:
   - voice-ai
 ---
 
-*Turn "change the agent's behavior" from a code change into a `kubectl apply`.*
-
 ## When a prompt change is a deployment
 
 In an early VoxFlow build, every stage prompt was a triple-quoted string in `prompts.py`. A non-trivial chunk of the company's IP — the tone, the verification script, the escalation rules — lived inside Python source. Consequences:
@@ -123,8 +121,4 @@ If hot-reload genuinely matters (it usually doesn't), use `inotify` + a debounce
 
 ## What this does *not* solve
 
-This pattern externalizes prompt *text*. It doesn't externalize prompt *structure* — the stages, the tools per stage, the transition graph. That's a code-level concept (see the multi-stage state machine post). The two concerns intentionally stay separate: behavior is code, content is config.
-
-## Takeaway
-
-A two-line loader and one env var turn your prompts from compiled-in IP into mountable, reviewable, rollbackable artifacts. Non-engineers can change the agent's words. A new tenant is a ConfigMap, not a fork. A/B testing is a deployment, not a feature flag. The cost is ~20 lines and the discipline to keep the placeholder set tiny.
+This pattern externalizes prompt *text*. It doesn't externalize prompt *structure* — the stages, the tools per stage, the transition graph (see {% post_link voxflow-04-multi-stage-conversation-state-machine %}). The two concerns intentionally stay separate: behavior is code, content is config.
