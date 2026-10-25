@@ -112,8 +112,8 @@ Joint Honours in CS, Finance, and Statistics.
 
 - [**godot-handrow**](https://github.com/faketut/godot-handrow): Godot 4.6 + C# showcase of Balatro-style card UI — hover, drag, reorder, punch animations, and custom shaders. Reusable component. | Godot 4.6 + C# 实现的 Balatro 风格卡牌 UI：悬停、拖拽、重排、打击动画与自定义着色器，可复用组件。.
 - [**C-class-compiler**](https://github.com/faketut/C-class-compiler): Multi-pass C-class compiler featuring scanning, parsing, type checking, and ARM64 code generation. | 多遍 C 类编译器，涵盖词法、语法、类型检查与 ARM64 代码生成。.
-- [**resume**](https://github.com/faketut/resume): Typst-based resume toolkit with an automated referral-message generator. | 基于 Typst 的简历工具集，附带自动化内推消息生成器。.
 - [**GhostPilot**](https://github.com/faketut/GhostPilot): Real-time desktop interview copilot for Windows: invisible overlay, multi-provider ASR + LLM, Alt+P screenshot vision, and a local hybrid RAG knowledge base. | Windows 桌面实时面试副驾驶：隐形悬浮窗、多家 ASR/LLM、Alt+P 截图视觉问答与本地混合 RAG 知识库。.
+- [**resume**](https://github.com/faketut/resume): Typst-based resume toolkit with an automated referral-message generator. | 基于 Typst 的简历工具集，附带自动化内推消息生成器。.
 - [**legos**](https://github.com/faketut/legos): Legos: zero-overhead compile-time-brick HFT system in Rust (trait + generics static dispatch, lock-free bus, L2/L3 books, FIX/ITCH gateways).
 - [**Chain-Reaction**](https://github.com/faketut/Chain-Reaction): Daily co-op physics puzzle on Reddit (Devvit + Phaser + Matter.js) — one piece per player, deterministic sim replays the community contraption at lock time, MVP named by leave-one-out re-sim. | Reddit 上的每日合作物理拼图（Devvit + Phaser + Matter.js）：每人放一个零件，锁帖时确定性模拟回放众人装置，通过逐一剔除法找出决定胜负的 MVP。.
 
